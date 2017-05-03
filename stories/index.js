@@ -1,80 +1,72 @@
 import React from 'react';
 
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+// addons.js
+import '@kadira/storybook/addons';
+import registerScissors, { defaultDevices } from 'storybook-addon-scissors';
 
-import StoryRouter from 'storybook-router';
-import Home from '../src/components/Home';
-import About from '../src/components/About';
-import App from '../src/components/App';
+import { storiesOf, action } from '@kadira/storybook';
 
+import Item from '../src/components/Item';
+import ItemList from '../src/components/ItemList';
 
-storiesOf('Home', module)
-  .add('with counter', () => (
-    <Home counter={10} increment={action('incremented')}/>
-  ));
+registerScissors(defaultDevices);
 
-
-storiesOf('About', module)
-  .add('to be loaded', () => (
-    <About
-      contributors={[]}
-      fetchContributors={action('fetch contributors')}
-      loaded={false}/>
-  ));
-
-storiesOf('About', module)
-  .add('with 2 contributors', () => {
-    const contributors = [{
-      username: 'gvaldambrini',
-      url: 'https://github.com/gvaldambrini',
-      avatar: 'https://avatars3.githubusercontent.com/u/2461921?v=3',
-      contributions: 10
-    }, {
-      username: 'rugginoso',
-      url: 'https://github.com/rugginoso',
-      avatar: 'https://avatars1.githubusercontent.com/u/425276?v=3',
-      contributions: 1
-    }];
-
-    return (
-      <About
-        contributors={contributors}
-        fetchContributors={action('fetch contributors')}
-        loaded={true}/>
+storiesOf('Item', module)
+  .add('single item', () => {
+    const item = {
+      item_id: 'dgdsfgsdfg',
+      name: 'item name',
+      description: 'item description',
+      price: 23.34
+    };
+    return (<Item
+      item={item} />
     );
   });
 
 
-storiesOf('App', module)
-  .addDecorator(StoryRouter({'/about': linkTo('App', 'about')}))
-  .add('home', () => (
-    <App>
-      <Home counter={10} increment={action('incremented')}/>
-    </App>
-  ));
+storiesOf('Itemlist', module)
+  .add('empty', () => {
+    const itemList = [];
+    return (<ItemList
+      itemList={itemList}
+      fetchItemList={action('fetch ItemList empty')}
+      loaded={true}/>
+    );
+  });
 
-
-storiesOf('App', module)
-  .addDecorator(StoryRouter({'/': linkTo('App', 'home')}))
-  .add('about', () => {
-    const contributors = [{
-      username: 'gvaldambrini',
-      url: 'https://github.com/gvaldambrini',
-      avatar: 'https://avatars3.githubusercontent.com/u/2461921?v=3',
-      contributions: 10
-    }, {
-      username: 'rugginoso',
-      url: 'https://github.com/rugginoso',
-      avatar: 'https://avatars1.githubusercontent.com/u/425276?v=3',
-      contributions: 1
+storiesOf('Itemlist', module)
+  .add('with one item', () => {
+    const itemList = [{
+      item_id: 'dgdsfgsdfg',
+      name: 'item name',
+      description: 'item description',
+      price: 23.34
     }];
+    return (<ItemList
+      itemList={itemList}
+      fetchItemList={action('fetch ItemList with one item')}
+      loaded={true}/>
+    );
+  });
 
-    return (
-      <App>
-        <About
-          contributors={contributors}
-          fetchContributors={action('fetch contributors')}
-          loaded={true}/>
-      </App>
+storiesOf('Itemlist', module)
+  .add('with many items', () => {
+    const itemList = [];
+
+    for(let i = 0; i < 9; i++) {
+      const item = {
+        item_id: 'dgdsfgsdfg',
+        name: 'item name',
+        description: 'item description',
+        price: 23.34
+      };
+      item.item_id = item.item_id + i;
+      itemList.push(item);
+    }
+    return (<ItemList
+      itemList={itemList}
+      fetchItemList={action('fetch ItemList with one item')}
+      loaded={true}/>
     );
   });
