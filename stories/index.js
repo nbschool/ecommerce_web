@@ -19,7 +19,8 @@ storiesOf('Item', module)
       description: 'item description',
       price: 23.34
     };
-    return (<Item
+    return (
+      <Item
       item={item} />
     );
   });
@@ -28,7 +29,8 @@ storiesOf('Item', module)
 storiesOf('Itemlist', module)
   .add('empty', () => {
     const itemList = [];
-    return (<ItemList
+    return (
+      <ItemList
       itemList={itemList}
       fetchItemList={action('fetch ItemList empty')}
       loaded={true}/>
@@ -43,7 +45,8 @@ storiesOf('Itemlist', module)
       description: 'item description',
       price: 23.34
     }];
-    return (<ItemList
+    return (
+      <ItemList
       itemList={itemList}
       fetchItemList={action('fetch ItemList with one item')}
       loaded={true}/>
@@ -64,7 +67,8 @@ storiesOf('Itemlist', module)
       item.item_id = item.item_id + i;
       itemList.push(item);
     }
-    return (<ItemList
+    return (
+      <ItemList
       itemList={itemList}
       fetchItemList={action('fetch ItemList with one item')}
       loaded={true}/>
