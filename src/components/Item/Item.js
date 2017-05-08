@@ -8,7 +8,7 @@ const Item = ({item}) => {
     <article key={item.item_id} className="Item">
       <div className="card">
         <div className="image">
-          <img src="http://placehold.it/150x250" />
+          <img src="http://placehold.it/150x250" alt="" />
         </div>
         <div className="info">
           <div className="name">{item.name}</div>
