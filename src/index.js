@@ -10,8 +10,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 
 import rootReducer from './modules';
 import App from './components/App';
-import Home from './containers/HomeContainer';
-import About from './containers/AboutContainer';
+import ItemList from './containers/ItemListContainer';
 
 const store = createStore(
   rootReducer,
@@ -21,8 +20,7 @@ const store = createStore(
 const routes = (
   <Router>
     <App>
-      <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
+      <Route exact path="/" component={ItemList}/>
     </App>
   </Router>
 );
