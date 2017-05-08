@@ -35,9 +35,7 @@ storiesOf('Itemlist', module)
       fetchItemList={action('fetch ItemList empty')}
       loaded={true}/>
     );
-  });
-
-storiesOf('Itemlist', module)
+  })
   .add('with one item', () => {
     const itemList = [{
       item_id: 'dgdsfgsdfg',
@@ -51,9 +49,7 @@ storiesOf('Itemlist', module)
       fetchItemList={action('fetch ItemList with one item')}
       loaded={true}/>
     );
-  });
-
-storiesOf('Itemlist', module)
+  })
   .add('with many items', () => {
     const itemList = [];
 
