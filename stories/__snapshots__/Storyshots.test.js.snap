@@ -149,3 +149,342 @@ exports[`Storyshots Home with counter 1`] = `
   </button>
 </div>
 `;
+
+exports[`Storyshots Item single item 1`] = `
+<article
+  className="Item">
+  <div
+    className="card">
+    <div
+      className="image">
+      <img
+        alt=""
+        src="http://placehold.it/150x250" />
+    </div>
+    <div
+      className="info">
+      <div
+        className="name">
+        item name
+      </div>
+      <div
+        className="price">
+        €
+        23.34
+      </div>
+      <div
+        className="description">
+        item description
+      </div>
+    </div>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Itemlist empty 1`] = `
+<div
+  className="ItemList">
+  <div
+    className="empty">
+    Nessun items disponibile
+  </div>
+</div>
+`;
+
+exports[`Storyshots Itemlist with many items 1`] = `
+<div
+  className="ItemList">
+  <section
+    className="items">
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt=""
+            src="http://placehold.it/150x250" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            item name
+          </div>
+          <div
+            className="price">
+            €
+            23.34
+          </div>
+          <div
+            className="description">
+            item description
+          </div>
+        </div>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt=""
+            src="http://placehold.it/150x250" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            item name
+          </div>
+          <div
+            className="price">
+            €
+            23.34
+          </div>
+          <div
+            className="description">
+            item description
+          </div>
+        </div>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt=""
+            src="http://placehold.it/150x250" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            item name
+          </div>
+          <div
+            className="price">
+            €
+            23.34
+          </div>
+          <div
+            className="description">
+            item description
+          </div>
+        </div>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt=""
+            src="http://placehold.it/150x250" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            item name
+          </div>
+          <div
+            className="price">
+            €
+            23.34
+          </div>
+          <div
+            className="description">
+            item description
+          </div>
+        </div>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt=""
+            src="http://placehold.it/150x250" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            item name
+          </div>
+          <div
+            className="price">
+            €
+            23.34
+          </div>
+          <div
+            className="description">
+            item description
+          </div>
+        </div>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt=""
+            src="http://placehold.it/150x250" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            item name
+          </div>
+          <div
+            className="price">
+            €
+            23.34
+          </div>
+          <div
+            className="description">
+            item description
+          </div>
+        </div>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt=""
+            src="http://placehold.it/150x250" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            item name
+          </div>
+          <div
+            className="price">
+            €
+            23.34
+          </div>
+          <div
+            className="description">
+            item description
+          </div>
+        </div>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt=""
+            src="http://placehold.it/150x250" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            item name
+          </div>
+          <div
+            className="price">
+            €
+            23.34
+          </div>
+          <div
+            className="description">
+            item description
+          </div>
+        </div>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt=""
+            src="http://placehold.it/150x250" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            item name
+          </div>
+          <div
+            className="price">
+            €
+            23.34
+          </div>
+          <div
+            className="description">
+            item description
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</div>
+`;
+
+exports[`Storyshots Itemlist with one item 1`] = `
+<div
+  className="ItemList">
+  <section
+    className="items">
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt=""
+            src="http://placehold.it/150x250" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            item name
+          </div>
+          <div
+            className="price">
+            €
+            23.34
+          </div>
+          <div
+            className="description">
+            item description
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</div>
+`;
