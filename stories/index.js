@@ -53,7 +53,7 @@ storiesOf('Itemlist', module)
   .add('with many items', () => {
     const itemList = [];
 
-    for(let i = 0; i < 9; i++) {
+    for (let i = 0; i < 9; i++) {
       const item = {
         item_id: 'dgdsfgsdfg',
         name: 'item name',

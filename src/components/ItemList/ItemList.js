@@ -24,7 +24,7 @@ class ItemList extends Component {
         </div>
       );
     }
-    else{
+    else {
       const itemList = this.props.itemList.map((el,index) => (
         <Item key={index} item={el} />
       ));
