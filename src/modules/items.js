@@ -9,10 +9,10 @@ const ITEMS_FETCH_FAILURE = 'ITEMS_FETCH_FAILURE';
 // ------------------------------------
 // Action creators
 
-function fetchItemsSuccess(itemList) {
+function fetchItemsSuccess(items) {
   return {
     type: ITEMS_FETCH_SUCCESS,
-    payload: itemList
+    payload: items
   };
 }
 
@@ -31,7 +31,7 @@ export function fetchItems() {
           throw new Error('Unable to fetch');
         return response.json();
       })
-      .then(itemList => dispatch(fetchItemsSuccess(itemList)))
+      .then(items => dispatch(fetchItemsSuccess(items)))
       .catch(error => dispatch(fetchItemsFailure(error.message)));
   };
 }
@@ -39,14 +39,14 @@ export function fetchItems() {
 // ------------------------------------
 // Selectors
 
-export const getItems = state => state.items.itemList;
+export const getItems = state => state.items.items;
 export const itemsLoaded = state => state.items.loaded;
 
 // ------------------------------------
 // Store & reducer
 
 const initialState = {
-  itemList: [],
+  items: [],
   loaded: false,
 };
 
@@ -55,7 +55,7 @@ export default function reducer(state = initialState, action = {}) {
   case ITEMS_FETCH_SUCCESS:
     return {
       ...state,
-      itemList: action.payload,
+      items: action.payload,
       loaded: true,
     };
   case ITEMS_FETCH_FAILURE:

@@ -18,9 +18,9 @@ beforeEach(() => {
 test('fetch items with success', done => {
   const data = [{
     item_id: '429994bf-784e-47cc-a823-e0c394b823e8',
-    name: "gvaldambrini",
+    name: "item name",
     price: 30.99,
-    description: "kd fasdkfjakslfjalskdf"
+    description: "item description"
   }];
 
   fetchMock.get(`${testing.base_url}/items`, {status: 200, body: data});
@@ -54,61 +54,61 @@ test('fetch items with error', done => {
 
 test('handle the fetchItemsSuccess action', () => {
   const initialState = {
-    itemList: [],
+    items: [],
     loaded: false,
   };
 
   const data = [{
     item_id: '429994bf-784e-47cc-a823-e0c394b823e8',
-    name: "gvaldambrini",
+    name: "item name",
     price: 30.99,
-    description: "kd fasdkfjakslfjalskdf"
+    description: "item description"
   }];
 
   const newState = reducer(initialState, testing.fetchItemsSuccess(data));
-  expect(newState.itemList).toEqual([{
+  expect(newState.items).toEqual([{
     item_id: '429994bf-784e-47cc-a823-e0c394b823e8',
-    name: "gvaldambrini",
+    name: "item name",
     price: 30.99,
-    description: "kd fasdkfjakslfjalskdf"
+    description: "item description"
   }]);
   expect(newState.loaded).toEqual(true);
 });
 
 test('handle the fetchItemsFailure action', () => {
   const initialState = {
-    itemList: [],
+    items: [],
     loaded: false,
   };
 
   const newState = reducer(initialState, testing.fetchItemsFailure('Unable to fetch'));
-  expect(newState.itemList).toEqual([]);
+  expect(newState.items).toEqual([]);
   expect(newState.loaded).toEqual(true);
 });
 
 test('handle an unknown action', () => {
   const newState = reducer();
-  expect(newState.itemList).toEqual([]);
+  expect(newState.items).toEqual([]);
   expect(newState.loaded).toEqual(false);
 });
 
 test('get the items', () => {
   const itemState = {
-    itemList: [{
+    items: [{
       item_id: '429994bf-784e-47cc-a823-e0c394b823e8',
-      name: "gvaldambrini",
+      name: "item name",
       price: 30.99,
-      description: "kd fasdkfjakslfjalskdf"
+      description: "item description"
     }],
     loaded: false,
   };
 
-  expect(getItems({items: itemState})).toEqual(itemState.itemList);
+  expect(getItems({items: itemState})).toEqual(itemState.items);
 });
 
 test('check if items are loaded', () => {
   const itemState = {
-    itemList: [],
+    items: [],
     loaded: true,
   };
 
