@@ -13,16 +13,16 @@ exports[`Storyshots Item single item 1`] = `
       className="info">
       <div
         className="name">
-        item name
+        Placeat voluptates repellendus veniam.
       </div>
       <div
         className="price">
         €
-        23.34
+        233.34
       </div>
       <div
         className="description">
-        item description
+        Deserunt ut quae architecto error assumenda exercitationem occaecati.
       </div>
     </div>
   </div>
@@ -58,16 +58,16 @@ exports[`Storyshots Itemlist with many items 1`] = `
           className="info">
           <div
             className="name">
-            item name
+            Placeat voluptates repellendus veniam.
           </div>
           <div
             className="price">
             €
-            23.34
+            233.34
           </div>
           <div
             className="description">
-            item description
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
       </div>
@@ -86,16 +86,16 @@ exports[`Storyshots Itemlist with many items 1`] = `
           className="info">
           <div
             className="name">
-            item name
+            Placeat voluptates repellendus veniam.
           </div>
           <div
             className="price">
             €
-            23.34
+            233.34
           </div>
           <div
             className="description">
-            item description
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
       </div>
@@ -114,16 +114,16 @@ exports[`Storyshots Itemlist with many items 1`] = `
           className="info">
           <div
             className="name">
-            item name
+            Placeat voluptates repellendus veniam.
           </div>
           <div
             className="price">
             €
-            23.34
+            233.34
           </div>
           <div
             className="description">
-            item description
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
       </div>
@@ -142,16 +142,16 @@ exports[`Storyshots Itemlist with many items 1`] = `
           className="info">
           <div
             className="name">
-            item name
+            Placeat voluptates repellendus veniam.
           </div>
           <div
             className="price">
             €
-            23.34
+            233.34
           </div>
           <div
             className="description">
-            item description
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
       </div>
@@ -170,16 +170,16 @@ exports[`Storyshots Itemlist with many items 1`] = `
           className="info">
           <div
             className="name">
-            item name
+            Placeat voluptates repellendus veniam.
           </div>
           <div
             className="price">
             €
-            23.34
+            233.34
           </div>
           <div
             className="description">
-            item description
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
       </div>
@@ -198,16 +198,16 @@ exports[`Storyshots Itemlist with many items 1`] = `
           className="info">
           <div
             className="name">
-            item name
+            Placeat voluptates repellendus veniam.
           </div>
           <div
             className="price">
             €
-            23.34
+            233.34
           </div>
           <div
             className="description">
-            item description
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
       </div>
@@ -226,16 +226,16 @@ exports[`Storyshots Itemlist with many items 1`] = `
           className="info">
           <div
             className="name">
-            item name
+            Placeat voluptates repellendus veniam.
           </div>
           <div
             className="price">
             €
-            23.34
+            233.34
           </div>
           <div
             className="description">
-            item description
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
       </div>
@@ -254,16 +254,16 @@ exports[`Storyshots Itemlist with many items 1`] = `
           className="info">
           <div
             className="name">
-            item name
+            Placeat voluptates repellendus veniam.
           </div>
           <div
             className="price">
             €
-            23.34
+            233.34
           </div>
           <div
             className="description">
-            item description
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
       </div>
@@ -282,16 +282,16 @@ exports[`Storyshots Itemlist with many items 1`] = `
           className="info">
           <div
             className="name">
-            item name
+            Placeat voluptates repellendus veniam.
           </div>
           <div
             className="price">
             €
-            23.34
+            233.34
           </div>
           <div
             className="description">
-            item description
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
       </div>
@@ -319,16 +319,16 @@ exports[`Storyshots Itemlist with one item 1`] = `
           className="info">
           <div
             className="name">
-            item name
+            Placeat voluptates repellendus veniam.
           </div>
           <div
             className="price">
             €
-            23.34
+            233.34
           </div>
           <div
             className="description">
-            item description
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
       </div>
