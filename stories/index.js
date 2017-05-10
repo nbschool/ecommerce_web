@@ -14,14 +14,14 @@ registerScissors(defaultDevices);
 storiesOf('Item', module)
   .add('single item', () => {
     const item = {
-      item_id: 'dgdsfgsdfg',
+      uuid: 'dgdsfgsdfg',
       name: 'item name',
       description: 'item description',
       price: 23.34
     };
     return (
       <Item
-      item={item} />
+      {...item} />
     );
   });
 
@@ -38,7 +38,7 @@ storiesOf('Itemlist', module)
   })
   .add('with one item', () => {
     const itemList = [{
-      item_id: 'dgdsfgsdfg',
+      uuid: 'dgdsfgsdfg',
       name: 'item name',
       description: 'item description',
       price: 23.34
@@ -55,7 +55,7 @@ storiesOf('Itemlist', module)
 
     for (let i = 0; i < 9; i++) {
       const item = {
-        item_id: 'dgdsfgsdfg',
+        uuid: 'dgdsfgsdfg',
         name: 'item name',
         description: 'item description',
         price: 23.34
