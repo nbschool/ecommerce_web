@@ -3,25 +3,26 @@ import PropTypes from 'prop-types';
 
 import './Item.css';
 
-const Item = ({item}) => {
-  return (
-    <article key={item.item_id} className="Item">
-      <div className="card">
-        <div className="image">
-          <img src="http://placehold.it/150x250" alt="" />
-        </div>
-        <div className="info">
-          <div className="name">{item.name}</div>
-          <div className="price">€{item.price}</div>
-          <div className="description">{item.description}</div>
-        </div>
+const Item = ({uuid, name, price, description}) => (
+  <article key={uuid} className="Item">
+    <div className="card">
+      <div className="image">
+        <img src="http://placehold.it/150x250" alt="" />
       </div>
-    </article>
-  );
-};
+      <div className="info">
+        <div className="name">{name}</div>
+        <div className="price">€{price}</div>
+        <div className="description">{description}</div>
+      </div>
+    </div>
+  </article>
+);
 
 Item.propTypes = {
-  item: PropTypes.object.isRequired,
+  uuid: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default Item;
