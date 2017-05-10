@@ -14,10 +14,10 @@ registerScissors(defaultDevices);
 storiesOf('Item', module)
   .add('single item', () => {
     const item = {
-      uuid: 'dgdsfgsdfg',
-      name: 'item name',
-      description: 'item description',
-      price: 23.34
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus veniam.',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati. Possimus nam natus ipsa. Soluta corporis neque nobis soluta necessitatibus. Repellat repudiandae laudantium iure corporis voluptates.',
+      price: 233.34
     };
     return (
       <Item
@@ -38,10 +38,10 @@ storiesOf('Itemlist', module)
   })
   .add('with one item', () => {
     const itemList = [{
-      uuid: 'dgdsfgsdfg',
-      name: 'item name',
-      description: 'item description',
-      price: 23.34
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus veniam.',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati. Possimus nam natus ipsa. Soluta corporis neque nobis soluta necessitatibus. Repellat repudiandae laudantium iure corporis voluptates.',
+      price: 233.34
     }];
     return (
       <ItemList
@@ -55,10 +55,10 @@ storiesOf('Itemlist', module)
 
     for (let i = 0; i < 9; i++) {
       const item = {
-        uuid: 'dgdsfgsdfg',
-        name: 'item name',
-        description: 'item description',
-        price: 23.34
+        uuid: 'ert534534wertwert',
+        name: 'Placeat voluptates repellendus veniam.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati. Possimus nam natus ipsa. Soluta corporis neque nobis soluta necessitatibus. Repellat repudiandae laudantium iure corporis voluptates.',
+        price: 233.34
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
