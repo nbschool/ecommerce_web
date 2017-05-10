@@ -17,7 +17,7 @@ beforeEach(() => {
 
 test('fetch items with success', done => {
   const data = [{
-    item_id: '429994bf-784e-47cc-a823-e0c394b823e8',
+    uuid: '429994bf-784e-47cc-a823-e0c394b823e8',
     name: "item name",
     price: 30.99,
     description: "item description"
@@ -59,7 +59,7 @@ test('handle the fetchItemsSuccess action', () => {
   };
 
   const data = [{
-    item_id: '429994bf-784e-47cc-a823-e0c394b823e8',
+    uuid: '429994bf-784e-47cc-a823-e0c394b823e8',
     name: "item name",
     price: 30.99,
     description: "item description"
@@ -67,7 +67,7 @@ test('handle the fetchItemsSuccess action', () => {
 
   const newState = reducer(initialState, testing.fetchItemsSuccess(data));
   expect(newState.items).toEqual([{
-    item_id: '429994bf-784e-47cc-a823-e0c394b823e8',
+    uuid: '429994bf-784e-47cc-a823-e0c394b823e8',
     name: "item name",
     price: 30.99,
     description: "item description"
@@ -95,7 +95,7 @@ test('handle an unknown action', () => {
 test('get the items', () => {
   const itemState = {
     items: [{
-      item_id: '429994bf-784e-47cc-a823-e0c394b823e8',
+      uuid: '429994bf-784e-47cc-a823-e0c394b823e8',
       name: "item name",
       price: 30.99,
       description: "item description"
