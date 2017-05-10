@@ -16,7 +16,7 @@ storiesOf('Item', module)
     const item = {
       uuid: 'ert534534wertwert',
       name: 'Placeat voluptates repellendus veniam.',
-      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati. Possimus nam natus ipsa. Soluta corporis neque nobis soluta necessitatibus. Repellat repudiandae laudantium iure corporis voluptates.',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34
     };
     return (
@@ -40,7 +40,7 @@ storiesOf('Itemlist', module)
     const itemList = [{
       uuid: 'ert534534wertwert',
       name: 'Placeat voluptates repellendus veniam.',
-      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati. Possimus nam natus ipsa. Soluta corporis neque nobis soluta necessitatibus. Repellat repudiandae laudantium iure corporis voluptates.',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34
     }];
     return (
@@ -57,7 +57,7 @@ storiesOf('Itemlist', module)
       const item = {
         uuid: 'ert534534wertwert',
         name: 'Placeat voluptates repellendus veniam.',
-        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati. Possimus nam natus ipsa. Soluta corporis neque nobis soluta necessitatibus. Repellat repudiandae laudantium iure corporis voluptates.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
         price: 233.34
       };
       item.item_id = item.item_id + i;
