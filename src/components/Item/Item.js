@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import placehold from './placehold.png';
 import './Item.css';
 
+console.log(placehold);
 const Item = ({uuid, name, price, description}) => (
   <article key={uuid} className="Item">
     <div className="card">
       <div className="image">
-        <img src="http://placehold.it/150x250" alt="" />
+        <img src={placehold} alt={name} />
       </div>
       <div className="info">
         <div className="name">{name}</div>
