@@ -6,8 +6,8 @@ exports[`Storyshots Item single item 1`] = `
     <div
       className="image">
       <img
-        alt=""
-        src="http://placehold.it/150x250" />
+        alt="Placeat voluptates repellendus veniam."
+        src="placehold.png" />
     </div>
     <div
       className="info">
@@ -21,7 +21,7 @@ exports[`Storyshots Item single item 1`] = `
         233.34
       </div>
       <div
-        className="description">
+        className="description block-with-text">
         Deserunt ut quae architecto error assumenda exercitationem occaecati.
       </div>
     </div>
@@ -51,8 +51,8 @@ exports[`Storyshots Itemlist with many items 1`] = `
         <div
           className="image">
           <img
-            alt=""
-            src="http://placehold.it/150x250" />
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
         </div>
         <div
           className="info">
@@ -66,7 +66,7 @@ exports[`Storyshots Itemlist with many items 1`] = `
             233.34
           </div>
           <div
-            className="description">
+            className="description block-with-text">
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
@@ -79,8 +79,8 @@ exports[`Storyshots Itemlist with many items 1`] = `
         <div
           className="image">
           <img
-            alt=""
-            src="http://placehold.it/150x250" />
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
         </div>
         <div
           className="info">
@@ -94,7 +94,7 @@ exports[`Storyshots Itemlist with many items 1`] = `
             233.34
           </div>
           <div
-            className="description">
+            className="description block-with-text">
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
@@ -107,8 +107,8 @@ exports[`Storyshots Itemlist with many items 1`] = `
         <div
           className="image">
           <img
-            alt=""
-            src="http://placehold.it/150x250" />
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
         </div>
         <div
           className="info">
@@ -122,7 +122,7 @@ exports[`Storyshots Itemlist with many items 1`] = `
             233.34
           </div>
           <div
-            className="description">
+            className="description block-with-text">
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
@@ -135,8 +135,8 @@ exports[`Storyshots Itemlist with many items 1`] = `
         <div
           className="image">
           <img
-            alt=""
-            src="http://placehold.it/150x250" />
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
         </div>
         <div
           className="info">
@@ -150,7 +150,7 @@ exports[`Storyshots Itemlist with many items 1`] = `
             233.34
           </div>
           <div
-            className="description">
+            className="description block-with-text">
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
@@ -163,8 +163,8 @@ exports[`Storyshots Itemlist with many items 1`] = `
         <div
           className="image">
           <img
-            alt=""
-            src="http://placehold.it/150x250" />
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
         </div>
         <div
           className="info">
@@ -178,7 +178,7 @@ exports[`Storyshots Itemlist with many items 1`] = `
             233.34
           </div>
           <div
-            className="description">
+            className="description block-with-text">
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
@@ -191,8 +191,8 @@ exports[`Storyshots Itemlist with many items 1`] = `
         <div
           className="image">
           <img
-            alt=""
-            src="http://placehold.it/150x250" />
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
         </div>
         <div
           className="info">
@@ -206,7 +206,7 @@ exports[`Storyshots Itemlist with many items 1`] = `
             233.34
           </div>
           <div
-            className="description">
+            className="description block-with-text">
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
@@ -219,8 +219,8 @@ exports[`Storyshots Itemlist with many items 1`] = `
         <div
           className="image">
           <img
-            alt=""
-            src="http://placehold.it/150x250" />
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
         </div>
         <div
           className="info">
@@ -234,7 +234,7 @@ exports[`Storyshots Itemlist with many items 1`] = `
             233.34
           </div>
           <div
-            className="description">
+            className="description block-with-text">
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
@@ -247,8 +247,8 @@ exports[`Storyshots Itemlist with many items 1`] = `
         <div
           className="image">
           <img
-            alt=""
-            src="http://placehold.it/150x250" />
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
         </div>
         <div
           className="info">
@@ -262,7 +262,7 @@ exports[`Storyshots Itemlist with many items 1`] = `
             233.34
           </div>
           <div
-            className="description">
+            className="description block-with-text">
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
@@ -275,8 +275,8 @@ exports[`Storyshots Itemlist with many items 1`] = `
         <div
           className="image">
           <img
-            alt=""
-            src="http://placehold.it/150x250" />
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
         </div>
         <div
           className="info">
@@ -290,7 +290,7 @@ exports[`Storyshots Itemlist with many items 1`] = `
             233.34
           </div>
           <div
-            className="description">
+            className="description block-with-text">
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
@@ -312,8 +312,8 @@ exports[`Storyshots Itemlist with one item 1`] = `
         <div
           className="image">
           <img
-            alt=""
-            src="http://placehold.it/150x250" />
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
         </div>
         <div
           className="info">
@@ -327,7 +327,7 @@ exports[`Storyshots Itemlist with one item 1`] = `
             233.34
           </div>
           <div
-            className="description">
+            className="description block-with-text">
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
