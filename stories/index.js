@@ -1,80 +1,72 @@
 import React from 'react';
 
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+// addons.js
+import '@kadira/storybook/addons';
+import registerScissors, { defaultDevices } from 'storybook-addon-scissors';
 
-import StoryRouter from 'storybook-router';
-import Home from '../src/components/Home';
-import About from '../src/components/About';
-import App from '../src/components/App';
+import { storiesOf, action } from '@kadira/storybook';
 
+import Item from '../src/components/Item';
+import ItemList from '../src/components/ItemList';
 
-storiesOf('Home', module)
-  .add('with counter', () => (
-    <Home counter={10} increment={action('incremented')}/>
-  ));
+registerScissors(defaultDevices);
 
-
-storiesOf('About', module)
-  .add('to be loaded', () => (
-    <About
-      contributors={[]}
-      fetchContributors={action('fetch contributors')}
-      loaded={false}/>
-  ));
-
-storiesOf('About', module)
-  .add('with 2 contributors', () => {
-    const contributors = [{
-      username: 'gvaldambrini',
-      url: 'https://github.com/gvaldambrini',
-      avatar: 'https://avatars3.githubusercontent.com/u/2461921?v=3',
-      contributions: 10
-    }, {
-      username: 'rugginoso',
-      url: 'https://github.com/rugginoso',
-      avatar: 'https://avatars1.githubusercontent.com/u/425276?v=3',
-      contributions: 1
-    }];
-
+storiesOf('Item', module)
+  .add('single item', () => {
+    const item = {
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus veniam.',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34
+    };
     return (
-      <About
-        contributors={contributors}
-        fetchContributors={action('fetch contributors')}
-        loaded={true}/>
+      <Item
+      {...item} />
     );
   });
 
 
-storiesOf('App', module)
-  .addDecorator(StoryRouter({'/about': linkTo('App', 'about')}))
-  .add('home', () => (
-    <App>
-      <Home counter={10} increment={action('incremented')}/>
-    </App>
-  ));
-
-
-storiesOf('App', module)
-  .addDecorator(StoryRouter({'/': linkTo('App', 'home')}))
-  .add('about', () => {
-    const contributors = [{
-      username: 'gvaldambrini',
-      url: 'https://github.com/gvaldambrini',
-      avatar: 'https://avatars3.githubusercontent.com/u/2461921?v=3',
-      contributions: 10
-    }, {
-      username: 'rugginoso',
-      url: 'https://github.com/rugginoso',
-      avatar: 'https://avatars1.githubusercontent.com/u/425276?v=3',
-      contributions: 1
-    }];
-
+storiesOf('Itemlist', module)
+  .add('empty', () => {
+    const itemList = [];
     return (
-      <App>
-        <About
-          contributors={contributors}
-          fetchContributors={action('fetch contributors')}
-          loaded={true}/>
-      </App>
+      <ItemList
+      itemList={itemList}
+      fetchItemList={action('fetch ItemList empty')}
+      loaded={true}/>
+    );
+  })
+  .add('with one item', () => {
+    const itemList = [{
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus veniam.',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34
+    }];
+    return (
+      <ItemList
+      itemList={itemList}
+      fetchItemList={action('fetch ItemList with one item')}
+      loaded={true}/>
+    );
+  })
+  .add('with many items', () => {
+    const itemList = [];
+
+    for (let i = 0; i < 9; i++) {
+      const item = {
+        uuid: 'ert534534wertwert',
+        name: 'Placeat voluptates repellendus veniam.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+        price: 233.34
+      };
+      item.item_id = item.item_id + i;
+      itemList.push(item);
+    }
+    return (
+      <ItemList
+      itemList={itemList}
+      fetchItemList={action('fetch ItemList with one item')}
+      loaded={true}/>
     );
   });
