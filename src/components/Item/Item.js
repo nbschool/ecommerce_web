@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import placehold from './placehold.png';
+import '../App/App.css';
 import './Item.css';
 
-console.log(placehold);
 const Item = ({uuid, name, price, description}) => (
   <article key={uuid} className="Item">
     <div className="card">
@@ -14,7 +14,7 @@ const Item = ({uuid, name, price, description}) => (
       <div className="info">
         <div className="name">{name}</div>
         <div className="price">€{price}</div>
-        <div className="description">{description}</div>
+        <div className="description block-with-text">{description}</div>
       </div>
     </div>
   </article>
