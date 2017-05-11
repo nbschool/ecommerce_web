@@ -7,7 +7,7 @@ const ITEMS_FETCH_SUCCESS = 'ITEMS_FETCH_SUCCESS';
 const ITEMS_FETCH_FAILURE = 'ITEMS_FETCH_FAILURE';
 
 //
-function filterItemsData(items){
+function filterItemsData(items) {
   return items.map((item) => {
     return {...item.data.attributes, uuid: item.data.id};
   });
