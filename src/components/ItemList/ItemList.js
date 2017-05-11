@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Item from '../Item/';
+import '../App/App.css';
 import './ItemList.css';
 
 
