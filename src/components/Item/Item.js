@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import placehold from './placehold.png';
-import '../App/App.css';
 import './Item.css';
 
 const Item = ({uuid, name, price, description}) => (
