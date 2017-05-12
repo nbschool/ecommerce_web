@@ -37,5 +37,9 @@
     "lint": "eslint src/* stories/*",
     "start-sb": "start-storybook -p 9001 -c .storybook",
     "storybook": "npm-run-all -p watch-css start-sb"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/ceskomira90/ecommerce_web.git",
+  "author": "Francesco Mirabelli <ceskomira90@gmail.com>",
+  "license": "MIT"
 }

@@ -5,6 +5,9 @@ const BASE_URL = 'http://127.0.0.1:5000';
 
 const ITEMS_FETCH_SUCCESS = 'ITEMS_FETCH_SUCCESS';
 const ITEMS_FETCH_FAILURE = 'ITEMS_FETCH_FAILURE';
+const PICTURE_FETCH_SUCCESS = 'PICTURE_FETCH_SUCCESS';
+const PICTURE_FETCH_FAILURE = 'PICTURE_FETCH_FAILURE';
+
 
 //
 export function filterItemsData(items) {
@@ -31,6 +34,44 @@ function fetchItemsFailure(errmessage) {
   };
 }
 
+function fetchPictureSuccess(picture) {
+  return {
+    type: PICTURE_FETCH_SUCCESS,
+    payload: picture
+  };
+}
+
+function fetchPictureFailure(errmessage) {
+  return {
+    type: PICTURE_FETCH_FAILURE,
+    payload: errmessage,
+  };
+}
+
+function fetchPicture(uuid) {
+  return dispatch => {
+    return fetch(`${BASE_URL}/items/${uuid}/pictures`)
+      .then(response => {
+        if (!response.ok)
+          throw new Error('Unable to fetch');
+        return response.json();
+      })
+      .then(picture => {dispatch(fetchPictureSuccess(picture));})
+      .catch(error => dispatch(fetchPictureFailure(error.message)));
+  };
+}
+
+function addPictureToItem(picture, state) {
+  for (const item of state.items) {
+    if (picture[0].item_uuid === item.uuid) {
+      item.pictureId = picture[0].uuid;
+      item.pictureUrl = `${BASE_URL}/pictures/${picture[0].uuid}`;
+      break;
+    }
+  }
+  return state.items = [...state.items];
+}
+
 export function fetchItems() {
   return dispatch => {
     return fetch(`${BASE_URL}/items`)
@@ -39,10 +80,18 @@ export function fetchItems() {
           throw new Error('Unable to fetch');
         return response.json();
       })
-      .then(items => dispatch(fetchItemsSuccess(filterItemsData(items))))
+      .then(items => {
+        for (const item of items) {
+          item.pictureId = '';
+          item.pictureUrl = 'http://placehold.it/150x250';
+          dispatch(fetchPicture(item.uuid));
+        }
+        dispatch(fetchItemsSuccess(filterItemsData(items)));
+      })
       .catch(error => dispatch(fetchItemsFailure(error.message)));
   };
 }
+
 
 // ------------------------------------
 // Selectors
@@ -69,6 +118,12 @@ export default function reducer(state = initialState, action = {}) {
   case ITEMS_FETCH_FAILURE:
     return {
       ...state,
+      loaded: true,
+    };
+  case PICTURE_FETCH_SUCCESS:
+    return {
+      ...state,
+      items: addPictureToItem(action.payload, state),
       loaded: true,
     };
 
