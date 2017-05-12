@@ -61,15 +61,15 @@ function fetchPicture(uuid) {
   };
 }
 
-function addPictureToItem(picture, state) {
-  for (const item of state.items) {
+function addPictureToItem(picture, items) {
+  for (const item of items) {
     if (picture[0].item_uuid === item.uuid) {
       item.pictureId = picture[0].uuid;
       item.pictureUrl = `${BASE_URL}/pictures/${picture[0].uuid}`;
       break;
     }
   }
-  return state.items = [...state.items];
+  return [...items];
 }
 
 export function fetchItems() {
@@ -123,7 +123,7 @@ export default function reducer(state = initialState, action = {}) {
   case PICTURE_FETCH_SUCCESS:
     return {
       ...state,
-      items: addPictureToItem(action.payload, state),
+      items: addPictureToItem(action.payload, state.items),
       loaded: true,
     };
 
