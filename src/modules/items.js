@@ -6,6 +6,14 @@ const BASE_URL = 'http://127.0.0.1:5000';
 const ITEMS_FETCH_SUCCESS = 'ITEMS_FETCH_SUCCESS';
 const ITEMS_FETCH_FAILURE = 'ITEMS_FETCH_FAILURE';
 
+//
+export function filterItemsData(items) {
+  return items.map((item) => {
+    return {...item.data.attributes, uuid: item.data.id};
+  });
+}
+
+
 // ------------------------------------
 // Action creators
 
@@ -31,7 +39,7 @@ export function fetchItems() {
           throw new Error('Unable to fetch');
         return response.json();
       })
-      .then(items => dispatch(fetchItemsSuccess(items)))
+      .then(items => dispatch(fetchItemsSuccess(filterItemsData(items))))
       .catch(error => dispatch(fetchItemsFailure(error.message)));
   };
 }

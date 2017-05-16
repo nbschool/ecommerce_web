@@ -6,6 +6,7 @@ import reducer, {
   fetchItems,
   getItems,
   itemsLoaded,
+  filterItemsData,
   testing
 } from './items';
 
@@ -17,17 +18,29 @@ beforeEach(() => {
 
 test('fetch items with success', done => {
   const data = [{
-    uuid: '429994bf-784e-47cc-a823-e0c394b823e8',
-    name: "item name",
-    price: 30.99,
-    description: "item description"
+    data: {
+      type: "item",
+      attributes: {
+        description: "Deserunt ut quae architecto error assumenda ",
+        price: 17.86,
+        availability: 29,
+        name: "Voluptatum dolorum atque."
+      },
+      id: "2aabf825-40b3-03d5-e686-9eaebd156c0e",
+      links: {
+        self: "/items/2aabf825-40b3-03d5-e686-9eaebd156c0e"
+      }
+    },
+    links: {
+      self: "/items/2aabf825-40b3-03d5-e686-9eaebd156c0e"
+    }
   }];
 
   fetchMock.get(`${testing.base_url}/items`, {status: 200, body: data});
 
   const store = mockStore();
   const expectedActions = [
-    testing.fetchItemsSuccess(data)
+    testing.fetchItemsSuccess(filterItemsData(data))
   ];
 
   return store.dispatch(fetchItems())
@@ -59,18 +72,31 @@ test('handle the fetchItemsSuccess action', () => {
   };
 
   const data = [{
-    uuid: '429994bf-784e-47cc-a823-e0c394b823e8',
-    name: "item name",
-    price: 30.99,
-    description: "item description"
+    data: {
+      type: "item",
+      attributes: {
+        description: "Deserunt ut quae architecto error assumenda ",
+        price: 17.86,
+        availability: 29,
+        name: "Voluptatum dolorum atque."
+      },
+      id: "2aabf825-40b3-03d5-e686-9eaebd156c0e",
+      links: {
+        self: "/items/2aabf825-40b3-03d5-e686-9eaebd156c0e"
+      }
+    },
+    links: {
+      self: "/items/2aabf825-40b3-03d5-e686-9eaebd156c0e"
+    }
   }];
 
-  const newState = reducer(initialState, testing.fetchItemsSuccess(data));
+  const newState = reducer(initialState, testing.fetchItemsSuccess(filterItemsData(data)));
   expect(newState.items).toEqual([{
-    uuid: '429994bf-784e-47cc-a823-e0c394b823e8',
-    name: "item name",
-    price: 30.99,
-    description: "item description"
+    description: "Deserunt ut quae architecto error assumenda ",
+    price: 17.86,
+    availability: 29,
+    name: "Voluptatum dolorum atque.",
+    uuid: "2aabf825-40b3-03d5-e686-9eaebd156c0e"
   }]);
   expect(newState.loaded).toEqual(true);
 });
@@ -95,10 +121,22 @@ test('handle an unknown action', () => {
 test('get the items', () => {
   const itemState = {
     items: [{
-      uuid: '429994bf-784e-47cc-a823-e0c394b823e8',
-      name: "item name",
-      price: 30.99,
-      description: "item description"
+      data: {
+        type: "item",
+        attributes: {
+          description: "Deserunt ut quae architecto error assumenda ",
+          price: 17.86,
+          availability: 29,
+          name: "Voluptatum dolorum atque."
+        },
+        id: "2aabf825-40b3-03d5-e686-9eaebd156c0e",
+        links: {
+          self: "/items/2aabf825-40b3-03d5-e686-9eaebd156c0e"
+        }
+      },
+      links: {
+        self: "/items/2aabf825-40b3-03d5-e686-9eaebd156c0e"
+      }
     }],
     loaded: false,
   };
