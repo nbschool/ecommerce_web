@@ -56,7 +56,8 @@ function fetchPicture(uuid) {
           throw new Error('Unable to fetch');
         return response.json();
       })
-      .then(picture => {dispatch(fetchPictureSuccess(picture));})
+      .then(picture => {
+        dispatch(fetchPictureSuccess(picture));})
       .catch(error => dispatch(fetchPictureFailure(error.message)));
   };
 }
@@ -84,7 +85,7 @@ export function fetchItems() {
         for (const item of items) {
           item.pictureId = '';
           item.pictureUrl = 'http://placehold.it/150x250';
-          dispatch(fetchPicture(item.uuid));
+          dispatch(fetchPicture(item.data.id));
         }
         dispatch(fetchItemsSuccess(filterItemsData(items)));
       })
