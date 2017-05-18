@@ -36,14 +36,20 @@ test('fetch items with success', done => {
     }
   }];
 
+  const pictureData = {};
   fetchMock.get(`${testing.base_url}/items`, {status: 200, body: data});
-
+  fetchMock.get(
+    `${testing.base_url}/items/2aabf825-40b3-03d5-e686-9eaebd156c0e/pictures`,
+    {status: 200, body: pictureData}
+  );
   const store = mockStore();
   const expectedActions = [
-    testing.fetchItemsSuccess(filterItemsData(data))
+    testing.fetchItemsSuccess(filterItemsData(data)),
+    testing.fetchPictureSuccess({}),
   ];
 
   return store.dispatch(fetchItems())
+    .then(actions => Promise.all(actions))
     .then(() => {
       expect(store.getActions()).toEqual(expectedActions);
       done();

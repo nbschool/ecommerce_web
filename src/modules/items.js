@@ -82,12 +82,14 @@ export function fetchItems() {
         return response.json();
       })
       .then(items => {
+        const actions = [];
         for (const item of items) {
           item.pictureId = '';
           item.pictureUrl = 'http://placehold.it/150x250';
-          dispatch(fetchPicture(item.data.id));
+          actions.push(dispatch(fetchPicture(item.data.id)));
         }
-        dispatch(fetchItemsSuccess(filterItemsData(items)));
+        actions.push(dispatch(fetchItemsSuccess(filterItemsData(items))));
+        return actions;
       })
       .catch(error => dispatch(fetchItemsFailure(error.message)));
   };
@@ -140,4 +142,7 @@ export const testing = {
   base_url: BASE_URL,
   fetchItemsSuccess,
   fetchItemsFailure,
+  fetchPicture,
+  fetchPictureSuccess,
+  fetchPictureFailure
 };
