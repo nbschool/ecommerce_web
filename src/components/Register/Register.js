@@ -34,8 +34,9 @@ const Register = (props) => {
           <input type="password" placeholder="Riscrivi la tua password" required
             className={'form-control ' + (clsError.password ? 'form-error' : '')} />
           <button className="submit" type="button">Registrati</button>
-          <a href="#" className="help">Bisogno di aiuto?</a>
-          <span className="clearfix"></span>
+          <div className="moreinfo">
+            <a href="#" className="help">Bisogno di aiuto?</a>
+          </div>
         </form>
       </div>
       <a href="#" className="registrati">Accedi al tuo account</a>

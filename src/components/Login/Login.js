@@ -10,17 +10,18 @@ const Login = (props) => (
     <div className="box">
       <img className="profile-img" src={login} alt="" />
       <form className="form-signin" action="#">
-        <div className="error">{(props.error) ? props.error : ''}</div>
+        <div className="error">{props.error}</div>
         <input type="text" className="form-control"
           placeholder="Inserisci la tua email" required />
         <input type="password" className="form-control"
           placeholder="Inserisci la tua password" required />
         <button className="submit" type="button">Accedi</button>
-        <label className="ricordami">
-          <input type="checkbox" value="ricordami"/>Ricordami
-        </label>
-        <a href="#" className="help">Bisogno di aiuto?</a>
-        <span className="clearfix"></span>
+        <div className="moreinfo">
+          <label className="ricordami">
+            <input type="checkbox" value="ricordami"/> Ricordami
+          </label>
+          <a href="#" className="help">Bisogno di aiuto?</a>
+        </div>
       </form>
     </div>
     <a href="#" className="registrati">Registrati</a>

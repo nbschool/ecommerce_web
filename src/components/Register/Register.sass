@@ -10,11 +10,11 @@
 
     .title
         color: #555
-        font-size: 18px
+        font-size: 1.3em
         font-weight: 400
 
     .box
-        padding: 40px 0px 20px 0px
+        padding: 2em 0
         background-color: #f7f7f7
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)
 
@@ -24,55 +24,51 @@
             border-radius: 50%
 
         .form-signin
-            padding: 30px
+            padding: 2em
             display: inline-block
 
             .form-control
                 font-size: 1em
-                padding: 10px
+                padding: 0.8em
                 box-sizing: border-box
                 border: 1px solid #ccc
                 border-radius: 4px
 
             .form-error
-                border-color: $error-color
+                border-color: $color-error
 
             .error-message
-                color: $error-color
+                color: $color-error
                 text-align: left
                 font-size: 0.9em
                 margin-top: 0.2em
 
             input[type="text"], input[type="password"], input[type="email"]
                 width: 100%
-                margin-top: 10px
+                margin-bottom: 1em
 
             .submit
                 border: 1px solid transparent
                 border-radius: 6px
                 color: #fff
-                background-color: $primary-color-background
+                background-color: $color-primary-background
                 border-color: #357ebd
-                padding: 10px 16px
+                padding: 0.5em 1em
                 font-size: 1.3em
                 width: 100%
                 cursor: pointer
-                margin-top: 2em
 
-            .ricordami
-                padding-left: 20px
-                margin-top: 10px
-                float: left
-
-            .help
-                float: right
-                margin-top: 10px
+            .moreinfo
+                display: flex
+                justify-content: flex-end
+                margin-top: 1em
 
             .error
-                color: $error-color
+                color: $color-error
                 padding: 0.5em 0
+                height: 1em
 
     .registrati
         display: block
-        margin-top: 10px
+        margin-top: 1em
         text-align: center
