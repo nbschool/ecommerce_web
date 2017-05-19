@@ -9,6 +9,7 @@ import { storiesOf, action } from '@kadira/storybook';
 import Item from '../src/components/Item';
 import ItemList from '../src/components/ItemList';
 import Login from '../src/components/Login';
+import Register from '../src/components/Register';
 
 registerScissors(defaultDevices);
 
@@ -83,5 +84,28 @@ storiesOf('Login', module)
     const error = 'Username o password non corretti';
     return (
       <Login error={error} />
+    );
+  });
+
+storiesOf('Register', module)
+  .add('empty form', () => {
+    const error = {};
+    return (
+      <Register error={error} />
+    );
+  })
+  .add('form with first name empty and email not correct', () => {
+    const error = {
+      text: 'Ci sono campi con errore',
+      details: [{
+        field: 'first_name',
+        error: 'Campo obbligatorio'
+      },{
+        field: 'email',
+        error: 'Email non corretta'
+      }]
+    };
+    return (
+      <Register error={error} />
     );
   });
