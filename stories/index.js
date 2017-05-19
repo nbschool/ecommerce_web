@@ -8,6 +8,7 @@ import { storiesOf, action } from '@kadira/storybook';
 
 import Item from '../src/components/Item';
 import ItemList from '../src/components/ItemList';
+import Login from '../src/components/Login';
 
 registerScissors(defaultDevices);
 
@@ -15,7 +16,7 @@ storiesOf('Item', module)
   .add('single item', () => {
     const item = {
       uuid: 'ert534534wertwert',
-      name: 'Placeat voluptates repellendus veniam.',
+      name: 'Placeat voluptates repellendus',
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34
     };
@@ -68,5 +69,19 @@ storiesOf('Itemlist', module)
       itemList={itemList}
       fetchItemList={action('fetch ItemList with one item')}
       loaded={true}/>
+    );
+  });
+
+storiesOf('Login', module)
+  .add('empty login', () => {
+    const error = '';
+    return (
+      <Login error={error} />
+    );
+  })
+  .add('bad credentials', () => {
+    const error = 'Username o password non corretti';
+    return (
+      <Login error={error} />
     );
   });
