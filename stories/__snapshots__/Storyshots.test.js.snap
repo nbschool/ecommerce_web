@@ -372,20 +372,21 @@ exports[`Storyshots Login bad credentials 1`] = `
         type="button">
         Accedi
       </button>
-      <label
-        className="ricordami">
-        <input
-          type="checkbox"
-          value="ricordami" />
-        Ricordami
-      </label>
-      <a
-        className="help"
-        href="#">
-        Bisogno di aiuto?
-      </a>
-      <span
-        className="clearfix" />
+      <div
+        className="moreinfo">
+        <label
+          className="ricordami">
+          <input
+            type="checkbox"
+            value="ricordami" />
+           Ricordami
+        </label>
+        <a
+          className="help"
+          href="#">
+          Bisogno di aiuto?
+        </a>
+      </div>
     </form>
   </div>
   <a
@@ -431,20 +432,21 @@ exports[`Storyshots Login empty login 1`] = `
         type="button">
         Accedi
       </button>
-      <label
-        className="ricordami">
-        <input
-          type="checkbox"
-          value="ricordami" />
-        Ricordami
-      </label>
-      <a
-        className="help"
-        href="#">
-        Bisogno di aiuto?
-      </a>
-      <span
-        className="clearfix" />
+      <div
+        className="moreinfo">
+        <label
+          className="ricordami">
+          <input
+            type="checkbox"
+            value="ricordami" />
+           Ricordami
+        </label>
+        <a
+          className="help"
+          href="#">
+          Bisogno di aiuto?
+        </a>
+      </div>
     </form>
   </div>
   <a
@@ -503,13 +505,14 @@ exports[`Storyshots Register empty form 1`] = `
         type="button">
         Registrati
       </button>
-      <a
-        className="help"
-        href="#">
-        Bisogno di aiuto?
-      </a>
-      <span
-        className="clearfix" />
+      <div
+        className="moreinfo">
+        <a
+          className="help"
+          href="#">
+          Bisogno di aiuto?
+        </a>
+      </div>
     </form>
   </div>
   <a
@@ -574,13 +577,14 @@ exports[`Storyshots Register form with first name empty and email not correct 1`
         type="button">
         Registrati
       </button>
-      <a
-        className="help"
-        href="#">
-        Bisogno di aiuto?
-      </a>
-      <span
-        className="clearfix" />
+      <div
+        className="moreinfo">
+        <a
+          className="help"
+          href="#">
+          Bisogno di aiuto?
+        </a>
+      </div>
     </form>
   </div>
   <a
