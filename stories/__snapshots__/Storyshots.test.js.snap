@@ -351,25 +351,31 @@ exports[`Storyshots Login bad credentials 1`] = `
       className="profile-img"
       src="login.png" />
     <form
-      action="#"
-      className="form-signin">
+      className="form-signin"
+      onSubmit={[Function]}>
       <div
         className="error">
         Username o password non corretti
       </div>
       <input
         className="form-control"
+        name="email"
+        onChange={[Function]}
         placeholder="Inserisci la tua email"
         required={true}
-        type="text" />
+        type="email"
+        value="" />
       <input
         className="form-control"
+        name="passwd"
+        onChange={[Function]}
         placeholder="Inserisci la tua password"
         required={true}
-        type="password" />
+        type="password"
+        value="" />
       <button
         className="submit"
-        type="button">
+        type="submit">
         Accedi
       </button>
       <div
@@ -411,25 +417,31 @@ exports[`Storyshots Login empty login 1`] = `
       className="profile-img"
       src="login.png" />
     <form
-      action="#"
-      className="form-signin">
+      className="form-signin"
+      onSubmit={[Function]}>
       <div
         className="error">
         
       </div>
       <input
         className="form-control"
+        name="email"
+        onChange={[Function]}
         placeholder="Inserisci la tua email"
         required={true}
-        type="text" />
+        type="email"
+        value="" />
       <input
         className="form-control"
+        name="passwd"
+        onChange={[Function]}
         placeholder="Inserisci la tua password"
         required={true}
-        type="password" />
+        type="password"
+        value="" />
       <button
         className="submit"
-        type="button">
+        type="submit">
         Accedi
       </button>
       <div
@@ -467,42 +479,57 @@ exports[`Storyshots Register empty form 1`] = `
   <div
     className="box">
     <form
-      action="#"
-      className="form-signin">
+      className="form-signin"
+      onSubmit={[Function]}>
       <div
         className="error" />
       <input
         className="form-control "
+        name="first_name"
+        onChange={[Function]}
         placeholder="Inserisci il tuo nome"
         required={true}
-        type="text" />
+        type="text"
+        value="" />
       <div
         className="error-message hidden" />
       <input
         className="form-control "
+        name="last_name"
+        onChange={[Function]}
         placeholder="Inserisci il tuo cognome"
         required={true}
-        type="text" />
+        type="text"
+        value="" />
       <input
         className="form-control "
+        name="email"
+        onChange={[Function]}
         placeholder="Inserisci la tua email"
         required={true}
-        type="email" />
+        type="email"
+        value="" />
       <div
         className="error-message hidden" />
       <input
         className="form-control "
+        name="passwd1"
+        onChange={[Function]}
         placeholder="Inserisci la tua password"
         required={true}
-        type="password" />
+        type="password"
+        value="" />
       <input
         className="form-control "
+        name="passwd2"
+        onChange={[Function]}
         placeholder="Riscrivi la tua password"
         required={true}
-        type="password" />
+        type="password"
+        value="" />
       <button
         className="submit"
-        type="button">
+        type="submit">
         Registrati
       </button>
       <div
@@ -533,48 +560,63 @@ exports[`Storyshots Register form with first name empty and email not correct 1`
   <div
     className="box">
     <form
-      action="#"
-      className="form-signin">
+      className="form-signin"
+      onSubmit={[Function]}>
       <div
         className="error">
         Ci sono campi con errore
       </div>
       <input
         className="form-control form-error"
+        name="first_name"
+        onChange={[Function]}
         placeholder="Inserisci il tuo nome"
         required={true}
-        type="text" />
+        type="text"
+        value="" />
       <div
         className="error-message show">
         Campo obbligatorio
       </div>
       <input
         className="form-control "
+        name="last_name"
+        onChange={[Function]}
         placeholder="Inserisci il tuo cognome"
         required={true}
-        type="text" />
+        type="text"
+        value="" />
       <input
         className="form-control form-error"
+        name="email"
+        onChange={[Function]}
         placeholder="Inserisci la tua email"
         required={true}
-        type="email" />
+        type="email"
+        value="" />
       <div
         className="error-message show">
         Email non corretta
       </div>
       <input
         className="form-control "
+        name="passwd1"
+        onChange={[Function]}
         placeholder="Inserisci la tua password"
         required={true}
-        type="password" />
+        type="password"
+        value="" />
       <input
         className="form-control "
+        name="passwd2"
+        onChange={[Function]}
         placeholder="Riscrivi la tua password"
         required={true}
-        type="password" />
+        type="password"
+        value="" />
       <button
         className="submit"
-        type="button">
+        type="submit">
         Registrati
       </button>
       <div

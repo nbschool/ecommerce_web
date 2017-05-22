@@ -77,13 +77,17 @@ storiesOf('Login', module)
   .add('empty login', () => {
     const error = '';
     return (
-      <Login error={error} />
+      <Login
+      error={error}
+      login={action('call to login')} />
     );
   })
   .add('bad credentials', () => {
     const error = 'Username o password non corretti';
     return (
-      <Login error={error} />
+      <Login
+      error={error}
+      login={action('call to login')} />
     );
   });
 
@@ -91,7 +95,9 @@ storiesOf('Register', module)
   .add('empty form', () => {
     const error = {};
     return (
-      <Register error={error} />
+      <Register
+      error={error}
+      register={action('call to register')} />
     );
   })
   .add('form with first name empty and email not correct', () => {
@@ -106,6 +112,8 @@ storiesOf('Register', module)
       }]
     };
     return (
-      <Register error={error} />
+      <Register
+      error={error}
+      register={action('call to register')} />
     );
   });
