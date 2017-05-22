@@ -11,14 +11,13 @@ class Register extends Component {
       first_name: '',
       last_name: '',
       email: '',
-      passwd1: '',
-      passwd2: ''
+      password1: '',
+      password2: ''
     };
   }
 
   inputChange(event) {
-    const value = event.target.value;
-    const name = event.target.name;
+    const {value, name} = event.target;
     this.setState({
       [name]: value
     });
@@ -63,11 +62,11 @@ class Register extends Component {
             </div>
             <input type="password" placeholder="Inserisci la tua password" required
               className={'form-control ' + (clsError.password ? 'form-error' : '')}
-              name="passwd1" value={this.state.passwd1}
+              name="password1" value={this.state.password1}
               onChange={(ev) => this.inputChange(ev)} />
             <input type="password" placeholder="Riscrivi la tua password" required
               className={'form-control ' + (clsError.password ? 'form-error' : '')}
-              name="passwd2" value={this.state.passwd2}
+              name="password2" value={this.state.password2}
               onChange={(ev) => this.inputChange(ev)} />
             <button className="submit" type="submit">Registrati</button>
             <div className="moreinfo">

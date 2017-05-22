@@ -10,13 +10,12 @@ class Login extends Component {
 
     this.state = {
       email: '',
-      passwd: ''
+      password: ''
     };
   }
 
   inputChange(event) {
-    const value = event.target.value;
-    const name = event.target.name;
+    const {value, name} = event.target;
     this.setState({
       [name]: value
     });
@@ -27,13 +26,12 @@ class Login extends Component {
     this.props.login(this.state);
   }
 
-
   render() {
     return (
       <div className="Login">
         <h1 className="title">Inserisci i tuoi dati per il login</h1>
         <div className="box">
-          <img className="profile-img" src={login} alt="" />
+          <img className="profile-img" src={login} alt="User picture" />
           <form className="form-signin" onSubmit={(event) => this.submitLogin(event)}>
             <div className="error">{this.props.error}</div>
             <input type="email" className="form-control"
@@ -42,12 +40,12 @@ class Login extends Component {
               onChange={(ev) => this.inputChange(ev)} />
             <input type="password" className="form-control"
               placeholder="Inserisci la tua password" required
-              name="passwd" value={this.state.passwd}
+              name="password" value={this.state.password}
               onChange={(ev) => this.inputChange(ev)} />
             <button className="submit" type="submit">Accedi</button>
             <div className="moreinfo">
-              <label className="ricordami">
-                <input type="checkbox" value="rememberme"/> Ricordami
+              <label className="rememberme">
+                <input type="checkbox" value="ricordami"/> Ricordami
               </label>
               <a href="#" className="help">Bisogno di aiuto?</a>
             </div>
