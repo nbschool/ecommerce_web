@@ -347,7 +347,7 @@ exports[`Storyshots Login bad credentials 1`] = `
   <div
     className="box">
     <img
-      alt=""
+      alt="User picture"
       className="profile-img"
       src="login.png" />
     <form
@@ -367,7 +367,7 @@ exports[`Storyshots Login bad credentials 1`] = `
         value="" />
       <input
         className="form-control"
-        name="passwd"
+        name="password"
         onChange={[Function]}
         placeholder="Inserisci la tua password"
         required={true}
@@ -381,10 +381,10 @@ exports[`Storyshots Login bad credentials 1`] = `
       <div
         className="moreinfo">
         <label
-          className="ricordami">
+          className="rememberme">
           <input
             type="checkbox"
-            value="rememberme" />
+            value="ricordami" />
            Ricordami
         </label>
         <a
@@ -413,7 +413,7 @@ exports[`Storyshots Login empty login 1`] = `
   <div
     className="box">
     <img
-      alt=""
+      alt="User picture"
       className="profile-img"
       src="login.png" />
     <form
@@ -433,7 +433,7 @@ exports[`Storyshots Login empty login 1`] = `
         value="" />
       <input
         className="form-control"
-        name="passwd"
+        name="password"
         onChange={[Function]}
         placeholder="Inserisci la tua password"
         required={true}
@@ -447,10 +447,10 @@ exports[`Storyshots Login empty login 1`] = `
       <div
         className="moreinfo">
         <label
-          className="ricordami">
+          className="rememberme">
           <input
             type="checkbox"
-            value="rememberme" />
+            value="ricordami" />
            Ricordami
         </label>
         <a
@@ -513,7 +513,7 @@ exports[`Storyshots Register empty form 1`] = `
         className="error-message hidden" />
       <input
         className="form-control "
-        name="passwd1"
+        name="password1"
         onChange={[Function]}
         placeholder="Inserisci la tua password"
         required={true}
@@ -521,7 +521,7 @@ exports[`Storyshots Register empty form 1`] = `
         value="" />
       <input
         className="form-control "
-        name="passwd2"
+        name="password2"
         onChange={[Function]}
         placeholder="Riscrivi la tua password"
         required={true}
@@ -600,7 +600,7 @@ exports[`Storyshots Register form with first name empty and email not correct 1`
       </div>
       <input
         className="form-control "
-        name="passwd1"
+        name="password1"
         onChange={[Function]}
         placeholder="Inserisci la tua password"
         required={true}
@@ -608,7 +608,7 @@ exports[`Storyshots Register form with first name empty and email not correct 1`
         value="" />
       <input
         className="form-control "
-        name="passwd2"
+        name="password2"
         onChange={[Function]}
         placeholder="Riscrivi la tua password"
         required={true}
