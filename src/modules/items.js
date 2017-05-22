@@ -142,7 +142,6 @@ export const testing = {
   base_url: BASE_URL,
   fetchItemsSuccess,
   fetchItemsFailure,
-  fetchPicture,
   fetchPictureSuccess,
   fetchPictureFailure
 };
