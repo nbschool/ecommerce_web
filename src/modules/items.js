@@ -85,7 +85,7 @@ export function fetchItems() {
         const actions = [];
         for (const item of items) {
           item.pictureId = '';
-          item.pictureUrl = 'http://placehold.it/150x250';
+          item.pictureUrl = null;
           actions.push(dispatch(fetchPicture(item.data.id)));
         }
         actions.push(dispatch(fetchItemsSuccess(filterItemsData(items))));
