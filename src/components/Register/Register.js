@@ -75,7 +75,7 @@ class Register extends Component {
             </div>
           </form>
         </div>
-        <a href="#" className="registrati">Accedi al tuo account</a>
+        <a href="#" className="login">Accedi al tuo account</a>
       </div>
     );
   }

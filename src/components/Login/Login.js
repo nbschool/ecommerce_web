@@ -47,13 +47,13 @@ class Login extends Component {
             <button className="submit" type="submit">Accedi</button>
             <div className="moreinfo">
               <label className="ricordami">
-                <input type="checkbox" value="ricordami"/> Ricordami
+                <input type="checkbox" value="rememberme"/> Ricordami
               </label>
               <a href="#" className="help">Bisogno di aiuto?</a>
             </div>
           </form>
         </div>
-        <a href="#" className="registrati">Registrati</a>
+        <a href="#" className="register">Registrati</a>
       </div>
     );
   }
