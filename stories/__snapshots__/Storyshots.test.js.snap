@@ -6,14 +6,14 @@ exports[`Storyshots Item single item 1`] = `
     <div
       className="image">
       <img
-        alt="Placeat voluptates repellendus veniam."
+        alt="Placeat voluptates repellendus"
         src="placehold.png" />
     </div>
     <div
       className="info">
       <div
         className="name">
-        Placeat voluptates repellendus veniam.
+        Placeat voluptates repellendus
       </div>
       <div
         className="price">
@@ -334,5 +334,305 @@ exports[`Storyshots Itemlist with one item 1`] = `
       </div>
     </article>
   </section>
+</div>
+`;
+
+exports[`Storyshots Login bad credentials 1`] = `
+<div
+  className="Login">
+  <h1
+    className="title">
+    Inserisci i tuoi dati per il login
+  </h1>
+  <div
+    className="box">
+    <img
+      alt="User picture"
+      className="profile-img"
+      src="login.png" />
+    <form
+      className="form-signin"
+      onSubmit={[Function]}>
+      <div
+        className="error">
+        Username o password non corretti
+      </div>
+      <input
+        className="form-control"
+        name="email"
+        onChange={[Function]}
+        placeholder="Inserisci la tua email"
+        required={true}
+        type="email"
+        value="" />
+      <input
+        className="form-control"
+        name="password"
+        onChange={[Function]}
+        placeholder="Inserisci la tua password"
+        required={true}
+        type="password"
+        value="" />
+      <button
+        className="submit"
+        type="submit">
+        Accedi
+      </button>
+      <div
+        className="moreinfo">
+        <label
+          className="rememberme">
+          <input
+            type="checkbox"
+            value="ricordami" />
+           Ricordami
+        </label>
+        <a
+          className="help"
+          href="#">
+          Bisogno di aiuto?
+        </a>
+      </div>
+    </form>
+  </div>
+  <a
+    className="register"
+    href="#">
+    Registrati
+  </a>
+</div>
+`;
+
+exports[`Storyshots Login empty login 1`] = `
+<div
+  className="Login">
+  <h1
+    className="title">
+    Inserisci i tuoi dati per il login
+  </h1>
+  <div
+    className="box">
+    <img
+      alt="User picture"
+      className="profile-img"
+      src="login.png" />
+    <form
+      className="form-signin"
+      onSubmit={[Function]}>
+      <div
+        className="error">
+        
+      </div>
+      <input
+        className="form-control"
+        name="email"
+        onChange={[Function]}
+        placeholder="Inserisci la tua email"
+        required={true}
+        type="email"
+        value="" />
+      <input
+        className="form-control"
+        name="password"
+        onChange={[Function]}
+        placeholder="Inserisci la tua password"
+        required={true}
+        type="password"
+        value="" />
+      <button
+        className="submit"
+        type="submit">
+        Accedi
+      </button>
+      <div
+        className="moreinfo">
+        <label
+          className="rememberme">
+          <input
+            type="checkbox"
+            value="ricordami" />
+           Ricordami
+        </label>
+        <a
+          className="help"
+          href="#">
+          Bisogno di aiuto?
+        </a>
+      </div>
+    </form>
+  </div>
+  <a
+    className="register"
+    href="#">
+    Registrati
+  </a>
+</div>
+`;
+
+exports[`Storyshots Register empty form 1`] = `
+<div
+  className="Register">
+  <h1
+    className="title">
+    Inserisci i tuoi dati per registrarti
+  </h1>
+  <div
+    className="box">
+    <form
+      className="form-signin"
+      onSubmit={[Function]}>
+      <div
+        className="error" />
+      <input
+        className="form-control "
+        name="first_name"
+        onChange={[Function]}
+        placeholder="Inserisci il tuo nome"
+        required={true}
+        type="text"
+        value="" />
+      <div
+        className="error-message hidden" />
+      <input
+        className="form-control "
+        name="last_name"
+        onChange={[Function]}
+        placeholder="Inserisci il tuo cognome"
+        required={true}
+        type="text"
+        value="" />
+      <input
+        className="form-control "
+        name="email"
+        onChange={[Function]}
+        placeholder="Inserisci la tua email"
+        required={true}
+        type="email"
+        value="" />
+      <div
+        className="error-message hidden" />
+      <input
+        className="form-control "
+        name="password1"
+        onChange={[Function]}
+        placeholder="Inserisci la tua password"
+        required={true}
+        type="password"
+        value="" />
+      <input
+        className="form-control "
+        name="password2"
+        onChange={[Function]}
+        placeholder="Riscrivi la tua password"
+        required={true}
+        type="password"
+        value="" />
+      <button
+        className="submit"
+        type="submit">
+        Registrati
+      </button>
+      <div
+        className="moreinfo">
+        <a
+          className="help"
+          href="#">
+          Bisogno di aiuto?
+        </a>
+      </div>
+    </form>
+  </div>
+  <a
+    className="login"
+    href="#">
+    Accedi al tuo account
+  </a>
+</div>
+`;
+
+exports[`Storyshots Register form with first name empty and email not correct 1`] = `
+<div
+  className="Register">
+  <h1
+    className="title">
+    Inserisci i tuoi dati per registrarti
+  </h1>
+  <div
+    className="box">
+    <form
+      className="form-signin"
+      onSubmit={[Function]}>
+      <div
+        className="error">
+        Ci sono campi con errore
+      </div>
+      <input
+        className="form-control form-error"
+        name="first_name"
+        onChange={[Function]}
+        placeholder="Inserisci il tuo nome"
+        required={true}
+        type="text"
+        value="" />
+      <div
+        className="error-message show">
+        Campo obbligatorio
+      </div>
+      <input
+        className="form-control "
+        name="last_name"
+        onChange={[Function]}
+        placeholder="Inserisci il tuo cognome"
+        required={true}
+        type="text"
+        value="" />
+      <input
+        className="form-control form-error"
+        name="email"
+        onChange={[Function]}
+        placeholder="Inserisci la tua email"
+        required={true}
+        type="email"
+        value="" />
+      <div
+        className="error-message show">
+        Email non corretta
+      </div>
+      <input
+        className="form-control "
+        name="password1"
+        onChange={[Function]}
+        placeholder="Inserisci la tua password"
+        required={true}
+        type="password"
+        value="" />
+      <input
+        className="form-control "
+        name="password2"
+        onChange={[Function]}
+        placeholder="Riscrivi la tua password"
+        required={true}
+        type="password"
+        value="" />
+      <button
+        className="submit"
+        type="submit">
+        Registrati
+      </button>
+      <div
+        className="moreinfo">
+        <a
+          className="help"
+          href="#">
+          Bisogno di aiuto?
+        </a>
+      </div>
+    </form>
+  </div>
+  <a
+    className="login"
+    href="#">
+    Accedi al tuo account
+  </a>
 </div>
 `;

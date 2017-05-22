@@ -8,6 +8,8 @@ import { storiesOf, action } from '@kadira/storybook';
 
 import Item from '../src/components/Item';
 import ItemList from '../src/components/ItemList';
+import Login from '../src/components/Login';
+import Register from '../src/components/Register';
 
 registerScissors(defaultDevices);
 
@@ -15,7 +17,7 @@ storiesOf('Item', module)
   .add('single item', () => {
     const item = {
       uuid: 'ert534534wertwert',
-      name: 'Placeat voluptates repellendus veniam.',
+      name: 'Placeat voluptates repellendus',
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34
     };
@@ -68,5 +70,50 @@ storiesOf('Itemlist', module)
       itemList={itemList}
       fetchItemList={action('fetch ItemList with one item')}
       loaded={true}/>
+    );
+  });
+
+storiesOf('Login', module)
+  .add('empty login', () => {
+    const error = '';
+    return (
+      <Login
+      error={error}
+      login={action('call to login')} />
+    );
+  })
+  .add('bad credentials', () => {
+    const error = 'Username o password non corretti';
+    return (
+      <Login
+      error={error}
+      login={action('call to login')} />
+    );
+  });
+
+storiesOf('Register', module)
+  .add('empty form', () => {
+    const error = {};
+    return (
+      <Register
+      error={error}
+      register={action('call to register')} />
+    );
+  })
+  .add('form with first name empty and email not correct', () => {
+    const error = {
+      text: 'Ci sono campi con errore',
+      details: [{
+        field: 'first_name',
+        error: 'Campo obbligatorio'
+      },{
+        field: 'email',
+        error: 'Email non corretta'
+      }]
+    };
+    return (
+      <Register
+      error={error}
+      register={action('call to register')} />
     );
   });
