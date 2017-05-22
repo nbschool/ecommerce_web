@@ -56,8 +56,7 @@ function fetchPicture(uuid) {
           throw new Error('Unable to fetch');
         return response.json();
       })
-      .then(picture => {
-        dispatch(fetchPictureSuccess(picture));})
+      .then(picture => dispatch(fetchPictureSuccess(picture)))
       .catch(error => dispatch(fetchPictureFailure(error.message)));
   };
 }
