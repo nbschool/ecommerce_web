@@ -5,6 +5,9 @@ const BASE_URL = 'http://127.0.0.1:5000';
 
 const ITEMS_FETCH_SUCCESS = 'ITEMS_FETCH_SUCCESS';
 const ITEMS_FETCH_FAILURE = 'ITEMS_FETCH_FAILURE';
+const PICTURE_FETCH_SUCCESS = 'PICTURE_FETCH_SUCCESS';
+const PICTURE_FETCH_FAILURE = 'PICTURE_FETCH_FAILURE';
+
 
 //
 export function filterItemsData(items) {
@@ -31,6 +34,49 @@ function fetchItemsFailure(errmessage) {
   };
 }
 
+function fetchPictureSuccess(picture) {
+  return {
+    type: PICTURE_FETCH_SUCCESS,
+    payload: picture
+  };
+}
+
+function fetchPictureFailure(errmessage) {
+  return {
+    type: PICTURE_FETCH_FAILURE,
+    payload: errmessage,
+  };
+}
+
+function fetchPicture(uuid) {
+  return dispatch => {
+    return fetch(`${BASE_URL}/items/${uuid}/pictures`)
+      .then(response => {
+        if (!response.ok)
+          throw new Error('Unable to fetch');
+        return response.json();
+      })
+      .then(picture => dispatch(fetchPictureSuccess(picture)))
+      .catch(error => dispatch(fetchPictureFailure(error.message)));
+  };
+}
+
+function addPictureToItem(picture, items) {
+  /*
+    This method get the picture and all the items
+    returning the items updated with pictureId and pictureUrl
+    of the fetched picture
+  */
+  for (const item of items) {
+    if (picture[0].item_uuid === item.uuid) {
+      item.pictureId = picture[0].uuid;
+      item.pictureUrl = `${BASE_URL}/pictures/${picture[0].uuid}`;
+      break;
+    }
+  }
+  return [...items];
+}
+
 export function fetchItems() {
   return dispatch => {
     return fetch(`${BASE_URL}/items`)
@@ -39,10 +85,20 @@ export function fetchItems() {
           throw new Error('Unable to fetch');
         return response.json();
       })
-      .then(items => dispatch(fetchItemsSuccess(filterItemsData(items))))
+      .then(items => {
+        const actions = [];
+        for (const item of items) {
+          item.pictureId = '';
+          item.pictureUrl = null;
+          actions.push(dispatch(fetchPicture(item.data.id)));
+        }
+        actions.push(dispatch(fetchItemsSuccess(filterItemsData(items))));
+        return actions;
+      })
       .catch(error => dispatch(fetchItemsFailure(error.message)));
   };
 }
+
 
 // ------------------------------------
 // Selectors
@@ -71,6 +127,11 @@ export default function reducer(state = initialState, action = {}) {
       ...state,
       loaded: true,
     };
+  case PICTURE_FETCH_SUCCESS:
+    return {
+      ...state,
+      items: addPictureToItem(action.payload, state.items),
+    };
 
   default:
     return state;
@@ -84,4 +145,6 @@ export const testing = {
   base_url: BASE_URL,
   fetchItemsSuccess,
   fetchItemsFailure,
+  fetchPictureSuccess,
+  fetchPictureFailure
 };

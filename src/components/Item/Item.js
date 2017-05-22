@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import placehold from './placehold.png';
 import './Item.css';
 
-const Item = ({uuid, name, price, description}) => (
+const Item = ({uuid, name, price, description, pictureUrl}) => (
   <article key={uuid} className="Item">
     <div className="card">
       <div className="image">
-        <img src={placehold} alt={name} />
+        <img src={pictureUrl ? pictureUrl : placehold} alt={name} />
       </div>
       <div className="info">
         <div className="name">{name}</div>
@@ -24,6 +24,7 @@ Item.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
+  pictureUrl: PropTypes.string,
 };
 
 export default Item;

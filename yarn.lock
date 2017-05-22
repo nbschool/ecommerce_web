@@ -5825,6 +5825,10 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
+storybook-addon-scissors@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/storybook-addon-scissors/-/storybook-addon-scissors-2.0.4.tgz#2c2637bb94e5bc339b003ed72f9e4820ecf8b770"
+
 storybook-router@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/storybook-router/-/storybook-router-0.1.1.tgz#89caf4f3334d0a1fc801aade0377ba96d043962f"

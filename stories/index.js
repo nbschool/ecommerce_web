@@ -19,7 +19,8 @@ storiesOf('Item', module)
       uuid: 'ert534534wertwert',
       name: 'Placeat voluptates repellendus',
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
-      price: 233.34
+      price: 233.34,
+      pictureUrl: null
     };
     return (
       <Item
@@ -43,7 +44,8 @@ storiesOf('Itemlist', module)
       uuid: 'ert534534wertwert',
       name: 'Placeat voluptates repellendus veniam.',
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
-      price: 233.34
+      price: 233.34,
+      pictureUrl: null
     }];
     return (
       <ItemList
@@ -60,7 +62,8 @@ storiesOf('Itemlist', module)
         uuid: 'ert534534wertwert',
         name: 'Placeat voluptates repellendus veniam.',
         description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
-        price: 233.34
+        price: 233.34,
+        pictureUrl: null
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
