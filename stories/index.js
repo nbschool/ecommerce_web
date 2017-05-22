@@ -18,7 +18,7 @@ storiesOf('Item', module)
       name: 'Placeat voluptates repellendus veniam.',
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
-      pictureUrl: 'placehold.png'
+      pictureUrl: null
     };
     return (
       <Item
@@ -43,7 +43,7 @@ storiesOf('Itemlist', module)
       name: 'Placeat voluptates repellendus veniam.',
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
-      pictureUrl: 'placehold.png'
+      pictureUrl: null
     }];
     return (
       <ItemList
@@ -61,7 +61,7 @@ storiesOf('Itemlist', module)
         name: 'Placeat voluptates repellendus veniam.',
         description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
         price: 233.34,
-        pictureUrl: 'placehold.png'
+        pictureUrl: null
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
