@@ -131,7 +131,6 @@ export default function reducer(state = initialState, action = {}) {
     return {
       ...state,
       items: addPictureToItem(action.payload, state.items),
-      loaded: true,
     };
 
   default:
