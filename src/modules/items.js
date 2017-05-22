@@ -62,6 +62,11 @@ function fetchPicture(uuid) {
 }
 
 function addPictureToItem(picture, items) {
+  /*
+    This method get the picture and all the items
+    returning the items updated with pictureId and pictureUrl
+    of the fetched picture
+  */
   for (const item of items) {
     if (picture[0].item_uuid === item.uuid) {
       item.pictureId = picture[0].uuid;
