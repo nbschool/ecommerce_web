@@ -6,12 +6,27 @@ import registerScissors, { defaultDevices } from 'storybook-addon-scissors';
 
 import { storiesOf, action } from '@kadira/storybook';
 
+import CategoryMenu from '../src/components/CategoryMenu';
 import Item from '../src/components/Item';
 import ItemList from '../src/components/ItemList';
 import Login from '../src/components/Login';
 import Register from '../src/components/Register';
 
 registerScissors(defaultDevices);
+
+storiesOf('CategoryMenu', module)
+  .add('four categories', () => {
+    const categories = [
+      {name: 'abbigliamento uomo', id: 1},
+      {name: 'abbigliamento donna', id: 2},
+      {name: 'scarpe', id: 3},
+      {name: 'accessori', id: 4},
+    ];
+    return (
+      <CategoryMenu
+      listCategories={categories} />
+    );
+  });
 
 storiesOf('Item', module)
   .add('single item', () => {
