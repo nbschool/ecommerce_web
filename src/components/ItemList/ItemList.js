@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { translate } from 'react-i18next';
 
 import Item from '../Item/';
 import './ItemList.css';
@@ -14,8 +13,6 @@ class ItemList extends Component {
   }
 
   render() {
-    const { t } = this.props;
-
     if (!this.props.loaded) {
       return null;
     }
@@ -23,7 +20,7 @@ class ItemList extends Component {
     if (this.props.itemList.length === 0) {
       return (
         <div className="ItemList">
-          <div className="empty">{t('itemList:empty')}</div>
+          <div className="empty">Nessun items disponibile</div>
         </div>
       );
     }
@@ -49,4 +46,4 @@ ItemList.propTypes = {
   loaded: PropTypes.bool.isRequired,
 };
 
-export default translate()(ItemList);
+export default ItemList;
