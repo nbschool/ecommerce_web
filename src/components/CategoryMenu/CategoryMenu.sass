@@ -1,0 +1,28 @@
+.CategoryMenu
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+    ul
+        list-style: none
+        margin: 0
+        padding: 0
+        display: flex
+        flex-wrap: wrap
+
+        li
+            flex: 1 1 25%
+
+            a
+                display: block;
+                height: 2em
+                background: black;
+                color: white;
+                text-transform: uppercase;
+                padding: 15px;
+                text-decoration: none;
+                text-align: center;
+                transition: .3s
+
+                &:hover
+                    color: lighten(black, 50%);
