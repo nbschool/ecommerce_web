@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { I18nextProvider } from 'react-i18next';
+import i18n from '../src/i18n'; // initialized i18next instance
+
 // addons.js
 import '@kadira/storybook/addons';
 import registerScissors, { defaultDevices } from 'storybook-addon-scissors';
@@ -33,10 +36,12 @@ storiesOf('Itemlist', module)
   .add('empty', () => {
     const itemList = [];
     return (
-      <ItemList
-      itemList={itemList}
-      fetchItemList={action('fetch ItemList empty')}
-      loaded={true}/>
+      <I18nextProvider i18n={i18n}>
+        <ItemList
+        itemList={itemList}
+        fetchItemList={action('fetch ItemList empty')}
+        loaded={true}/>
+      </I18nextProvider>
     );
   })
   .add('with one item', () => {
@@ -48,10 +53,12 @@ storiesOf('Itemlist', module)
       pictureUrl: null
     }];
     return (
-      <ItemList
-      itemList={itemList}
-      fetchItemList={action('fetch ItemList with one item')}
-      loaded={true}/>
+      <I18nextProvider i18n={i18n}>
+        <ItemList
+        itemList={itemList}
+        fetchItemList={action('fetch ItemList with one item')}
+        loaded={true}/>
+      </I18nextProvider>
     );
   })
   .add('with many items', () => {
@@ -69,10 +76,12 @@ storiesOf('Itemlist', module)
       itemList.push(item);
     }
     return (
-      <ItemList
-      itemList={itemList}
-      fetchItemList={action('fetch ItemList with one item')}
-      loaded={true}/>
+      <I18nextProvider i18n={i18n}>
+        <ItemList
+        itemList={itemList}
+        fetchItemList={action('fetch ItemList with one item')}
+        loaded={true}/>
+      </I18nextProvider>
     );
   });
 

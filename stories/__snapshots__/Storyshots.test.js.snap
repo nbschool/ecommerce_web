@@ -34,7 +34,7 @@ exports[`Storyshots Itemlist empty 1`] = `
   className="ItemList">
   <div
     className="empty">
-    Nessun items disponibile
+    No items availables
   </div>
 </div>
 `;
