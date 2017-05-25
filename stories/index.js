@@ -13,6 +13,7 @@ import Item from '../src/components/Item';
 import ItemList from '../src/components/ItemList';
 import Login from '../src/components/Login';
 import Register from '../src/components/Register';
+import SearchBar from '../src/components/SearchBar';
 
 registerScissors(defaultDevices);
 
@@ -127,5 +128,12 @@ storiesOf('Register', module)
       <Register
       error={error}
       register={action('call to register')} />
+    );
+  });
+storiesOf('SearchBar', module)
+  .add('empty search', () => {
+    return (
+      <SearchBar
+      search={action('call to search')}/>
     );
   });
