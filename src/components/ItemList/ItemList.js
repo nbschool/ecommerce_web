@@ -14,7 +14,7 @@ class ItemList extends Component {
   }
 
   render() {
-    const { t } = this.props;
+    const {t} = this.props;
 
     if (!this.props.loaded) {
       return null;
@@ -47,6 +47,7 @@ ItemList.propTypes = {
   fetchItemList: PropTypes.func.isRequired,
   itemList: PropTypes.array.isRequired,
   loaded: PropTypes.bool.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
-export default translate()(ItemList);
+export default translate('itemList')(ItemList);
