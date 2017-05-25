@@ -22,17 +22,17 @@ const store = createStore(
 
 const routes = (
   <Router>
-    <I18nextProvider i18n={ i18n }>
-      <App>
-        <Route exact path="/" component={ItemList}/>
-      </App>
-    </I18nextProvider>
+    <App>
+      <Route exact path="/" component={ItemList}/>
+    </App>
   </Router>
 );
 
 ReactDOM.render(
-  <Provider store={store}>
-    {routes}
-  </Provider>,
+  <I18nextProvider i18n={i18n}>
+    <Provider store={store}>
+      {routes}
+    </Provider>
+  </I18nextProvider>,
   document.getElementById('root')
 );
