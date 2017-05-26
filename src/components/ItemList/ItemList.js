@@ -13,19 +13,28 @@ class ItemList extends Component {
   }
 
   render() {
+
+    let itemList = this.props.itemList
+    const { match: { params: { category } } } = this.props
+
     if (!this.props.loaded) {
       return null;
     }
 
-    if (this.props.itemList.length === 0) {
+    if (itemList.length === 0) {
       return (
         <div className="ItemList">
           <div className="empty">Nessun items disponibile</div>
         </div>
       );
     }
+
     else {
-      const itemList = this.props.itemList.map((el,index) => (
+      if (category) {
+        itemList = itemList.filter(el => el.category == category)
+      }
+
+      itemList = itemList.map((el,index) => (
         <Item key={index} {...el} />
       ));
 
