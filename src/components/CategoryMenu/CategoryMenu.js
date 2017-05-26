@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import './CategoryMenu.css';
 
 class CategoryMenu extends Component {
 
   render() {
-    const listCategories = this.props.listCategories.map((category) =>
-      <li key={category.id}>
-        <a href="#">
-          {category.name}
-        </a>
+    const listCategories = this.props.listCategories.map(({id, name}) =>
+      <li key={id}>
+        <NavLink to={`/${name}`}>{name}</NavLink>
       </li>
     );
     return (
@@ -22,7 +21,7 @@ class CategoryMenu extends Component {
 }
 
 CategoryMenu.proptypes = {
-  listCategories: PropTypes.array.isRequired
+  listCategories: PropTypes.array.isRequired,
 };
 
 export default CategoryMenu;
