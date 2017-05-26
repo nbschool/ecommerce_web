@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './CategoryMenu.css';
 
 const CategoryMenu = (props) => {
   const listCategories = props.listCategories.map(({id, name}) =>
     <li key={id}>
-      <NavLink to={`/${name}`}>{name}</NavLink>
+      <Link to={`/${name}`}>{name}</Link>
     </li>
   );
 
