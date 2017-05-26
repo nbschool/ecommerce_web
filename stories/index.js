@@ -138,6 +138,19 @@ storiesOf('SearchBar', module)
       <SearchBar
         search={action('call to search')} />
     );
+  })
+  .add('dropDownList search', () => {
+    const dropDownList = [];
+    return (
+      <div>
+        <SearchBar
+          search={action('call to dropDownList')} />
+        <DropDownList
+          dropDownList={dropDownList}
+          fetchDropDownList={action('fetch dropDownList empty')}
+          loaded={true} />
+      </div>
+    );
   });
 
 storiesOf('DropDownItem', module)
@@ -162,6 +175,15 @@ storiesOf('DropDownList', module)
       <DropDownList
         dropDownList={dropDownList}
         fetchDropDownList={action('fetch dropDownList empty')}
+        loaded={false} />
+    );
+  })
+  .add('wrong search', () => {
+    const dropDownList = [];
+    return (
+      <DropDownList
+        dropDownList={dropDownList}
+        fetchDropDownList={action('fetch dropDownList wrong search')}
         loaded={true} />
     );
   })
