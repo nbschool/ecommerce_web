@@ -14,6 +14,8 @@ import ItemList from '../src/components/ItemList';
 import Login from '../src/components/Login';
 import Register from '../src/components/Register';
 import SearchBar from '../src/components/SearchBar';
+import DropDownItem from '../src/components/DropDownItem';
+import DropDownList from '../src/components/DropDownList';
 
 registerScissors(defaultDevices);
 
@@ -28,7 +30,7 @@ storiesOf('Item', module)
     };
     return (
       <Item
-      {...item} />
+        {...item} />
     );
   });
 
@@ -91,16 +93,16 @@ storiesOf('Login', module)
     const error = '';
     return (
       <Login
-      error={error}
-      login={action('call to login')} />
+        error={error}
+        login={action('call to login')} />
     );
   })
   .add('bad credentials', () => {
     const error = 'Username o password non corretti';
     return (
       <Login
-      error={error}
-      login={action('call to login')} />
+        error={error}
+        login={action('call to login')} />
     );
   });
 
@@ -109,8 +111,8 @@ storiesOf('Register', module)
     const error = {};
     return (
       <Register
-      error={error}
-      register={action('call to register')} />
+        error={error}
+        register={action('call to register')} />
     );
   })
   .add('form with first name empty and email not correct', () => {
@@ -119,21 +121,83 @@ storiesOf('Register', module)
       details: [{
         field: 'first_name',
         error: 'Campo obbligatorio'
-      },{
+      }, {
         field: 'email',
         error: 'Email non corretta'
       }]
     };
     return (
       <Register
-      error={error}
-      register={action('call to register')} />
+        error={error}
+        register={action('call to register')} />
     );
   });
 storiesOf('SearchBar', module)
   .add('empty search', () => {
     return (
       <SearchBar
-      search={action('call to search')}/>
+        search={action('call to search')} />
+    );
+  });
+
+storiesOf('DropDownItem', module)
+  .add('one DropDownItem', () => {
+    const dropDownItem = {
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34,
+      pictureUrl: null
+    };
+    return (
+      <DropDownItem
+        {...dropDownItem} />
+    );
+  });
+
+storiesOf('DropDownList', module)
+  .add('empty', () => {
+    const dropDownList = [];
+    return (
+      <DropDownList
+        dropDownList={dropDownList}
+        fetchDropDownList={action('fetch dropDownList empty')}
+        loaded={true} />
+    );
+  })
+  .add('with one item', () => {
+    const dropDownList = [{
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus veniam.',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34,
+      pictureUrl: null
+    }];
+    return (
+      <DropDownList
+        dropDownList={dropDownList}
+        fetchDropDownList={action('fetch DropDownList with one item')}
+        loaded={true} />
+    );
+  })
+  .add('with many items', () => {
+    const dropDownList = [];
+
+    for (let i = 0; i < 9; i++) {
+      const item = {
+        uuid: 'ert534534wertwert',
+        name: 'Placeat voluptates repellendus veniam.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+        price: 233.34,
+        pictureUrl: null
+      };
+      item.item_id = item.item_id + i;
+      dropDownList.push(item);
+    }
+    return (
+      <DropDownList
+        dropDownList={dropDownList}
+        fetchDropDownList={action('fetch DropDownList with one item')}
+        loaded={true} />
     );
   });
