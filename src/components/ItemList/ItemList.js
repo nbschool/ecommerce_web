@@ -52,7 +52,7 @@ ItemList.propTypes = {
   fetchItemList: PropTypes.func.isRequired,
   itemList: PropTypes.array.isRequired,
   loaded: PropTypes.bool.isRequired,
-  match: PropTypes.array.isRequired,
+  match: PropTypes.object.isRequired,
 };
 
 export default ItemList;
