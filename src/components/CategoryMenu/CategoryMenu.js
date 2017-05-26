@@ -13,7 +13,12 @@ const CategoryMenu = (props) => {
 
   return (
     <nav className="CategoryMenu">
-      <ul>{listCategories}</ul>
+      <ul>
+      <li key="0">
+        <Link to={`/`}>Home</Link>
+      </li>
+      {listCategories}
+      </ul>
     </nav>
   );
 };

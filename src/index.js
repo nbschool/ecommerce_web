@@ -29,6 +29,7 @@ const routes = (
     <App>
       <CategoryMenu listCategories={CATEGORIES}/>
       <Route exact path="/" component={ItemList}/>
+      <Route path="/home" component={ItemList}/>
       <Route path="/:category" component={ItemList}/>
     </App>
   </Router>
