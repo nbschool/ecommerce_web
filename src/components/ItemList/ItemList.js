@@ -13,9 +13,8 @@ class ItemList extends Component {
   }
 
   render() {
-
-    let itemList = this.props.itemList
-    const { match: { params: { category } } } = this.props
+    let itemList = this.props.itemList;
+    const { match: { params: { category } } } = this.props;
 
     if (!this.props.loaded) {
       return null;
@@ -31,7 +30,7 @@ class ItemList extends Component {
 
     else {
       if (category) {
-        itemList = itemList.filter(el => el.category == category)
+        itemList = itemList.filter(el => el.category === category);
       }
 
       itemList = itemList.map((el,index) => (
@@ -53,6 +52,7 @@ ItemList.propTypes = {
   fetchItemList: PropTypes.func.isRequired,
   itemList: PropTypes.array.isRequired,
   loaded: PropTypes.bool.isRequired,
+  match: PropTypes.array.isRequired,
 };
 
 export default ItemList;

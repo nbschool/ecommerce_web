@@ -22,7 +22,7 @@ const CATEGORIES = [
       {name: 'abbigliamento uomo', id: 1},
       {name: 'abbigliamento donna', id: 2},
       {name: 'scarpe', id: 3},
-      {name: 'accessori', id: 4},]
+      {name: 'accessori', id: 4},];
 
 const routes = (
   <Router>

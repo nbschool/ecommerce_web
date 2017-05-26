@@ -1,26 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import './CategoryMenu.css';
 
-class CategoryMenu extends Component {
+const CategoryMenu = (props) => {
+  const listCategories = props.listCategories.map(({id, name}) =>
+    <li key={id}>
+      <NavLink to={`/${name}`}>{name}</NavLink>
+    </li>
+  );
 
-  render() {
-    const listCategories = this.props.listCategories.map(({id, name}) =>
-      <li key={id}>
-        <NavLink to={`/${name}`}>{name}</NavLink>
-      </li>
-    );
-    return (
-      <nav className="CategoryMenu">
-        <ul>{listCategories}</ul>
-      </nav>
-    );
-  }
-}
+  return (
+    <nav className="CategoryMenu">
+      <ul>{listCategories}</ul>
+    </nav>
+  );
+};
 
-CategoryMenu.proptypes = {
+CategoryMenu.propTypes = {
   listCategories: PropTypes.array.isRequired,
 };
 
