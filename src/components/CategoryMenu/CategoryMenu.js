@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import './CategoryMenu.css';
 
-const CategoryMenu = (props, context) => {
-  const pathname = context.router.route.location.pathname;
+const CategoryMenu = withRouter((props) => {
+  const pathname = props.location.pathname;
   const category = pathname.slice(1);
   const menu = [{id: 0, name: 'home'}, ...props.listCategories];
 
@@ -24,14 +24,10 @@ const CategoryMenu = (props, context) => {
       </ul>
     </nav>
   );
-};
+});
 
 CategoryMenu.propTypes = {
   listCategories: PropTypes.array.isRequired,
-};
-
-CategoryMenu.contextTypes = {
-  router: PropTypes.object.isRequired,
 };
 
 export default CategoryMenu;
