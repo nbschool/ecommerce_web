@@ -1,3 +1,5 @@
+@import ../../style/palette.sass
+
 .CategoryMenu
     display: flex
     flex-wrap: wrap
@@ -12,10 +14,10 @@
 
         li
             flex: 1 1 15%
-            background-color: #303F9F;
+            background-color: $primary-color-dark;
 
             &.active
-                background-color: #3F51B5
+                background-color: $primary-color
 
             a
                 display: block;
@@ -31,4 +33,4 @@
                 transition: .3s
 
                 &:hover
-                    color: lighten(#303F9F, 30%);
+                    color: lighten($primary-color-dark, 30%);
