@@ -12,20 +12,23 @@
 
         li
             flex: 1 1 15%
-            background-color: black;
+            background-color: #303F9F;
 
             &.active
-                background-color: red
+                background-color: #3F51B5
 
             a
                 display: block;
-                height: 2em
-                color: white;
+                height: 2em;
+                font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-weight: 300;
+                -webkit-font-smoothing: antialiased;
+                color: #FFFFFF;
                 text-transform: uppercase;
-                padding: 15px;
+                padding: 2em;
                 text-decoration: none;
                 text-align: center;
                 transition: .3s
 
                 &:hover
-                    color: lighten(black, 50%);
+                    color: lighten(#303F9F, 30%);
