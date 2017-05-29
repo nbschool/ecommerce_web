@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom';
 import './CategoryMenu.css';
 
 const CategoryMenu = (props, context) => {
-  const pathname = context.router.route.location.pathname
-  const category = pathname.slice(1)
-  const menu = [{id: 0, name: 'home'}, ...props.listCategories]
+  const pathname = context.router.route.location.pathname;
+  const category = pathname.slice(1);
+  const menu = [{id: 0, name: 'home'}, ...props.listCategories];
 
   const listCategories = menu.map(({id, name}) => {
-    const url = name == 'home' ? '' : name
-    const className = category === url ? 'active': '';
+    const url = name === 'home' ? '' : name;
+    const className = category === url ? 'active' : '';
     return (<li key={id} className={className}>
       <Link to={`/${url}`}>{name}</Link>
-    </li>)
+    </li>);
   });
 
   return (
