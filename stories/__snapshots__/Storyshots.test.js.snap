@@ -1,3 +1,51 @@
+exports[`Storyshots CategoryMenu four categories 1`] = `
+<nav
+  className="CategoryMenu">
+  <ul>
+    <li
+      className="active">
+      <a
+        href="/"
+        onClick={[Function]}>
+        home
+      </a>
+    </li>
+    <li
+      className="">
+      <a
+        href="/abbigliamento%20uomo"
+        onClick={[Function]}>
+        abbigliamento uomo
+      </a>
+    </li>
+    <li
+      className="">
+      <a
+        href="/abbigliamento%20donna"
+        onClick={[Function]}>
+        abbigliamento donna
+      </a>
+    </li>
+    <li
+      className="">
+      <a
+        href="/scarpe"
+        onClick={[Function]}>
+        scarpe
+      </a>
+    </li>
+    <li
+      className="">
+      <a
+        href="/accessori"
+        onClick={[Function]}>
+        accessori
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
 exports[`Storyshots Item single item 1`] = `
 <article
   className="Item">
