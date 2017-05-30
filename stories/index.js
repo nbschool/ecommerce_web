@@ -13,6 +13,7 @@ import Item from '../src/components/Item';
 import ItemList from '../src/components/ItemList';
 import Login from '../src/components/Login';
 import Register from '../src/components/Register';
+import placehold from '../src/components/Item/placehold.png';
 
 registerScissors(defaultDevices);
 
@@ -23,7 +24,7 @@ storiesOf('Item', module)
       name: 'Placeat voluptates repellendus',
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
-      pictureUrl: null
+      pictureUrl: placehold
     };
     return (
       <Item
@@ -50,7 +51,7 @@ storiesOf('Itemlist', module)
       name: 'Placeat voluptates repellendus veniam.',
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
-      pictureUrl: null
+      pictureUrl: placehold
     }];
     return (
       <I18nextProvider i18n={i18n}>
@@ -70,7 +71,7 @@ storiesOf('Itemlist', module)
         name: 'Placeat voluptates repellendus veniam.',
         description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
         price: 233.34,
-        pictureUrl: null
+        pictureUrl: placehold
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
