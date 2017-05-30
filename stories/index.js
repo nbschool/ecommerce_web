@@ -7,7 +7,7 @@ import i18n from '../src/i18n'; // initialized i18next instance
 import '@kadira/storybook/addons';
 import registerScissors, { defaultDevices } from 'storybook-addon-scissors';
 
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf, action, addDecorator } from '@kadira/storybook';
 import { MemoryRouter } from 'react-router';
 
 import CategoryMenu from '../src/components/CategoryMenu';
@@ -21,10 +21,17 @@ import DropDownList from '../src/components/DropDownList';
 
 registerScissors(defaultDevices);
 
+const LanguageDecorator = (story) => (
+  <I18nextProvider i18n={i18n}>
+    {story()}
+  </I18nextProvider>
+);
+addDecorator(LanguageDecorator);
+
 storiesOf('CategoryMenu', module)
   .addDecorator((story) => (
     <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
-    ))
+  ))
   .add('four categories', () => {
     const categories = [
       {name: 'abbigliamento uomo', id: 1},
@@ -40,6 +47,7 @@ storiesOf('CategoryMenu', module)
 
 storiesOf('Item', module)
   .add('single item', () => {
+    i18n.changeLanguage("en");
     const item = {
       uuid: 'ert534534wertwert',
       name: 'Placeat voluptates repellendus',
@@ -56,19 +64,30 @@ storiesOf('Item', module)
 
 
 storiesOf('Itemlist', module)
-  .add('empty', () => {
+  .add('empty en', () => {
+    i18n.changeLanguage("en");
     const itemList = [];
     return (
-      <I18nextProvider i18n={i18n}>
-        <ItemList
-          itemList={itemList}
-          fetchItemList={action('fetch ItemList empty')}
-          loaded={true}
-          match={{ params: {category: 'accessori'}}}/>
-      </I18nextProvider>
+      <ItemList
+      itemList={itemList}
+      fetchItemList={action('fetch ItemList empty')}
+      loaded={true}
+      match={{ params: {category: 'accessori'}}}/>
+    );
+  })
+  .add('empty it', () => {
+    i18n.changeLanguage("it");
+    const itemList = [];
+    return (
+      <ItemList
+        itemList={itemList}
+        fetchItemList={action('fetch ItemList empty')}
+        loaded={true}
+        match={{ params: {category: 'accessori'}}}/>
     );
   })
   .add('with one item', () => {
+    i18n.changeLanguage("en");
     const itemList = [{
       uuid: 'ert534534wertwert',
       name: 'Placeat voluptates repellendus veniam.',
@@ -78,16 +97,15 @@ storiesOf('Itemlist', module)
       category: 'accessori',
     }];
     return (
-      <I18nextProvider i18n={i18n}>
-        <ItemList
-          itemList={itemList}
-          fetchItemList={action('fetch ItemList with one item')}
-          loaded={true}
-          match={{ params: {category: 'accessori'}}}/>
-      </I18nextProvider>
+      <ItemList
+        itemList={itemList}
+        fetchItemList={action('fetch ItemList with one item')}
+        loaded={true}
+        match={{ params: {category: 'accessori'}}}/>
     );
   })
   .add('with many items', () => {
+    i18n.changeLanguage("en");
     const itemList = [];
 
     for (let i = 0; i < 9; i++) {
@@ -103,18 +121,27 @@ storiesOf('Itemlist', module)
       itemList.push(item);
     }
     return (
-      <I18nextProvider i18n={i18n}>
-        <ItemList
-          itemList={itemList}
-          fetchItemList={action('fetch ItemList with one item')}
-          loaded={true}
-          match={{ params: {category: 'accessori'}}}/>
-      </I18nextProvider>
+      <ItemList
+        itemList={itemList}
+        fetchItemList={action('fetch ItemList with one item')}
+        loaded={true}
+        match={{ params: {category: 'accessori'}}}/>
     );
   });
 
 storiesOf('Login', module)
-  .add('empty login', () => {
+  .add('empty login it', () => {
+    i18n.changeLanguage("it");
+    const error = '';
+    return (
+      <Login
+      lng="it"
+      error={error}
+      login={action('call to login')} />
+    );
+  })
+  .add('empty login en', () => {
+    i18n.changeLanguage("en");
     const error = '';
     return (
       <Login
@@ -123,7 +150,8 @@ storiesOf('Login', module)
     );
   })
   .add('bad credentials', () => {
-    const error = 'Username o password non corretti';
+    i18n.changeLanguage("en");
+    const error = 'login_error';
     return (
       <Login
         error={error}
@@ -132,7 +160,17 @@ storiesOf('Login', module)
   });
 
 storiesOf('Register', module)
-  .add('empty form', () => {
+  .add('empty form en', () => {
+    i18n.changeLanguage("en");
+    const error = {};
+    return (
+      <Register
+      error={error}
+      register={action('call to register')} />
+    );
+  })
+  .add('empty form it', () => {
+    i18n.changeLanguage("it");
     const error = {};
     return (
       <Register
@@ -141,14 +179,14 @@ storiesOf('Register', module)
     );
   })
   .add('form with first name empty and email not correct', () => {
+    i18n.changeLanguage("en");
     const error = {
-      text: 'Ci sono campi con errore',
       details: [{
         field: 'first_name',
-        error: 'Campo obbligatorio'
-      }, {
+        error: 'empty'
+      },{
         field: 'email',
-        error: 'Email non corretta'
+        error: 'invalid'
       }]
     };
     return (
