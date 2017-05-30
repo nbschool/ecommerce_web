@@ -139,15 +139,100 @@ storiesOf('SearchBar', module)
         search={action('call to search')} />
     );
   })
-  .add('dropDownList search', () => {
+  .add('dropDownList wrong empty', () => {
     const dropDownList = [];
+
     return (
       <div>
         <SearchBar
           search={action('call to dropDownList')} />
         <DropDownList
           dropDownList={dropDownList}
-          fetchDropDownList={action('fetch dropDownList empty')}
+          fetchDropDownList={action('fetch dropDownList one item')}
+          loaded={true} />
+      </div>
+    );
+  })
+  .add('dropDownList search one item', () => {
+    const dropDownList = [{
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus veniam.',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34,
+      pictureUrl: null
+    }];
+    return (
+      <div>
+        <SearchBar
+          search={action('call to dropDownList')} />
+        <DropDownList
+          dropDownList={dropDownList}
+          fetchDropDownList={action('fetch dropDownList many items item')}
+          loaded={true} />
+      </div>
+    );
+  })
+  .add('dropDownList search many item', () => {
+    const dropDownList = [];
+    for (let i = 0; i < 9; i++) {
+      const item = {
+        uuid: 'ert534534wertwert',
+        name: 'Placeat voluptates repellendus veniam.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+        price: 233.34,
+        pictureUrl: null
+      };
+      item.item_id = item.item_id + i;
+      dropDownList.push(item);
+    }
+    return (
+      <div>
+        <SearchBar
+          search={action('call to dropDownList many items')} />
+        <DropDownList
+          dropDownList={dropDownList}
+          fetchDropDownList={action('fetch dropDownList one item')}
+          loaded={true} />
+      </div>
+    );
+  })
+  .add('dropDownList search many item and itemList', () => {
+    const dropDownList = [];
+    for (let i = 0; i < 9; i++) {
+      const item = {
+        uuid: 'ert534534wertwert',
+        name: 'Placeat voluptates repellendus veniam.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+        price: 233.34,
+        pictureUrl: null
+      };
+      item.item_id = item.item_id + i;
+      dropDownList.push(item);
+    }
+    const itemList = [];
+
+    for (let i = 0; i < 9; i++) {
+      const item = {
+        uuid: 'ert534534wertwert',
+        name: 'Placeat voluptates repellendus veniam.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+        price: 233.34,
+        pictureUrl: null
+      };
+      item.item_id = item.item_id + i;
+      itemList.push(item);
+    }
+    return (
+      <div>
+        <SearchBar
+          search={action('call to dropDownList many items')} />
+        <DropDownList
+          dropDownList={dropDownList}
+          fetchDropDownList={action('fetch dropDownList one item')}
+          loaded={true} />
+        <ItemList
+          itemList={itemList}
+          fetchItemList={action('fetch ItemList with one item')}
           loaded={true} />
       </div>
     );
