@@ -8,7 +8,9 @@ import '@kadira/storybook/addons';
 import registerScissors, { defaultDevices } from 'storybook-addon-scissors';
 
 import { storiesOf, action } from '@kadira/storybook';
+import { MemoryRouter } from 'react-router';
 
+import CategoryMenu from '../src/components/CategoryMenu';
 import Item from '../src/components/Item';
 import ItemList from '../src/components/ItemList';
 import Login from '../src/components/Login';
@@ -19,6 +21,23 @@ import DropDownList from '../src/components/DropDownList';
 
 registerScissors(defaultDevices);
 
+storiesOf('CategoryMenu', module)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
+    ))
+  .add('four categories', () => {
+    const categories = [
+      {name: 'abbigliamento uomo', id: 1},
+      {name: 'abbigliamento donna', id: 2},
+      {name: 'scarpe', id: 3},
+      {name: 'accessori', id: 4},
+    ];
+    return (
+      <CategoryMenu
+      listCategories={categories} context={{}}/>
+    );
+  });
+
 storiesOf('Item', module)
   .add('single item', () => {
     const item = {
@@ -26,11 +45,12 @@ storiesOf('Item', module)
       name: 'Placeat voluptates repellendus',
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
-      pictureUrl: null
+      pictureUrl: null,
+      category: 'accessori',
     };
     return (
       <Item
-        {...item} />
+      {...item} />
     );
   });
 
@@ -43,7 +63,8 @@ storiesOf('Itemlist', module)
         <ItemList
           itemList={itemList}
           fetchItemList={action('fetch ItemList empty')}
-          loaded={true} />
+          loaded={true}
+          match={{ params: {category: 'accessori'}}}/>
       </I18nextProvider>
     );
   })
@@ -53,14 +74,16 @@ storiesOf('Itemlist', module)
       name: 'Placeat voluptates repellendus veniam.',
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
-      pictureUrl: null
+      pictureUrl: null,
+      category: 'accessori',
     }];
     return (
       <I18nextProvider i18n={i18n}>
         <ItemList
           itemList={itemList}
           fetchItemList={action('fetch ItemList with one item')}
-          loaded={true} />
+          loaded={true}
+          match={{ params: {category: 'accessori'}}}/>
       </I18nextProvider>
     );
   })
@@ -73,7 +96,8 @@ storiesOf('Itemlist', module)
         name: 'Placeat voluptates repellendus veniam.',
         description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
         price: 233.34,
-        pictureUrl: null
+        pictureUrl: null,
+        category: 'accessori',
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
@@ -83,7 +107,8 @@ storiesOf('Itemlist', module)
         <ItemList
           itemList={itemList}
           fetchItemList={action('fetch ItemList with one item')}
-          loaded={true} />
+          loaded={true}
+          match={{ params: {category: 'accessori'}}}/>
       </I18nextProvider>
     );
   });
@@ -217,7 +242,8 @@ storiesOf('SearchBar', module)
         name: 'Placeat voluptates repellendus veniam.',
         description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
         price: 233.34,
-        pictureUrl: null
+        pictureUrl: null,
+        category: 'accessori',
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
@@ -234,7 +260,8 @@ storiesOf('SearchBar', module)
           <ItemList
             itemList={itemList}
             fetchItemList={action('fetch ItemList with one item')}
-            loaded={true} />
+            loaded={true}
+            match={{ params: {category: 'accessori'}}} />
         </I18nextProvider>
       </div>
     );

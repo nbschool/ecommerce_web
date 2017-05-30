@@ -14,16 +14,25 @@ import App from './components/App';
 import i18n from './i18n'; // initialized i18next instance
 
 import ItemList from './containers/ItemListContainer';
+import CategoryMenu from './components/CategoryMenu';
 
 const store = createStore(
   rootReducer,
   applyMiddleware(thunkMiddleware)
 );
 
+const CATEGORIES = [
+      {name: 'abbigliamento uomo', id: 1},
+      {name: 'abbigliamento donna', id: 2},
+      {name: 'scarpe', id: 3},
+      {name: 'accessori', id: 4},];
+
 const routes = (
   <Router>
     <App>
+      <CategoryMenu listCategories={CATEGORIES}/>
       <Route exact path="/" component={ItemList}/>
+      <Route path="/:category" component={ItemList}/>
     </App>
   </Router>
 );

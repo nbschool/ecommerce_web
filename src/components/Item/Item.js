@@ -25,6 +25,7 @@ Item.propTypes = {
   price: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   pictureUrl: PropTypes.string,
+  category: PropTypes.string.isRequired,
 };
 
 export default Item;
