@@ -41,9 +41,9 @@ storiesOf('Itemlist', module)
     return (
       <I18nextProvider i18n={i18n}>
         <ItemList
-        itemList={itemList}
-        fetchItemList={action('fetch ItemList empty')}
-        loaded={true}/>
+          itemList={itemList}
+          fetchItemList={action('fetch ItemList empty')}
+          loaded={true} />
       </I18nextProvider>
     );
   })
@@ -58,9 +58,9 @@ storiesOf('Itemlist', module)
     return (
       <I18nextProvider i18n={i18n}>
         <ItemList
-        itemList={itemList}
-        fetchItemList={action('fetch ItemList with one item')}
-        loaded={true}/>
+          itemList={itemList}
+          fetchItemList={action('fetch ItemList with one item')}
+          loaded={true} />
       </I18nextProvider>
     );
   })
@@ -81,9 +81,9 @@ storiesOf('Itemlist', module)
     return (
       <I18nextProvider i18n={i18n}>
         <ItemList
-        itemList={itemList}
-        fetchItemList={action('fetch ItemList with one item')}
-        loaded={true}/>
+          itemList={itemList}
+          fetchItemList={action('fetch ItemList with one item')}
+          loaded={true} />
       </I18nextProvider>
     );
   });
@@ -230,10 +230,12 @@ storiesOf('SearchBar', module)
           dropDownList={dropDownList}
           fetchDropDownList={action('fetch dropDownList one item')}
           loaded={true} />
-        <ItemList
-          itemList={itemList}
-          fetchItemList={action('fetch ItemList with one item')}
-          loaded={true} />
+        <I18nextProvider i18n={i18n}>
+          <ItemList
+            itemList={itemList}
+            fetchItemList={action('fetch ItemList with one item')}
+            loaded={true} />
+        </I18nextProvider>
       </div>
     );
   });
