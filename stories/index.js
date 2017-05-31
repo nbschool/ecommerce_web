@@ -123,6 +123,7 @@ storiesOf('Itemlist', module)
       price: 233.34,
       pictureUrl: null,
       category: 'accessori',
+      tagStock: {'emoji': '✅', 'text':'Disponible' },
     }];
     return (
       <ItemList
@@ -144,6 +145,7 @@ storiesOf('Itemlist', module)
         price: 233.34,
         pictureUrl: null,
         category: 'accessori',
+        tagStock: {'emoji': '✅', 'text':'Disponible' },
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
