@@ -1,0 +1,21 @@
+@import ../App/App.sass
+.SidebarMenu
+    background-color: $color-background-sidebar
+    padding: 1em
+
+    ul
+        list-style: none
+        padding: 0
+
+        li
+            padding: 1em 0.5em
+
+            &.active
+                background-color: $color-background-sidebar-active
+
+                a
+                    color: $color-link-sidebar-active
+
+            a
+                color: $color-link-sidebar
+                text-decoration: none

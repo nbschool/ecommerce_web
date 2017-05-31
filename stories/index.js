@@ -19,7 +19,10 @@ import SearchBar from '../src/components/SearchBar';
 import DropDownItem from '../src/components/DropDownItem';
 import DropDownList from '../src/components/DropDownList';
 import SearchBox from '../src/components/SearchBox';
-
+import SidebarMenu from '../src/components/SidebarMenu';
+import PersonalAreaPersonalData from '../src/components/PersonalAreaPersonalData';
+import PersonalAreaAddressData from '../src/components/PersonalAreaAddressData';
+import PersonalArea from '../src/components/PersonalArea';
 
 registerScissors(defaultDevices);
 
@@ -459,5 +462,71 @@ storiesOf('SearchBox', module)
         emptySearchResults={action('emptying stored results')}
         searchResults={searchResults}
       />
+    );
+  });
+
+storiesOf('SidebarMenu', module)
+  .add('default', () => {
+    i18n.changeLanguage("it");
+    const menuList = [{
+      label: 'Dati personali',
+      name: 'personalarea',
+    },{
+      label: 'Dati di spedizione',
+      name: 'adressesarea',
+    }];
+
+    return (
+      <SidebarMenu
+        menuList={menuList} />
+    );
+  });
+
+
+storiesOf('PersonalAreaPersonalData', module)
+  .add('default', () => {
+    const personalData = {
+      first_name: 'Pino',
+      last_name: 'Silvestre',
+      email: 'pino.silvestre@gmail.com'
+    };
+
+    return (
+      <PersonalAreaPersonalData
+        personalData={personalData}
+        saveData={action('call to saveData')} />
+    );
+  });
+
+storiesOf('PersonalAreaAddressData', module)
+  .add('default', () => {
+    return (
+      <PersonalAreaAddressData />
+    );
+  });
+
+storiesOf('PersonalArea', module)
+  .add('default', () => {
+    i18n.changeLanguage("en");
+
+    const menuList = [{
+      label: 'Dati personali',
+      name: 'personalarea',
+    },{
+      label: 'Dati di spedizione',
+      name: 'adressesarea',
+    }];
+
+    const personalData = {
+      first_name: 'Pino',
+      last_name: 'Silvestre',
+      email: 'pino.silvestre@gmail.com'
+    };
+
+    return (
+      <PersonalArea
+        menuList={menuList}
+        personalData={personalData}
+        saveData={action('call to saveData')} />
     );
   });
