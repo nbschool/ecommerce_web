@@ -55,7 +55,7 @@ storiesOf('Item', module)
       price: 233.34,
       pictureUrl: null,
       category: 'accessori',
-      tagStock: {'emoji': null, 'text': null }
+      tagStock: {emoji: null, text: null }
     };
     return (
       <Item
@@ -69,7 +69,7 @@ storiesOf('Item', module)
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
       pictureUrl: null,
-      tagStock: {'emoji': '✅', 'text':'Disponible' }
+      tagStock: {emoji: '✅', text: 'Disponible'}
     };
     return (
       <Item
@@ -83,7 +83,7 @@ storiesOf('Item', module)
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
       pictureUrl: null,
-      tagStock: {'emoji': '❌', 'text':'Non Disponible' }
+      tagStock: {emoji: '❌', text: 'Non Disponible'}
     };
     return (
       <Item
@@ -123,7 +123,7 @@ storiesOf('Itemlist', module)
       price: 233.34,
       pictureUrl: null,
       category: 'accessori',
-      tagStock: {'emoji': '✅', 'text':'Disponible' },
+      tagStock: {emoji: '✅', text: 'Disponible'},
     }];
     return (
       <ItemList
@@ -145,7 +145,7 @@ storiesOf('Itemlist', module)
         price: 233.34,
         pictureUrl: null,
         category: 'accessori',
-        tagStock: {'emoji': '✅', 'text':'Disponible' },
+        tagStock: {emoji: '✅', text: 'Disponible'},
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
@@ -323,7 +323,7 @@ storiesOf('SearchBar', module)
         price: 233.34,
         pictureUrl: null,
         category: 'accessori',
-        tagStock: {'emoji': '✅', 'text':'Disponible' },
+        tagStock: {emoji: '✅', text: 'Disponible'},
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
