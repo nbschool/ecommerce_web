@@ -37,6 +37,12 @@ i18n
         },
         itemList: {
           empty: 'No items availables'
+        },
+        searchBar: {
+          input_placeholder: 'Search'
+        },
+        dropDownList: {
+          empty: 'No items availables'
         }
       },
       it: {
@@ -70,6 +76,12 @@ i18n
         },
         itemList: {
           empty: 'Nessun items disponibile'
+        },
+        searchBar: {
+          input_placeholder: 'Cerca'
+        },
+        dropDownList: {
+          empty: 'Nessun items disponibile con questa ricerca'
         }
       }
     },

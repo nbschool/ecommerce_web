@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { translate } from 'react-i18next';
 
 import './SearchBar.css';
 
@@ -35,11 +36,13 @@ class SearchBar extends Component {
   }
 
   render() {
+    const {t} = this.props;
+
     return (
       <div className="SearchBar">
         <form className="box" onSubmit={this.handleFormSubmit}>
           <input type="text"
-            placeholder="Search"
+            placeholder={t('searchBar:input_placeholder')}
             name="search"
             value={this.state.value}
             onChange={this.handleInputChange}
@@ -54,7 +57,8 @@ class SearchBar extends Component {
 }
 
 SearchBar.propTypes = {
-  search: PropTypes.func.isRequired
+  search: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
-export default SearchBar;
+export default translate('login')(SearchBar);

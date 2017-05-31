@@ -338,7 +338,7 @@ exports[`Storyshots DropDownList wrong search 1`] = `
   className="DropDownList">
   <div
     className="empty">
-    Nessun item con questa ricerca
+    No items availables
   </div>
 </div>
 `;
@@ -1959,13 +1959,13 @@ exports[`Storyshots SearchBar dropDownList wrong empty 1`] = `
     className="DropDownList">
     <div
       className="empty">
-      Nessun item con questa ricerca
+      No items availables
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots SearchBar empty search 1`] = `
+exports[`Storyshots SearchBar empty search en 1`] = `
 <div
   className="SearchBar">
   <form
@@ -1975,6 +1975,24 @@ exports[`Storyshots SearchBar empty search 1`] = `
       name="search"
       onChange={[Function]}
       placeholder="Search"
+      type="text"
+      value="" />
+    <button
+      className="submit" />
+  </form>
+</div>
+`;
+
+exports[`Storyshots SearchBar empty search it 1`] = `
+<div
+  className="SearchBar">
+  <form
+    className="box"
+    onSubmit={[Function]}>
+    <input
+      name="search"
+      onChange={[Function]}
+      placeholder="Cerca"
       type="text"
       value="" />
     <button

@@ -196,7 +196,15 @@ storiesOf('Register', module)
     );
   });
 storiesOf('SearchBar', module)
-  .add('empty search', () => {
+  .add('empty search en', () => {
+    i18n.changeLanguage("en");
+    return (
+      <SearchBar
+        search={action('call to search')} />
+    );
+  })
+  .add('empty search it', () => {
+    i18n.changeLanguage("it");
     return (
       <SearchBar
         search={action('call to search')} />
@@ -204,7 +212,7 @@ storiesOf('SearchBar', module)
   })
   .add('dropDownList wrong empty', () => {
     const dropDownList = [];
-
+    i18n.changeLanguage("en");
     return (
       <div>
         <SearchBar
@@ -217,6 +225,7 @@ storiesOf('SearchBar', module)
     );
   })
   .add('dropDownList search one item', () => {
+    i18n.changeLanguage("en");
     const dropDownList = [{
       uuid: 'ert534534wertwert',
       name: 'Placeat voluptates repellendus veniam.',
@@ -236,6 +245,7 @@ storiesOf('SearchBar', module)
     );
   })
   .add('dropDownList search many item', () => {
+    i18n.changeLanguage("en");
     const dropDownList = [];
     for (let i = 0; i < 9; i++) {
       const item = {
@@ -260,6 +270,7 @@ storiesOf('SearchBar', module)
     );
   })
   .add('dropDownList search many item and itemList', () => {
+    i18n.changeLanguage("en");
     const dropDownList = [];
     for (let i = 0; i < 9; i++) {
       const item = {

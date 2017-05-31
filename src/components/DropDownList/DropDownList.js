@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { translate } from 'react-i18next';
 
 import DropDownItem from '../DropDownItem/';
 import './DropDownList.css';
@@ -13,6 +14,8 @@ class DropDownList extends Component {
   }
 
   render() {
+    const {t} = this.props;
+
     if (!this.props.loaded) {
       return null;
     }
@@ -20,7 +23,7 @@ class DropDownList extends Component {
     if (this.props.dropDownList.length === 0) {
       return (
         <div className="DropDownList">
-          <div className="empty">Nessun item con questa ricerca</div>
+          <div className="empty">{t('dropDownList:empty')}</div>
         </div>
       );
     }
@@ -44,6 +47,7 @@ DropDownList.propTypes = {
   fetchDropDownList: PropTypes.func.isRequired,
   dropDownList: PropTypes.array.isRequired,
   loaded: PropTypes.bool.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
-export default DropDownList;
+export default translate('dropDownList')(DropDownList);
