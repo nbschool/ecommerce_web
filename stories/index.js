@@ -10,6 +10,7 @@ import registerScissors, { defaultDevices } from 'storybook-addon-scissors';
 import { storiesOf, action, addDecorator } from '@kadira/storybook';
 import { MemoryRouter } from 'react-router';
 
+import Cart from '../src/components/Cart';
 import CategoryMenu from '../src/components/CategoryMenu';
 import Item from '../src/components/Item';
 import ItemList from '../src/components/ItemList';
@@ -32,6 +33,42 @@ const LanguageDecorator = (story) => (
   </I18nextProvider>
 );
 addDecorator(LanguageDecorator);
+storiesOf('cart', module)
+  .add('one item', () => {
+    const items = [{
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34,
+      pictureUrl: null,
+      category: 'accessori',
+      quantity: 5,
+    }];
+    return (
+      <Cart
+        items={items} />
+    );
+  })
+  .add('with many items', () => {
+    const items = [];
+
+    for (let i = 0; i < 5; i++) {
+      const item = {
+        uuid: 'ert534534we'.concat(i),
+        name: 'Placeat voluptates repellendus veniam.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+        price: 30 * i,
+        pictureUrl: null,
+        category: 'accessori',
+        quantity: i,
+      };
+      items.push(item);
+    }
+    return (
+      <Cart
+        items={items} />
+    );
+  });
 
 storiesOf('CategoryMenu', module)
   .addDecorator((story) => (
