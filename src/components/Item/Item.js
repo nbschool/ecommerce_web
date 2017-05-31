@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import placehold from './placehold.png';
 import './Item.css';
 
-const Item = ({uuid, name, price, description, pictureUrl}) => (
+const Item = ({uuid, name, price, description, pictureUrl, tagStock}) => (
   <article key={uuid} className="Item">
     <div className="card">
       <div className="image">
@@ -14,6 +14,9 @@ const Item = ({uuid, name, price, description, pictureUrl}) => (
         <div className="name">{name}</div>
         <div className="price">€{price}</div>
         <div className="description block-with-text">{description}</div>
+      </div>
+      <div className="isInStock">
+        {tagStock.emoji}<p>{tagStock.text}</p>
       </div>
     </div>
   </article>

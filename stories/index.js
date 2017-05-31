@@ -55,13 +55,41 @@ storiesOf('Item', module)
       price: 233.34,
       pictureUrl: null,
       category: 'accessori',
+      tagStock: {'emoji': null, 'text': null }
+    };
+    return (
+      <Item
+      {...item} />
+    );
+  })
+  .add('Item in Stock', () => {
+    const item = {
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34,
+      pictureUrl: null,
+      tagStock: {'emoji': '✅', 'text':'Disponible' }
+    };
+    return (
+      <Item
+      {...item} />
+    );
+  })
+  .add('Item out Stock', () => {
+    const item = {
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34,
+      pictureUrl: null,
+      tagStock: {'emoji': '❌', 'text':'Non Disponible' }
     };
     return (
       <Item
       {...item} />
     );
   });
-
 
 storiesOf('Itemlist', module)
   .add('empty en', () => {
