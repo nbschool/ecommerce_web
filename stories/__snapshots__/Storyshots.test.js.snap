@@ -343,6 +343,82 @@ exports[`Storyshots DropDownList wrong search 1`] = `
 </div>
 `;
 
+exports[`Storyshots Item Item in Stock 1`] = `
+<article
+  className="Item">
+  <div
+    className="card">
+    <div
+      className="image">
+      <img
+        alt="Placeat voluptates repellendus"
+        src="placehold.png" />
+    </div>
+    <div
+      className="info">
+      <div
+        className="name">
+        Placeat voluptates repellendus
+      </div>
+      <div
+        className="price">
+        €
+        233.34
+      </div>
+      <div
+        className="description block-with-text">
+        Deserunt ut quae architecto error assumenda exercitationem occaecati.
+      </div>
+    </div>
+    <div
+      className="isInStock">
+      ✅
+      <p>
+        Disponible
+      </p>
+    </div>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Item Item out Stock 1`] = `
+<article
+  className="Item">
+  <div
+    className="card">
+    <div
+      className="image">
+      <img
+        alt="Placeat voluptates repellendus"
+        src="placehold.png" />
+    </div>
+    <div
+      className="info">
+      <div
+        className="name">
+        Placeat voluptates repellendus
+      </div>
+      <div
+        className="price">
+        €
+        233.34
+      </div>
+      <div
+        className="description block-with-text">
+        Deserunt ut quae architecto error assumenda exercitationem occaecati.
+      </div>
+    </div>
+    <div
+      className="isInStock">
+      ❌
+      <p>
+        Non Disponible
+      </p>
+    </div>
+  </div>
+</article>
+`;
+
 exports[`Storyshots Item single item 1`] = `
 <article
   className="Item">
@@ -369,6 +445,10 @@ exports[`Storyshots Item single item 1`] = `
         className="description block-with-text">
         Deserunt ut quae architecto error assumenda exercitationem occaecati.
       </div>
+    </div>
+    <div
+      className="isInStock">
+      <p />
     </div>
   </div>
 </article>
@@ -425,33 +505,12 @@ exports[`Storyshots Itemlist with many items 1`] = `
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
-      </div>
-    </article>
-    <article
-      className="Item">
-      <div
-        className="card">
         <div
-          className="image">
-          <img
-            alt="Placeat voluptates repellendus veniam."
-            src="placehold.png" />
-        </div>
-        <div
-          className="info">
-          <div
-            className="name">
-            Placeat voluptates repellendus veniam.
-          </div>
-          <div
-            className="price">
-            €
-            233.34
-          </div>
-          <div
-            className="description block-with-text">
-            Deserunt ut quae architecto error assumenda exercitationem occaecati.
-          </div>
+          className="isInStock">
+          ✅
+          <p>
+            Disponible
+          </p>
         </div>
       </div>
     </article>
@@ -481,33 +540,12 @@ exports[`Storyshots Itemlist with many items 1`] = `
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
-      </div>
-    </article>
-    <article
-      className="Item">
-      <div
-        className="card">
         <div
-          className="image">
-          <img
-            alt="Placeat voluptates repellendus veniam."
-            src="placehold.png" />
-        </div>
-        <div
-          className="info">
-          <div
-            className="name">
-            Placeat voluptates repellendus veniam.
-          </div>
-          <div
-            className="price">
-            €
-            233.34
-          </div>
-          <div
-            className="description block-with-text">
-            Deserunt ut quae architecto error assumenda exercitationem occaecati.
-          </div>
+          className="isInStock">
+          ✅
+          <p>
+            Disponible
+          </p>
         </div>
       </div>
     </article>
@@ -537,33 +575,12 @@ exports[`Storyshots Itemlist with many items 1`] = `
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
-      </div>
-    </article>
-    <article
-      className="Item">
-      <div
-        className="card">
         <div
-          className="image">
-          <img
-            alt="Placeat voluptates repellendus veniam."
-            src="placehold.png" />
-        </div>
-        <div
-          className="info">
-          <div
-            className="name">
-            Placeat voluptates repellendus veniam.
-          </div>
-          <div
-            className="price">
-            €
-            233.34
-          </div>
-          <div
-            className="description block-with-text">
-            Deserunt ut quae architecto error assumenda exercitationem occaecati.
-          </div>
+          className="isInStock">
+          ✅
+          <p>
+            Disponible
+          </p>
         </div>
       </div>
     </article>
@@ -593,33 +610,12 @@ exports[`Storyshots Itemlist with many items 1`] = `
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
         </div>
-      </div>
-    </article>
-    <article
-      className="Item">
-      <div
-        className="card">
         <div
-          className="image">
-          <img
-            alt="Placeat voluptates repellendus veniam."
-            src="placehold.png" />
-        </div>
-        <div
-          className="info">
-          <div
-            className="name">
-            Placeat voluptates repellendus veniam.
-          </div>
-          <div
-            className="price">
-            €
-            233.34
-          </div>
-          <div
-            className="description block-with-text">
-            Deserunt ut quae architecto error assumenda exercitationem occaecati.
-          </div>
+          className="isInStock">
+          ✅
+          <p>
+            Disponible
+          </p>
         </div>
       </div>
     </article>
@@ -648,6 +644,153 @@ exports[`Storyshots Itemlist with many items 1`] = `
             className="description block-with-text">
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
+        </div>
+        <div
+          className="isInStock">
+          ✅
+          <p>
+            Disponible
+          </p>
+        </div>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+        </div>
+        <div
+          className="isInStock">
+          ✅
+          <p>
+            Disponible
+          </p>
+        </div>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+        </div>
+        <div
+          className="isInStock">
+          ✅
+          <p>
+            Disponible
+          </p>
+        </div>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+        </div>
+        <div
+          className="isInStock">
+          ✅
+          <p>
+            Disponible
+          </p>
+        </div>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="card">
+        <div
+          className="image">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+        </div>
+        <div
+          className="isInStock">
+          ✅
+          <p>
+            Disponible
+          </p>
         </div>
       </div>
     </article>
@@ -685,6 +828,13 @@ exports[`Storyshots Itemlist with one item 1`] = `
             className="description block-with-text">
             Deserunt ut quae architecto error assumenda exercitationem occaecati.
           </div>
+        </div>
+        <div
+          className="isInStock">
+          ✅
+          <p>
+            Disponible
+          </p>
         </div>
       </div>
     </article>
@@ -1657,33 +1807,12 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
               Deserunt ut quae architecto error assumenda exercitationem occaecati.
             </div>
           </div>
-        </div>
-      </article>
-      <article
-        className="Item">
-        <div
-          className="card">
           <div
-            className="image">
-            <img
-              alt="Placeat voluptates repellendus veniam."
-              src="placehold.png" />
-          </div>
-          <div
-            className="info">
-            <div
-              className="name">
-              Placeat voluptates repellendus veniam.
-            </div>
-            <div
-              className="price">
-              €
-              233.34
-            </div>
-            <div
-              className="description block-with-text">
-              Deserunt ut quae architecto error assumenda exercitationem occaecati.
-            </div>
+            className="isInStock">
+            ✅
+            <p>
+              Disponible
+            </p>
           </div>
         </div>
       </article>
@@ -1713,33 +1842,12 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
               Deserunt ut quae architecto error assumenda exercitationem occaecati.
             </div>
           </div>
-        </div>
-      </article>
-      <article
-        className="Item">
-        <div
-          className="card">
           <div
-            className="image">
-            <img
-              alt="Placeat voluptates repellendus veniam."
-              src="placehold.png" />
-          </div>
-          <div
-            className="info">
-            <div
-              className="name">
-              Placeat voluptates repellendus veniam.
-            </div>
-            <div
-              className="price">
-              €
-              233.34
-            </div>
-            <div
-              className="description block-with-text">
-              Deserunt ut quae architecto error assumenda exercitationem occaecati.
-            </div>
+            className="isInStock">
+            ✅
+            <p>
+              Disponible
+            </p>
           </div>
         </div>
       </article>
@@ -1769,33 +1877,12 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
               Deserunt ut quae architecto error assumenda exercitationem occaecati.
             </div>
           </div>
-        </div>
-      </article>
-      <article
-        className="Item">
-        <div
-          className="card">
           <div
-            className="image">
-            <img
-              alt="Placeat voluptates repellendus veniam."
-              src="placehold.png" />
-          </div>
-          <div
-            className="info">
-            <div
-              className="name">
-              Placeat voluptates repellendus veniam.
-            </div>
-            <div
-              className="price">
-              €
-              233.34
-            </div>
-            <div
-              className="description block-with-text">
-              Deserunt ut quae architecto error assumenda exercitationem occaecati.
-            </div>
+            className="isInStock">
+            ✅
+            <p>
+              Disponible
+            </p>
           </div>
         </div>
       </article>
@@ -1825,33 +1912,12 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
               Deserunt ut quae architecto error assumenda exercitationem occaecati.
             </div>
           </div>
-        </div>
-      </article>
-      <article
-        className="Item">
-        <div
-          className="card">
           <div
-            className="image">
-            <img
-              alt="Placeat voluptates repellendus veniam."
-              src="placehold.png" />
-          </div>
-          <div
-            className="info">
-            <div
-              className="name">
-              Placeat voluptates repellendus veniam.
-            </div>
-            <div
-              className="price">
-              €
-              233.34
-            </div>
-            <div
-              className="description block-with-text">
-              Deserunt ut quae architecto error assumenda exercitationem occaecati.
-            </div>
+            className="isInStock">
+            ✅
+            <p>
+              Disponible
+            </p>
           </div>
         </div>
       </article>
@@ -1880,6 +1946,153 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
               className="description block-with-text">
               Deserunt ut quae architecto error assumenda exercitationem occaecati.
             </div>
+          </div>
+          <div
+            className="isInStock">
+            ✅
+            <p>
+              Disponible
+            </p>
+          </div>
+        </div>
+      </article>
+      <article
+        className="Item">
+        <div
+          className="card">
+          <div
+            className="image">
+            <img
+              alt="Placeat voluptates repellendus veniam."
+              src="placehold.png" />
+          </div>
+          <div
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              233.34
+            </div>
+            <div
+              className="description block-with-text">
+              Deserunt ut quae architecto error assumenda exercitationem occaecati.
+            </div>
+          </div>
+          <div
+            className="isInStock">
+            ✅
+            <p>
+              Disponible
+            </p>
+          </div>
+        </div>
+      </article>
+      <article
+        className="Item">
+        <div
+          className="card">
+          <div
+            className="image">
+            <img
+              alt="Placeat voluptates repellendus veniam."
+              src="placehold.png" />
+          </div>
+          <div
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              233.34
+            </div>
+            <div
+              className="description block-with-text">
+              Deserunt ut quae architecto error assumenda exercitationem occaecati.
+            </div>
+          </div>
+          <div
+            className="isInStock">
+            ✅
+            <p>
+              Disponible
+            </p>
+          </div>
+        </div>
+      </article>
+      <article
+        className="Item">
+        <div
+          className="card">
+          <div
+            className="image">
+            <img
+              alt="Placeat voluptates repellendus veniam."
+              src="placehold.png" />
+          </div>
+          <div
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              233.34
+            </div>
+            <div
+              className="description block-with-text">
+              Deserunt ut quae architecto error assumenda exercitationem occaecati.
+            </div>
+          </div>
+          <div
+            className="isInStock">
+            ✅
+            <p>
+              Disponible
+            </p>
+          </div>
+        </div>
+      </article>
+      <article
+        className="Item">
+        <div
+          className="card">
+          <div
+            className="image">
+            <img
+              alt="Placeat voluptates repellendus veniam."
+              src="placehold.png" />
+          </div>
+          <div
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              233.34
+            </div>
+            <div
+              className="description block-with-text">
+              Deserunt ut quae architecto error assumenda exercitationem occaecati.
+            </div>
+          </div>
+          <div
+            className="isInStock">
+            ✅
+            <p>
+              Disponible
+            </p>
           </div>
         </div>
       </article>
