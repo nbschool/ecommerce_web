@@ -338,7 +338,7 @@ exports[`Storyshots DropDownList wrong search 1`] = `
   className="DropDownList">
   <div
     className="empty">
-    Nessun item con questa ricerca
+    No items availables
   </div>
 </div>
 `;
@@ -374,12 +374,22 @@ exports[`Storyshots Item single item 1`] = `
 </article>
 `;
 
-exports[`Storyshots Itemlist empty 1`] = `
+exports[`Storyshots Itemlist empty en 1`] = `
 <div
   className="ItemList">
   <div
     className="empty">
     No items availables
+  </div>
+</div>
+`;
+
+exports[`Storyshots Itemlist empty it 1`] = `
+<div
+  className="ItemList">
+  <div
+    className="empty">
+    Nessun items disponibile
   </div>
 </div>
 `;
@@ -687,7 +697,7 @@ exports[`Storyshots Login bad credentials 1`] = `
   className="Login">
   <h1
     className="title">
-    Inserisci i tuoi dati per il login
+    Fill the form to login
   </h1>
   <div
     className="box">
@@ -700,13 +710,13 @@ exports[`Storyshots Login bad credentials 1`] = `
       onSubmit={[Function]}>
       <div
         className="error">
-        Username o password non corretti
+        Username or password not correct
       </div>
       <input
         className="form-control"
         name="email"
         onChange={[Function]}
-        placeholder="Inserisci la tua email"
+        placeholder="Insert your email"
         required={true}
         type="email"
         value="" />
@@ -714,14 +724,14 @@ exports[`Storyshots Login bad credentials 1`] = `
         className="form-control"
         name="password"
         onChange={[Function]}
-        placeholder="Inserisci la tua password"
+        placeholder="Insert your password"
         required={true}
         type="password"
         value="" />
       <button
         className="submit"
         type="submit">
-        Accedi
+        Login
       </button>
       <div
         className="moreinfo">
@@ -730,12 +740,13 @@ exports[`Storyshots Login bad credentials 1`] = `
           <input
             type="checkbox"
             value="ricordami" />
-           Ricordami
+           
+          Remember me
         </label>
         <a
           className="help"
           href="#">
-          Bisogno di aiuto?
+          Do you need help?
         </a>
       </div>
     </form>
@@ -743,12 +754,79 @@ exports[`Storyshots Login bad credentials 1`] = `
   <a
     className="register"
     href="#">
-    Registrati
+    Register
   </a>
 </div>
 `;
 
-exports[`Storyshots Login empty login 1`] = `
+exports[`Storyshots Login empty login en 1`] = `
+<div
+  className="Login">
+  <h1
+    className="title">
+    Fill the form to login
+  </h1>
+  <div
+    className="box">
+    <img
+      alt="User picture"
+      className="profile-img"
+      src="login.png" />
+    <form
+      className="form-signin"
+      onSubmit={[Function]}>
+      <div
+        className="error">
+        
+      </div>
+      <input
+        className="form-control"
+        name="email"
+        onChange={[Function]}
+        placeholder="Insert your email"
+        required={true}
+        type="email"
+        value="" />
+      <input
+        className="form-control"
+        name="password"
+        onChange={[Function]}
+        placeholder="Insert your password"
+        required={true}
+        type="password"
+        value="" />
+      <button
+        className="submit"
+        type="submit">
+        Login
+      </button>
+      <div
+        className="moreinfo">
+        <label
+          className="rememberme">
+          <input
+            type="checkbox"
+            value="ricordami" />
+           
+          Remember me
+        </label>
+        <a
+          className="help"
+          href="#">
+          Do you need help?
+        </a>
+      </div>
+    </form>
+  </div>
+  <a
+    className="register"
+    href="#">
+    Register
+  </a>
+</div>
+`;
+
+exports[`Storyshots Login empty login it 1`] = `
 <div
   className="Login">
   <h1
@@ -796,7 +874,8 @@ exports[`Storyshots Login empty login 1`] = `
           <input
             type="checkbox"
             value="ricordami" />
-           Ricordami
+           
+          Ricordami
         </label>
         <a
           className="help"
@@ -814,7 +893,90 @@ exports[`Storyshots Login empty login 1`] = `
 </div>
 `;
 
-exports[`Storyshots Register empty form 1`] = `
+exports[`Storyshots Register empty form en 1`] = `
+<div
+  className="Register">
+  <h1
+    className="title">
+    Fill the form to register
+  </h1>
+  <div
+    className="box">
+    <form
+      className="form-signin"
+      onSubmit={[Function]}>
+      <div
+        className="error">
+        
+      </div>
+      <input
+        className="form-control "
+        name="first_name"
+        onChange={[Function]}
+        placeholder="Insert your first name"
+        required={true}
+        type="text"
+        value="" />
+      <div
+        className="error-message hidden" />
+      <input
+        className="form-control "
+        name="last_name"
+        onChange={[Function]}
+        placeholder="Insert your last name"
+        required={true}
+        type="text"
+        value="" />
+      <input
+        className="form-control "
+        name="email"
+        onChange={[Function]}
+        placeholder="Insert your email"
+        required={true}
+        type="email"
+        value="" />
+      <div
+        className="error-message hidden" />
+      <input
+        className="form-control "
+        name="password1"
+        onChange={[Function]}
+        placeholder="Insert your password"
+        required={true}
+        type="password"
+        value="" />
+      <input
+        className="form-control "
+        name="password2"
+        onChange={[Function]}
+        placeholder="Re-insert your password"
+        required={true}
+        type="password"
+        value="" />
+      <button
+        className="submit"
+        type="submit">
+        Register
+      </button>
+      <div
+        className="moreinfo">
+        <a
+          className="help"
+          href="#">
+          Do you need help?
+        </a>
+      </div>
+    </form>
+  </div>
+  <a
+    className="login"
+    href="#">
+    Go to your account
+  </a>
+</div>
+`;
+
+exports[`Storyshots Register empty form it 1`] = `
 <div
   className="Register">
   <h1
@@ -827,7 +989,9 @@ exports[`Storyshots Register empty form 1`] = `
       className="form-signin"
       onSubmit={[Function]}>
       <div
-        className="error" />
+        className="error">
+        
+      </div>
       <input
         className="form-control "
         name="first_name"
@@ -900,7 +1064,7 @@ exports[`Storyshots Register form with first name empty and email not correct 1`
   className="Register">
   <h1
     className="title">
-    Inserisci i tuoi dati per registrarti
+    Fill the form to register
   </h1>
   <div
     className="box">
@@ -909,25 +1073,25 @@ exports[`Storyshots Register form with first name empty and email not correct 1`
       onSubmit={[Function]}>
       <div
         className="error">
-        Ci sono campi con errore
+        Form errors
       </div>
       <input
         className="form-control form-error"
         name="first_name"
         onChange={[Function]}
-        placeholder="Inserisci il tuo nome"
+        placeholder="Insert your first name"
         required={true}
         type="text"
         value="" />
       <div
         className="error-message show">
-        Campo obbligatorio
+        Empty field
       </div>
       <input
         className="form-control "
         name="last_name"
         onChange={[Function]}
-        placeholder="Inserisci il tuo cognome"
+        placeholder="Insert your last name"
         required={true}
         type="text"
         value="" />
@@ -935,19 +1099,19 @@ exports[`Storyshots Register form with first name empty and email not correct 1`
         className="form-control form-error"
         name="email"
         onChange={[Function]}
-        placeholder="Inserisci la tua email"
+        placeholder="Insert your email"
         required={true}
         type="email"
         value="" />
       <div
         className="error-message show">
-        Email non corretta
+        Field not correct
       </div>
       <input
         className="form-control "
         name="password1"
         onChange={[Function]}
-        placeholder="Inserisci la tua password"
+        placeholder="Insert your password"
         required={true}
         type="password"
         value="" />
@@ -955,21 +1119,21 @@ exports[`Storyshots Register form with first name empty and email not correct 1`
         className="form-control "
         name="password2"
         onChange={[Function]}
-        placeholder="Riscrivi la tua password"
+        placeholder="Re-insert your password"
         required={true}
         type="password"
         value="" />
       <button
         className="submit"
         type="submit">
-        Registrati
+        Register
       </button>
       <div
         className="moreinfo">
         <a
           className="help"
           href="#">
-          Bisogno di aiuto?
+          Do you need help?
         </a>
       </div>
     </form>
@@ -977,7 +1141,7 @@ exports[`Storyshots Register form with first name empty and email not correct 1`
   <a
     className="login"
     href="#">
-    Accedi al tuo account
+    Go to your account
   </a>
 </div>
 `;
@@ -1795,13 +1959,13 @@ exports[`Storyshots SearchBar dropDownList wrong empty 1`] = `
     className="DropDownList">
     <div
       className="empty">
-      Nessun item con questa ricerca
+      No items availables
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots SearchBar empty search 1`] = `
+exports[`Storyshots SearchBar empty search en 1`] = `
 <div
   className="SearchBar">
   <form
@@ -1811,6 +1975,24 @@ exports[`Storyshots SearchBar empty search 1`] = `
       name="search"
       onChange={[Function]}
       placeholder="Search"
+      type="text"
+      value="" />
+    <button
+      className="submit" />
+  </form>
+</div>
+`;
+
+exports[`Storyshots SearchBar empty search it 1`] = `
+<div
+  className="SearchBar">
+  <form
+    className="box"
+    onSubmit={[Function]}>
+    <input
+      name="search"
+      onChange={[Function]}
+      placeholder="Cerca"
       type="text"
       value="" />
     <button
