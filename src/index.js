@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { createStore, applyMiddleware } from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
+
+import { autoRehydrate, persistStore } from 'redux-persist'
 
 import thunkMiddleware from 'redux-thunk';
 
@@ -15,8 +17,18 @@ import Login from './containers/LoginContainer';
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunkMiddleware)
+  undefined,
+  compose(
+    applyMiddleware(thunkMiddleware),
+    autoRehydrate(),
+  ),
 );
+
+// begin periodically persisting the store
+persistStore(
+  store,
+  { whitelist: ['login'] },
+)
 
 const routes = (
   <Router>

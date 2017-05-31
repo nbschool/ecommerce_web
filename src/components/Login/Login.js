@@ -1,3 +1,4 @@
+import { Redirect } from 'react-router';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -23,15 +24,20 @@ class Login extends Component {
 
   submitLogin(event) {
     event.preventDefault();
-    this.props.login(this.state);
+    this.props.login(this.state.email, this.state.password);
+    this.setState({message: this.props.error});
   }
 
   render() {
+    if (this.props.logged) {
+      return <Redirect to="/"/>
+    }
+
     return (
       <div className="Login">
         <h1 className="title">Inserisci i tuoi dati per il login</h1>
         <div className="box">
-          <img className="profile-img" src={login} alt="User picture" />
+          <img className="profile-img" src={login} alt="User" />
           <form className="form-signin" onSubmit={(event) => this.submitLogin(event)}>
             <div className="error">{this.props.error}</div>
             <input type="email" className="form-control"
@@ -58,8 +64,9 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  error: PropTypes.string.isRequired,
-  login: PropTypes.func.isRequired
+  error: PropTypes.string,
+  login: PropTypes.func.isRequired,
+  logged: PropTypes.bool.isRequired,
 };
 
 export default Login;

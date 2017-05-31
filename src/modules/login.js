@@ -1,18 +1,10 @@
 // ------------------------------------
 // Constants
 
-const BASE_URL = '127.0.0.1:5000';
+const BASE_URL = 'http://127.0.0.1:5000';
 
 const LOGIN_FETCH_SUCCESS = 'LOGIN_FETCH_SUCCESS';
 const LOGIN_FETCH_FAILURE = 'LOGIN_FETCH_FAILURE';
-
-//
-export function filterItemsData(items) {
-  return items.map((item) => {
-    return {...item.data.attributes, uuid: item.data.id};
-  });
-}
-
 
 // ------------------------------------
 // Action creators
@@ -40,14 +32,13 @@ export function fetchLogin(email, password) {
        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: email,
-        password: password,
+        'email': email,
+        'password': password,
       })
     })
     .then(response => {
       if(!response.ok)
         throw new Error('Unable to login');
-      return response.json();
     })
     .then(() => dispatch(fetchLoginSuccess()))
     .catch(error => dispatch(fetchLoginFailure(error.message)));
@@ -57,15 +48,15 @@ export function fetchLogin(email, password) {
 // ------------------------------------
 // Selectors
 
-export const logged = state => state.logged;
-export const error = state => state.error;
+export const logged = state => state.login.logged;
+export const error = state => state.login.error;
 
 // ------------------------------------
 // Store & reducer
 
 const initialState = {
   logged: false,
-  error: 'Login request has not started yet',
+  error: '',
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -74,6 +65,7 @@ export default function reducer(state = initialState, action = {}) {
     return {
       ...state,
       logged: true,
+      error: '',
     };
   case LOGIN_FETCH_FAILURE:
     return {
