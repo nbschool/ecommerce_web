@@ -15,7 +15,7 @@ const Item = ({uuid, name, price, description, pictureUrl, tagStock}) => (
         <div className="price">€{price}</div>
         <div className="description block-with-text">{description}</div>
       </div>
-      <div className="isInStock">
+      <div className="in_Stock">
         {tagStock.emoji}<p>{tagStock.text}</p>
       </div>
     </div>
