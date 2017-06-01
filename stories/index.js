@@ -46,23 +46,8 @@ storiesOf('CategoryMenu', module)
   });
 
 storiesOf('Item', module)
-  .add('single item', () => {
-    i18n.changeLanguage("en");
-    const item = {
-      uuid: 'ert534534wertwert',
-      name: 'Placeat voluptates repellendus',
-      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
-      price: 233.34,
-      pictureUrl: null,
-      category: 'accessori',
-      tagStock: {emoji: null, text: null }
-    };
-    return (
-      <Item
-      {...item} />
-    );
-  })
   .add('Item in Stock', () => {
+    i18n.changeLanguage("en");
     const item = {
       uuid: 'ert534534wertwert',
       name: 'Placeat voluptates repellendus',
@@ -77,6 +62,7 @@ storiesOf('Item', module)
     );
   })
   .add('Item out Stock', () => {
+    i18n.changeLanguage("en");
     const item = {
       uuid: 'ert534534wertwert',
       name: 'Placeat voluptates repellendus',
