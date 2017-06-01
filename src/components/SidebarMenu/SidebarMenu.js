@@ -17,7 +17,6 @@ class SidebarMenu extends Component {
     this.props.setActiveArea(area.name);
   }
 
-
   render() {
     const menu = this.props.menuList.map((menu, index) => {
       const menuClass = (this.state.active === menu.name) ? "active" : '';
@@ -27,7 +26,6 @@ class SidebarMenu extends Component {
         </li>
       );
     });
-
 
     return (
       <div className="SidebarMenu">

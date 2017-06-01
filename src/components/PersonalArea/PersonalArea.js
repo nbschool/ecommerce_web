@@ -39,6 +39,7 @@ class PersonalArea extends Component {
         <div className="content">
           <div className="sidebar">
             <SidebarMenu
+              active={this.props.active}
               menuList={this.props.menuList}
               setActiveArea={(area) => this.setActiveArea(area)} />
           </div>

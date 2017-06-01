@@ -476,8 +476,11 @@ storiesOf('SidebarMenu', module)
       name: 'adressesarea',
     }];
 
+    const defaultMenu = 'personalarea';
     return (
       <SidebarMenu
+        active={defaultMenu}
+        setActiveArea={action('set active Area')}
         menuList={menuList} />
     );
   });
@@ -523,8 +526,12 @@ storiesOf('PersonalArea', module)
       email: 'pino.silvestre@gmail.com'
     };
 
+    const defaultMenu = 'personalarea';
+
     return (
       <PersonalArea
+        active={defaultMenu}
+        setActiveArea={action('set active Area')}
         menuList={menuList}
         personalData={personalData}
         saveData={action('call to saveData')} />
