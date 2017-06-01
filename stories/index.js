@@ -54,7 +54,7 @@ storiesOf('Item', module)
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
       pictureUrl: null,
-      tagStock: {emoji: '✅', text: 'Disponible'}
+      tagStock: true
     };
     return (
       <Item
@@ -69,7 +69,7 @@ storiesOf('Item', module)
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
       pictureUrl: null,
-      tagStock: {emoji: '❌', text: 'Non Disponible'}
+      tagStock: false
     };
     return (
       <Item
@@ -109,7 +109,7 @@ storiesOf('Itemlist', module)
       price: 233.34,
       pictureUrl: null,
       category: 'accessori',
-      tagStock: {emoji: '✅', text: 'Disponible'},
+      tagStock: true,
     }];
     return (
       <ItemList
@@ -131,7 +131,7 @@ storiesOf('Itemlist', module)
         price: 233.34,
         pictureUrl: null,
         category: 'accessori',
-        tagStock: {emoji: '✅', text: 'Disponible'},
+        tagStock: true,
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
@@ -309,7 +309,7 @@ storiesOf('SearchBar', module)
         price: 233.34,
         pictureUrl: null,
         category: 'accessori',
-        tagStock: {emoji: '✅', text: 'Disponible'},
+        tagStock: true,
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
