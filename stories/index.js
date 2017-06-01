@@ -55,6 +55,7 @@ storiesOf('Item', module)
       price: 233.34,
       pictureUrl: null,
       category: 'accessori',
+      availability: 3
     };
     return (
       <Item
@@ -95,6 +96,7 @@ storiesOf('Itemlist', module)
       price: 233.34,
       pictureUrl: null,
       category: 'accessori',
+      availability: 3
     }];
     return (
       <ItemList
@@ -116,6 +118,7 @@ storiesOf('Itemlist', module)
         price: 233.34,
         pictureUrl: null,
         category: 'accessori',
+        availability: 3
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
@@ -278,7 +281,7 @@ storiesOf('SearchBar', module)
         name: 'Placeat voluptates repellendus veniam.',
         description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
         price: 233.34,
-        pictureUrl: null
+        pictureUrl: null,
       };
       item.item_id = item.item_id + i;
       dropDownList.push(item);
@@ -293,6 +296,7 @@ storiesOf('SearchBar', module)
         price: 233.34,
         pictureUrl: null,
         category: 'accessori',
+        availability: 3
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
