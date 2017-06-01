@@ -52,7 +52,7 @@ storiesOf('cart', module)
   .add('with many items', () => {
     const items = [];
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 1; i <=5; i++) {
       const item = {
         uuid: 'ert534534we'.concat(i),
         name: 'Placeat voluptates repellendus veniam.',
