@@ -13,22 +13,23 @@ const Item = ({uuid, name, price, description, pictureUrl, tagStock}) => {
     emojiStock = '❌';
     textStock = 'Out of Stock';
   }
-  return (<article key={uuid} className="Item">
-            <div className="card">
-              <div className="image">
-                <img src={pictureUrl ? pictureUrl : placehold} alt={name} />
-              </div>
-              <div className="info">
-                <div className="name">{name}</div>
-                <div className="price">€{price}</div>
-                <div className="description block-with-text">{description}</div>
-              </div>
-              <div className="in_Stock">
-                {emojiStock}<p>{textStock}</p>
-              </div>
-            </div>
-          </article>
-  )
+  return (
+    <article key={uuid} className="Item">
+      <div className="card">
+        <div className="image">
+          <img src={pictureUrl ? pictureUrl : placehold} alt={name} />
+        </div>
+        <div className="info">
+          <div className="name">{name}</div>
+          <div className="price">€{price}</div>
+          <div className="description block-with-text">{description}</div>
+        </div>
+        <div className="in_Stock">
+          {emojiStock}<p>{textStock}</p>
+        </div>
+      </div>
+    </article>
+  );
 };
 
 Item.propTypes = {
@@ -39,6 +40,7 @@ Item.propTypes = {
   pictureUrl: PropTypes.string,
   category: PropTypes.string.isRequired,
   emojiStock: PropTypes.string.isRequired,
+  tagStock: PropTypes.boolean.isRequired,
   textStock: PropTypes.string.isRequired,
 };
 
