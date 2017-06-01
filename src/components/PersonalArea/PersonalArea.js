@@ -54,9 +54,11 @@ class PersonalArea extends Component {
 
 PersonalArea.propTypes = {
   t: PropTypes.func.isRequired,
+  active: PropTypes.string.isRequired,
+  setActiveArea: PropTypes.func.isRequired,
+  menuList: PropTypes.array.isRequired,
   personalData: PropTypes.object.isRequired,
   saveData: PropTypes.func.isRequired,
-  menuList: PropTypes.array.isRequired
 };
 
 export default translate('personalArea')(PersonalArea);
