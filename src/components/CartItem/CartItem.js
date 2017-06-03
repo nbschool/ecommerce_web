@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Item from '../Item/';
 import './CartItem.css';
 
 class CartItem extends Component {
@@ -25,7 +24,7 @@ class CartItem extends Component {
 
   renderDropDown() {
     return (
-      <select onChange={this.handleChange} value={this.state.value}>
+      <select className='drop-down-item' onChange={this.handleChange} value={this.state.value}>
         {
           ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10+'].map(
             (el, index) => <option value={el} key={index}>{el}</option>
@@ -39,32 +38,40 @@ class CartItem extends Component {
     return (
       <div>
         <input
-          className='inputQuantity' type='text'
+          className='input-quantity' type='text'
           value={this.state.value}
           onChange={this.handleChange}>
         </input>
-        <button className='updateCartItem'>Aggiorna</button>
+        <button className='update-cart-item'>Aggiorna</button>
       </div>
     );
   }
 
   render() {
     return (
-      <div className='cartItem'>
-        <Item
-          name={this.props.item.name}
-          price={this.props.item.price} />
-        <img className='cartItemImg' src={this.props.item.pictureUrl}/>
-        <h3>Quantità = {this.props.item.quantity}</h3>
-        <h3>Subtotale = {this.props.item.price * this.props.item.quantity}</h3>
-        {
-          this.state.isOptionValue ? this.renderDropDown() : this.renderTextInput()
-        }
-        <button className='removeCartItem'>Rimuovi</button>
+      <div className='cart-item'>
+        <div className='cart-item-top'>
+          <img className='cart-item-img' src={this.props.item.pictureUrl} />
+          <div className='item'>
+            <div className='item-name'>{this.props.item.name}</div>
+            <div>Prezzo: {this.props.item.price}</div>
+          </div>
+        </div>
+        <div className='cart-item-bottom'>
+          <div className='class-name-quantity'>Quantità = {this.props.item.quantity}</div>
+          <div className='class-name-subtotal'>
+            Subtotale = {this.props.item.price * this.props.item.quantity} €
+          </div>
+          {
+            this.state.isOptionValue ? this.renderDropDown() : this.renderTextInput()
+          }
+          <button className='remove-cart-item'>Rimuovi</button>
+        </div>
       </div>
     );
   }
 }
+
 
 CartItem.propTypes = {
   item: PropTypes.array,

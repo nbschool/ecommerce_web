@@ -1,5 +1,64 @@
 @import ../../style/palette.sass
 
-.CartItem
+.cart-item
     display: flex
-    flex-wrap: wrap
+    flex-direction: column
+
+.cart-item-top
+    display: flex
+    flex-direction: row
+    height: 5em
+
+.cart-item-img
+    flex-grow: 1
+    min-width: 20%
+    border: 1px
+    margin-left: 0.5em
+
+.item
+    flex-grow: 5
+    display: flex
+    flex-direction: column
+
+    & *
+        margin-left: 0.5em
+
+.item-name
+    font-weight: 500
+
+.class-name-subtotal
+    margin-bottom: 0.5em
+
+.cart-item-bottom
+    display: flex
+    flex-direction: column
+    margin: 0.5em
+    padding-bottom: 0.5em
+
+.drop-down-item
+    max-width: 20%
+    margin-right: 0.5em
+
+.remove-cart-item
+    max-width: 20%
+    margin-top: 0.5em
+
+.update-cart-item
+    max-width: 20%
+    margin-left: 0.5em
+
+.input-quantity
+    max-width: 20%
+
+button
+    border: 8px;
+    background-color: $accent-color
+    border-radius: 4px
+    color: $primary-color-text
+    transition: .3s
+
+    &:hover
+        color: lighten($primary-text-color, 10%)
+
+h1, h3
+    margin-left: 7px

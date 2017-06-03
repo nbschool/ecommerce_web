@@ -20,7 +20,7 @@ class Cart extends Component {
         total += subtotal;
         return (
           <CartItem
-            className='cartItems'
+            className='cart-item'
             key={index}
             item={item}/>
         );
@@ -30,11 +30,11 @@ class Cart extends Component {
     );
 
     return (
-      <div>
+      <div className='cart'>
         <h1>Carrello</h1>
-        <div className='cart'>{cart}</div>
+        <div>{cart}</div>
         <h3>Totale = {total} €</h3>
-        <button>Acquista ora</button>
+        <button className='buy'>Acquista ora</button>
       </div>
     );
   }
