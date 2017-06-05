@@ -9,7 +9,7 @@ class Item extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numItems: 0
+      numItems: 0,
     };
     this.setNumberItemToCart = this.setNumberItemToCart.bind(this);
   }
@@ -25,11 +25,15 @@ class Item extends Component {
     this.setState({
       numItems: count
     });
+
+    this.props.setItemInCart(this.props.uuid, this.props.price, this.state.numItems);
   }
 
   render() {
     const item = this.props;
     const {t} = this.props;
+
+
     let itemsAdded = [];
     let btnAdd = [];
 
