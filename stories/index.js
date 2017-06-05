@@ -34,14 +34,14 @@ storiesOf('CategoryMenu', module)
   ))
   .add('four categories', () => {
     const categories = [
-      {name: 'abbigliamento uomo', id: 1},
-      {name: 'abbigliamento donna', id: 2},
-      {name: 'scarpe', id: 3},
-      {name: 'accessori', id: 4},
+      { name: 'abbigliamento uomo', id: 1 },
+      { name: 'abbigliamento donna', id: 2 },
+      { name: 'scarpe', id: 3 },
+      { name: 'accessori', id: 4 },
     ];
     return (
       <CategoryMenu
-      listCategories={categories} context={{}}/>
+        listCategories={categories} context={{}} />
     );
   });
 
@@ -55,10 +55,13 @@ storiesOf('Item', module)
       price: 233.34,
       pictureUrl: null,
       category: 'accessori',
+      availability: 3
     };
     return (
-      <Item
-      {...item} />
+      <I18nextProvider i18n={i18n}>
+        <Item
+          {...item} />
+      </I18nextProvider>
     );
   });
 
@@ -79,11 +82,13 @@ storiesOf('Itemlist', module)
     i18n.changeLanguage("it");
     const itemList = [];
     return (
-      <ItemList
-        itemList={itemList}
-        fetchItemList={action('fetch ItemList empty')}
-        loaded={true}
-        match={{ params: {category: 'accessori'}}}/>
+      <I18nextProvider i18n={i18n}>
+        <ItemList
+          itemList={itemList}
+          fetchItemList={action('fetch ItemList empty')}
+          loaded={true}
+          match={{ params: { category: 'accessori' } }} />
+      </I18nextProvider>
     );
   })
   .add('with one item', () => {
@@ -95,13 +100,16 @@ storiesOf('Itemlist', module)
       price: 233.34,
       pictureUrl: null,
       category: 'accessori',
+      availability: 3
     }];
     return (
-      <ItemList
-        itemList={itemList}
-        fetchItemList={action('fetch ItemList with one item')}
-        loaded={true}
-        match={{ params: {category: 'accessori'}}}/>
+      <I18nextProvider i18n={i18n}>
+        <ItemList
+          itemList={itemList}
+          fetchItemList={action('fetch ItemList with one item')}
+          loaded={true}
+          match={{ params: { category: 'accessori' } }} />
+      </I18nextProvider>
     );
   })
   .add('with many items', () => {
@@ -116,16 +124,19 @@ storiesOf('Itemlist', module)
         price: 233.34,
         pictureUrl: null,
         category: 'accessori',
+        availability: 3
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
     }
     return (
-      <ItemList
-        itemList={itemList}
-        fetchItemList={action('fetch ItemList with one item')}
-        loaded={true}
-        match={{ params: {category: 'accessori'}}}/>
+      <I18nextProvider i18n={i18n}>
+        <ItemList
+          itemList={itemList}
+          fetchItemList={action('fetch ItemList with one item')}
+          loaded={true}
+          match={{ params: { category: 'accessori' } }} />
+      </I18nextProvider>
     );
   });
 
@@ -278,7 +289,7 @@ storiesOf('SearchBar', module)
         name: 'Placeat voluptates repellendus veniam.',
         description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
         price: 233.34,
-        pictureUrl: null
+        pictureUrl: null,
       };
       item.item_id = item.item_id + i;
       dropDownList.push(item);
@@ -293,6 +304,7 @@ storiesOf('SearchBar', module)
         price: 233.34,
         pictureUrl: null,
         category: 'accessori',
+        availability: 3
       };
       item.item_id = item.item_id + i;
       itemList.push(item);
@@ -310,7 +322,7 @@ storiesOf('SearchBar', module)
             itemList={itemList}
             fetchItemList={action('fetch ItemList with one item')}
             loaded={true}
-            match={{ params: {category: 'accessori'}}} />
+            match={{ params: { category: 'accessori' } }} />
         </I18nextProvider>
       </div>
     );
