@@ -20,7 +20,8 @@ class Item extends Component {
       <article key={this.props.uuid} className="Item">
         <div className="card">
           <div className="image">
-            <img src={this.props.pictureUrl ? this.props.pictureUrl : placehold} alt={this.props.name} />
+            <img src={this.props.pictureUrl ? this.props.pictureUrl : placehold}
+             alt={this.props.name} />
           </div>
           <div className="info">
             <div className="name">{this.props.name}</div>
@@ -34,7 +35,7 @@ class Item extends Component {
       </article>
     );
   }
-};
+}
 
 Item.propTypes = {
   uuid: PropTypes.string.isRequired,
@@ -43,9 +44,7 @@ Item.propTypes = {
   description: PropTypes.string.isRequired,
   pictureUrl: PropTypes.string,
   category: PropTypes.string.isRequired,
-  emojiStock: PropTypes.string.isRequired,
   tagStock: PropTypes.bool.isRequired,
-  textStock: PropTypes.string.isRequired,
   t: PropTypes.func.isRequired,
 };
 
