@@ -224,4 +224,7 @@ export const testing = {
   fetchItemsFailure,
   fetchPictureSuccess,
   fetchPictureFailure,
+  searchItemSuccess,
+  searchItemFailure,
+  initialState,
 };
