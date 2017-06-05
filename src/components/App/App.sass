@@ -1,9 +1,26 @@
 @import ../../../node_modules/normalize.css/normalize.css
+@font-face
+    font-family: 'Titillium Web'
+    src: url('../../assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf')
+@font-face
+    font-family: "Titillium Web"
+    src: url('../../assets/fonts/Titillium_Web/TitilliumWeb-Bold.ttf')
+    font-weight: bold
+@font-face
+    font-family: "Titillium Web"
+    src: url('../../assets/fonts/Titillium_Web/TitilliumWeb-Italic.ttf')
+    font-style: italic
+@font-face
+    font-family: "Titillium Web"
+    src: url('../../assets/fonts/Titillium_Web/TitilliumWeb-BoldItalic.ttf')
+    font-weight: bold
+    font-style: italic
 
-$font-family: Helvetica, sans-serif
+$font-family: 'Titillium Web', sans-serif
 
-body
+body, input, input::placeholder, button
     font-family: $font-family
+
 
 .clearfix
   clear: both

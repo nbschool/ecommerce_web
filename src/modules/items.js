@@ -70,9 +70,10 @@ function addPictureToItem(picture, items) {
     of the fetched picture
   */
   for (const item of items) {
-    if (picture[0].item_uuid === item.uuid) {
-      item.pictureId = picture[0].uuid;
-      item.pictureUrl = `${BASE_URL}/pictures/${picture[0].uuid}`;
+    const itemPictureId = picture[0].data.relationships.item.data.id;
+    if (itemPictureId === item.uuid) {
+      item.pictureId = picture[0].data.id;
+      item.pictureUrl = `${BASE_URL}/pictures/${picture[0].data.id}`;
       break;
     }
   }
