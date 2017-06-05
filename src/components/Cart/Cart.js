@@ -10,14 +10,15 @@ class Cart extends Component {
     this.dispatchHandleChange = this.dispatchHandleChange.bind(this);
   }
 
-  dispatchHandleChange() {
-    return;
+  dispatchHandleChange(quantity) {
+
   }
 
   render() {
     let total = 0;
-    let cart = this.props.cart.map((item, index) => {
-      total += (item.quantity * item.price);
+    let cart = Object.values(this.props.cart).map((item, index) => {
+      total += (item.numItems * item.price);
+
       return (
         <CartItem
           className='cart-item'
@@ -43,7 +44,7 @@ class Cart extends Component {
 
 
 Cart.propTypes = {
-  cart: PropTypes.array,
+  cart: PropTypes.object.isRequired,
 };
 
 export default Cart;
