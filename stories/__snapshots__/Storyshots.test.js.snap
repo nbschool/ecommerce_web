@@ -769,7 +769,7 @@ exports[`Storyshots Login empty login en 1`] = `
   <div
     className="box">
     <img
-      alt="User picture"
+      alt="User"
       className="profile-img"
       src="login.png" />
     <form
