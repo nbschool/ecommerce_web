@@ -132,29 +132,29 @@ storiesOf('Itemlist', module)
 storiesOf('Login', module)
   .add('empty login it', () => {
     i18n.changeLanguage("it");
-    const error = '';
     return (
       <Login
       lng="it"
-      error={error}
+      logged={false}
+      error={false}
       login={action('call to login')} />
     );
   })
   .add('empty login en', () => {
     i18n.changeLanguage("en");
-    const error = '';
     return (
       <Login
-        error={error}
+        logged={false}
+        error={false}
         login={action('call to login')} />
     );
   })
   .add('bad credentials', () => {
     i18n.changeLanguage("en");
-    const error = 'login_error';
     return (
       <Login
-        error={error}
+        logged={false}
+        error={true}
         login={action('call to login')} />
     );
   });
