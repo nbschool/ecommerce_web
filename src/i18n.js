@@ -43,6 +43,10 @@ i18n
         },
         dropDownList: {
           empty: 'No items availables'
+        },
+        item: {
+          in_stock: 'In Stock',
+          out_stock: 'Out of Stock'
         }
       },
       it: {
@@ -82,6 +86,10 @@ i18n
         },
         dropDownList: {
           empty: 'Nessun items disponibile con questa ricerca'
+        },
+        item: {
+          in_stock: 'Disponible',
+          out_stock: 'Non Disponibile'
         }
       }
     },
