@@ -11,10 +11,10 @@ class Item extends Component {
     let emojiStock, textStock;
     if (this.props.tagStock) {
       emojiStock = '✅';
-      textStock = t('item:textStock');
+      textStock = t('item:in_stock');
     } else {
       emojiStock = '❌';
-      textStock = t('item:textStock');
+      textStock = t('item:out_stock');
     }
     return (
       <article key={this.props.uuid} className="Item">
