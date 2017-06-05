@@ -7,7 +7,7 @@ import './CategoryMenu.css';
 const CategoryMenu = withRouter((props) => {
   const pathname = props.location.pathname;
   const category = pathname.slice(1);
-  const menu = [{id: 0, name: 'home'}, ...props.listCategories];
+  const menu = [{id: 0, name: 'home'}, ...props.listCategories, {id: 5, name: 'carrello'}];
 
   const listCategories = menu.map(({id, name}) => {
     const url = name === 'home' ? '' : name;
