@@ -1,3 +1,5 @@
+import crendetialParams from './utils';
+
 // ------------------------------------
 // Constants
 
@@ -26,15 +28,14 @@ export function fetchLogin(email, password) {
   return dispatch => {
     return fetch(`${BASE_URL}/auth/login/`, { 
       method: 'post',
-      mode: 'cors',
-      credentials: 'include',
       headers: {
        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         'email': email,
         'password': password,
-      })
+      }),
+      ...crendetialParams
     })
     .then(response => {
       if(!response.ok)

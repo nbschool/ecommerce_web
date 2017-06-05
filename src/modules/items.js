@@ -1,3 +1,5 @@
+import crendetialParams from './utils';
+
 // ------------------------------------
 // Constants
 
@@ -79,7 +81,7 @@ function addPictureToItem(picture, items) {
 
 export function fetchItems() {
   return dispatch => {
-    return fetch(`${BASE_URL}/items`)
+    return fetch(`${BASE_URL}/items`, crendetialParams)
       .then(response => {
         if (!response.ok)
           throw new Error('Unable to fetch');
