@@ -16,7 +16,7 @@ class Cart extends Component {
 
   render() {
     let total = 0;
-    let cart = this.props.items.map((item, index) => {
+    let cart = this.props.cart.map((item, index) => {
       total += (item.quantity * item.price);
       return (
         <CartItem
@@ -43,7 +43,7 @@ class Cart extends Component {
 
 
 Cart.propTypes = {
-  items: PropTypes.array,
+  cart: PropTypes.array,
 };
 
 export default Cart;

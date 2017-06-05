@@ -8,7 +8,6 @@ import {
 
 import ItemList from '../components/ItemList';
 
-
 const mapDispatchToProps = {
   fetchItemList: () => fetchItems(),
   setItemInCart: (uuid, price, numItems) => setCart(uuid, price, numItems),

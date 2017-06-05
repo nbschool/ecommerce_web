@@ -46,7 +46,7 @@ storiesOf('cart', module)
     }];
     return (
       <Cart
-        items={items} />
+        cart={items} />
     );
   })
   .add('with many items', () => {
@@ -66,7 +66,7 @@ storiesOf('cart', module)
     }
     return (
       <Cart
-        items={items} />
+        cart={items} />
     );
   });
 

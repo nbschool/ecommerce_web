@@ -155,6 +155,7 @@ export const getItems = state => state.items.items;
 export const itemsLoaded = state => state.items.loaded;
 export const getSearchResults = state => state.items.searchResults;
 export const getSearchStatus = state => state.items.searchStatus;
+export const getCart = state => state.cart;
 
 // ------------------------------------
 // Store & reducer
