@@ -19,7 +19,7 @@ class CartItem extends Component {
 
   handleChange(event) {
     event.preventDefault();
-    let value = parseInt(event.target.value)
+    const value = parseInt(event.target.value);
     this.setState({
       selectedQuantity: value,
       isOptionValue: value < 10,
@@ -35,12 +35,12 @@ class CartItem extends Component {
     this.setState({
       selectedQuantity: this.state.textQuantityValue,
       isOptionValue: this.state.textQuantityValue < 10,
-    })
-    this.props.dispatchHandleChange(this.state.textQuantityValue)
+    });
+    this.props.dispatchHandleChange(this.state.textQuantityValue);
   }
 
   get renderDropDown() {
-    let values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10+']
+    const values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10+'];
     return (
       <select
         className='drop-down-item'

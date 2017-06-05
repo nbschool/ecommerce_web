@@ -7,27 +7,27 @@ import './Cart.css';
 class Cart extends Component {
   constructor(props) {
     super(props);
-    this.dispatchHandleChange = this.dispatchHandleChange.bind(this)
+    this.dispatchHandleChange = this.dispatchHandleChange.bind(this);
   }
 
-  dispatchHandleChange(quantity) {
-    return
+  dispatchHandleChange() {
+    return;
   }
 
   render() {
     let total = 0;
     let cart = this.props.items.map((item, index) => {
-        total += (item.quantity * item.price);
-        return (
-          <CartItem
-            className='cart-item'
-            key={index}
-            item={item}
-            dispatchHandleChange={this.dispatchHandleChange} />
-        );
+      total += (item.quantity * item.price);
+      return (
+        <CartItem
+          className='cart-item'
+          key={index}
+          item={item}
+          dispatchHandleChange={this.dispatchHandleChange} />
+      );
     });
 
-    if (cart.length == 0)
+    if (cart.length === 0)
       cart = <h2>Il tuo carrello è vuoto.</h2>;
 
     return (
