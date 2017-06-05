@@ -347,7 +347,7 @@ exports[`Storyshots Login bad credentials 1`] = `
   <div
     className="box">
     <img
-      alt="User picture"
+      alt="User"
       className="profile-img"
       src="login.png" />
     <form
@@ -413,7 +413,7 @@ exports[`Storyshots Login empty login 1`] = `
   <div
     className="box">
     <img
-      alt="User picture"
+      alt="User"
       className="profile-img"
       src="login.png" />
     <form
