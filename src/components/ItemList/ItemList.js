@@ -36,7 +36,7 @@ class ItemList extends Component {
       }
 
       itemList = itemList.map((el,index) => (
-        <Item key={index} {...el} />
+        <Item key={index} {...el} setItemInCart={this.props.setItemInCart} />
       ));
 
       return (
@@ -55,6 +55,7 @@ ItemList.propTypes = {
   itemList: PropTypes.array.isRequired,
   loaded: PropTypes.bool.isRequired,
   match: PropTypes.object.isRequired,
+  setItemInCart: PropTypes.func.isRequired,
   t: PropTypes.func.isRequired,
 };
 

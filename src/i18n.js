@@ -43,6 +43,10 @@ i18n
         },
         dropDownList: {
           empty: 'No items availables'
+        },
+        item: {
+          addToCart: "Add To Cart",
+          removeFromCart: "Remove from Cart"
         }
       },
       it: {
@@ -82,6 +86,10 @@ i18n
         },
         dropDownList: {
           empty: 'Nessun items disponibile con questa ricerca'
+        },
+        item: {
+          addToCart: "Aggiungi al Carrello",
+          removeFromCart: "Rimuovi dal Carrello"
         }
       }
     },

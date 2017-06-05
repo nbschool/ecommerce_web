@@ -2,14 +2,16 @@ import { connect } from 'react-redux';
 import {
     fetchItems,
     getItems,
-    itemsLoaded
+    itemsLoaded,
+    setCart,
 } from '../modules/items';
 
 import ItemList from '../components/ItemList';
 
 
 const mapDispatchToProps = {
-  fetchItemList: () => fetchItems()
+  fetchItemList: () => fetchItems(),
+  setItemInCart: (uuid, price, numItems) => setCart(uuid, price, numItems),
 };
 
 const mapStateToProps = (state) => {
