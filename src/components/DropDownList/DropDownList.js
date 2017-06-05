@@ -7,12 +7,6 @@ import './DropDownList.css';
 
 
 class DropDownList extends Component {
-  componentDidMount() {
-    if (!this.props.loaded) {
-      this.props.fetchDropDownList();
-    }
-  }
-
   render() {
     const {t} = this.props;
 
@@ -44,7 +38,6 @@ class DropDownList extends Component {
 }
 
 DropDownList.propTypes = {
-  fetchDropDownList: PropTypes.func.isRequired,
   dropDownList: PropTypes.array.isRequired,
   loaded: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
