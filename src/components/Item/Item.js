@@ -17,10 +17,10 @@ class Item extends Component {
   setNumberItemToCart(mathOp) {
     let count = this.state.numItems;
     if (mathOp) {
-      count = count + 1;
+      count++;
     }
     else {
-      count = count - 1;
+      count--;
     }
     this.setState({
       numItems: count
