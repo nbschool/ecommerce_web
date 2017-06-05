@@ -17,10 +17,9 @@ function fetchLoginSuccess() {
   };
 }
 
-function fetchLoginFailure(errmessage) {
+function fetchLoginFailure() {
   return {
     type: LOGIN_FETCH_FAILURE,
-    payload: errmessage,
   };
 }
 
@@ -42,7 +41,7 @@ export function fetchLogin(email, password) {
         throw new Error('Unable to login');
     })
     .then(() => dispatch(fetchLoginSuccess()))
-    .catch(error => dispatch(fetchLoginFailure(error.message)));
+    .catch(() => dispatch(fetchLoginFailure()));
   };
 }
 
@@ -57,7 +56,7 @@ export const error = state => state.login.error;
 
 const initialState = {
   logged: false,
-  error: '',
+  error: false,
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -66,13 +65,13 @@ export default function reducer(state = initialState, action = {}) {
     return {
       ...state,
       logged: true,
-      error: '',
+      error: false,
     };
   case LOGIN_FETCH_FAILURE:
     return {
       ...state,
       logged: false,
-      error: action.payload,
+      error: true,
     };
   default:
     return state;
