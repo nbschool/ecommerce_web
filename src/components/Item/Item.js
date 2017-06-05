@@ -14,14 +14,9 @@ class Item extends Component {
     this.setNumberItemToCart = this.setNumberItemToCart.bind(this);
   }
 
-  setNumberItemToCart(mathOp) {
+  setNumberItemToCart(amount) {
     let count = this.state.numItems;
-    if (mathOp) {
-      count++;
-    }
-    else {
-      count--;
-    }
+    count += amount;
     this.setState({
       numItems: count
     });
@@ -42,10 +37,10 @@ class Item extends Component {
         <label>{this.state.numItems}</label>;
       btnAdd =
         <div>
-          <button className="addToCart" onClick={() => this.setNumberItemToCart(true)}>
+          <button className="addToCart" onClick={() => this.setNumberItemToCart(1)}>
             {t('item:addToCart')}
           </button>
-          <button className="removeFromCart" onClick={() => this.setNumberItemToCart(false)}>
+          <button className="removeFromCart" onClick={() => this.setNumberItemToCart(-1)}>
             {t('item:removeFromCart')}
           </button>
         </div>;
@@ -62,7 +57,7 @@ class Item extends Component {
     else if (this.state.numItems === 0 && item.availability > this.state.numItems) {
       btnAdd =
         <div>
-          <button className="addToCart" onClick={() => this.setNumberItemToCart(true)}>
+          <button className="addToCart" onClick={() => this.setNumberItemToCart(1)}>
             {t('item:addToCart')}
           </button>
           <button className="buttonDisabled" disabled>{t('item:removeFromCart')}</button>
@@ -75,7 +70,7 @@ class Item extends Component {
       btnAdd =
         <div>
           <button className="buttonDisabled" disabled>{t('item:addToCart')}</button>
-          <button className="removeFromCart" onClick={() => this.setNumberItemToCart(false)}>
+          <button className="removeFromCart" onClick={() => this.setNumberItemToCart(-1)}>
             {t('item:removeFromCart')}
           </button>
         </div>;
