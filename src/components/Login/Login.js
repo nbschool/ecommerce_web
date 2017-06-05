@@ -12,7 +12,8 @@ class Login extends Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      error: false,
     };
   }
 
@@ -26,6 +27,7 @@ class Login extends Component {
   submitLogin(event) {
     event.preventDefault();
     this.props.login(this.state.email, this.state.password);
+    this.setState({error: !this.props.logged});
   }
 
   render() {
@@ -40,7 +42,7 @@ class Login extends Component {
         <div className="box">
           <img className="profile-img" src={login} alt="User" />
           <form className="form-signin" onSubmit={(event) => this.submitLogin(event)}>
-            <div className="error">{((this.props.error) ? t(`login:error.form`) : '')}</div>
+            <div className="error">{((this.state.error) ? t(`login:error.form`) : '')}</div>
             <input type="email" className="form-control"
               placeholder={t('login:email_placeholder')} required
               name="email" value={this.state.email}
@@ -66,7 +68,6 @@ class Login extends Component {
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,
-  error: PropTypes.bool.isRequired,
   logged: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
 };

@@ -136,7 +136,6 @@ storiesOf('Login', module)
       <Login
       lng="it"
       logged={false}
-      error={false}
       login={action('call to login')} />
     );
   })
@@ -145,16 +144,6 @@ storiesOf('Login', module)
     return (
       <Login
         logged={false}
-        error={false}
-        login={action('call to login')} />
-    );
-  })
-  .add('bad credentials', () => {
-    i18n.changeLanguage("en");
-    return (
-      <Login
-        logged={false}
-        error={true}
         login={action('call to login')} />
     );
   });

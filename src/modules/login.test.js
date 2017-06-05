@@ -39,7 +39,7 @@ test('fetch login failure', done => {
   });
   const store = mockStore();
   const expectedActions = [
-    testing.fetchLoginFailure('Unable to login'),
+    testing.fetchLoginFailure(),
   ];
 
   const email = "mario.rossi@email.com";

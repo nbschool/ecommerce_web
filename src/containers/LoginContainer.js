@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import {
-    error,
     fetchLogin,
     logged,
 } from '../modules/login';
@@ -14,7 +13,6 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => {
   return {
-    error: error(state),
     logged: logged(state),
   };
 };

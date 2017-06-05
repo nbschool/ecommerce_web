@@ -49,14 +49,12 @@ export function fetchLogin(email, password) {
 // Selectors
 
 export const logged = state => state.login.logged;
-export const error = state => state.login.error;
 
 // ------------------------------------
 // Store & reducer
 
 const initialState = {
   logged: false,
-  error: false,
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -65,13 +63,11 @@ export default function reducer(state = initialState, action = {}) {
     return {
       ...state,
       logged: true,
-      error: false,
     };
   case LOGIN_FETCH_FAILURE:
     return {
       ...state,
       logged: false,
-      error: true,
     };
   default:
     return state;
