@@ -8,21 +8,35 @@ class Cart extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      value: '',
     };
+  }
+
+  componentDidMount() {
+    this.state = {value: ''}
+    this.dispatchHandleChange = this.dispatchHandleChange.bind(this)
+  }
+
+  dispatchHandleChange(quantity) {
+    this.setState({value: quantity})
   }
 
   render() {
     let subtotal, total = 0;
-
     const cart = this.props.items.length > 0 ? (
       this.props.items.map((item, index) => {
-        subtotal = item.quantity * item.price;
+        subtotal = this.state.value * item.price;
         total += subtotal;
+        console.log(this.state.value)
+        console.log(subtotal)
+        console.log(total)
         return (
           <CartItem
             className='cart-item'
             key={index}
-            item={item}/>
+            item={item}
+            dispatchHandleChange={this.dispatchHandleChange}
+            value={this.state.value} />
         );
       })
     ) : (

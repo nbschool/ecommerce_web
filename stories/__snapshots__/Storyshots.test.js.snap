@@ -1051,7 +1051,7 @@ exports[`Storyshots Login empty login en 1`] = `
       onSubmit={[Function]}>
       <div
         className="error">
-        
+
       </div>
       <input
         className="form-control"
@@ -1081,7 +1081,7 @@ exports[`Storyshots Login empty login en 1`] = `
           <input
             type="checkbox"
             value="ricordami" />
-           
+
           Remember me
         </label>
         <a
@@ -1118,7 +1118,7 @@ exports[`Storyshots Login empty login it 1`] = `
       onSubmit={[Function]}>
       <div
         className="error">
-        
+
       </div>
       <input
         className="form-control"
@@ -1148,7 +1148,7 @@ exports[`Storyshots Login empty login it 1`] = `
           <input
             type="checkbox"
             value="ricordami" />
-           
+
           Ricordami
         </label>
         <a
@@ -1316,7 +1316,7 @@ exports[`Storyshots Register empty form en 1`] = `
       onSubmit={[Function]}>
       <div
         className="error">
-        
+
       </div>
       <input
         className="form-control "
@@ -1399,7 +1399,7 @@ exports[`Storyshots Register empty form it 1`] = `
       onSubmit={[Function]}>
       <div
         className="error">
-        
+
       </div>
       <input
         className="form-control "
@@ -2668,4 +2668,533 @@ exports[`Storyshots SidebarMenu default 1`] = `
     </li>
   </ul>
 </section>
+`;
+exports[`Storyshots cart one item 1`] = `
+<div>
+  <h1>
+    Carrello
+  </h1>
+  <div
+    className="cart">
+    <div>
+      <article
+        className="Item">
+        <div
+          className="card">
+          <div
+            className="image">
+            <img
+              alt="Placeat voluptates repellendus"
+              src="placehold.png" />
+          </div>
+          <div
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus
+            </div>
+            <div
+              className="price">
+              €
+              233.34
+            </div>
+            <div
+              className="description block-with-text" />
+          </div>
+        </div>
+      </article>
+      <img
+        src={null} />
+      <h3>
+        Quantità =
+        5
+      </h3>
+      <h3>
+        Subtotale =
+        1166.7
+      </h3>
+      <select
+        onChange={[Function]}
+        value={undefined}>
+        <option
+          value="1">
+          1
+        </option>
+        <option
+          value="2">
+          2
+        </option>
+        <option
+          value="3">
+          3
+        </option>
+        <option
+          value="4">
+          4
+        </option>
+        <option
+          value="5">
+          5
+        </option>
+        <option
+          value="6">
+          6
+        </option>
+        <option
+          value="7">
+          7
+        </option>
+        <option
+          value="8">
+          8
+        </option>
+        <option
+          value="9">
+          9
+        </option>
+        <option
+          value="10+">
+          10+
+        </option>
+      </select>
+    </div>
+  </div>
+  <h3>
+    Totale =
+    1166.7
+     €
+  </h3>
+  <button>
+    Acquista ora
+  </button>
+</div>
+`;
+
+exports[`Storyshots cart with many items 1`] = `
+<div>
+  <h1>
+    Carrello
+  </h1>
+  <div
+    className="cart">
+    <div>
+      <article
+        className="Item">
+        <div
+          className="card">
+          <div
+            className="image">
+            <img
+              alt="Placeat voluptates repellendus veniam."
+              src="placehold.png" />
+          </div>
+          <div
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              0
+            </div>
+            <div
+              className="description block-with-text" />
+          </div>
+        </div>
+      </article>
+      <img
+        src={null} />
+      <h3>
+        Quantità =
+        0
+      </h3>
+      <h3>
+        Subtotale =
+        0
+      </h3>
+      <select
+        onChange={[Function]}
+        value={undefined}>
+        <option
+          value="1">
+          1
+        </option>
+        <option
+          value="2">
+          2
+        </option>
+        <option
+          value="3">
+          3
+        </option>
+        <option
+          value="4">
+          4
+        </option>
+        <option
+          value="5">
+          5
+        </option>
+        <option
+          value="6">
+          6
+        </option>
+        <option
+          value="7">
+          7
+        </option>
+        <option
+          value="8">
+          8
+        </option>
+        <option
+          value="9">
+          9
+        </option>
+        <option
+          value="10+">
+          10+
+        </option>
+      </select>
+    </div>
+    <div>
+      <article
+        className="Item">
+        <div
+          className="card">
+          <div
+            className="image">
+            <img
+              alt="Placeat voluptates repellendus veniam."
+              src="placehold.png" />
+          </div>
+          <div
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              30
+            </div>
+            <div
+              className="description block-with-text" />
+          </div>
+        </div>
+      </article>
+      <img
+        src={null} />
+      <h3>
+        Quantità =
+        1
+      </h3>
+      <h3>
+        Subtotale =
+        30
+      </h3>
+      <select
+        onChange={[Function]}
+        value={undefined}>
+        <option
+          value="1">
+          1
+        </option>
+        <option
+          value="2">
+          2
+        </option>
+        <option
+          value="3">
+          3
+        </option>
+        <option
+          value="4">
+          4
+        </option>
+        <option
+          value="5">
+          5
+        </option>
+        <option
+          value="6">
+          6
+        </option>
+        <option
+          value="7">
+          7
+        </option>
+        <option
+          value="8">
+          8
+        </option>
+        <option
+          value="9">
+          9
+        </option>
+        <option
+          value="10+">
+          10+
+        </option>
+      </select>
+    </div>
+    <div>
+      <article
+        className="Item">
+        <div
+          className="card">
+          <div
+            className="image">
+            <img
+              alt="Placeat voluptates repellendus veniam."
+              src="placehold.png" />
+          </div>
+          <div
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              60
+            </div>
+            <div
+              className="description block-with-text" />
+          </div>
+        </div>
+      </article>
+      <img
+        src={null} />
+      <h3>
+        Quantità =
+        2
+      </h3>
+      <h3>
+        Subtotale =
+        120
+      </h3>
+      <select
+        onChange={[Function]}
+        value={undefined}>
+        <option
+          value="1">
+          1
+        </option>
+        <option
+          value="2">
+          2
+        </option>
+        <option
+          value="3">
+          3
+        </option>
+        <option
+          value="4">
+          4
+        </option>
+        <option
+          value="5">
+          5
+        </option>
+        <option
+          value="6">
+          6
+        </option>
+        <option
+          value="7">
+          7
+        </option>
+        <option
+          value="8">
+          8
+        </option>
+        <option
+          value="9">
+          9
+        </option>
+        <option
+          value="10+">
+          10+
+        </option>
+      </select>
+    </div>
+    <div>
+      <article
+        className="Item">
+        <div
+          className="card">
+          <div
+            className="image">
+            <img
+              alt="Placeat voluptates repellendus veniam."
+              src="placehold.png" />
+          </div>
+          <div
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              90
+            </div>
+            <div
+              className="description block-with-text" />
+          </div>
+        </div>
+      </article>
+      <img
+        src={null} />
+      <h3>
+        Quantità =
+        3
+      </h3>
+      <h3>
+        Subtotale =
+        270
+      </h3>
+      <select
+        onChange={[Function]}
+        value={undefined}>
+        <option
+          value="1">
+          1
+        </option>
+        <option
+          value="2">
+          2
+        </option>
+        <option
+          value="3">
+          3
+        </option>
+        <option
+          value="4">
+          4
+        </option>
+        <option
+          value="5">
+          5
+        </option>
+        <option
+          value="6">
+          6
+        </option>
+        <option
+          value="7">
+          7
+        </option>
+        <option
+          value="8">
+          8
+        </option>
+        <option
+          value="9">
+          9
+        </option>
+        <option
+          value="10+">
+          10+
+        </option>
+      </select>
+    </div>
+    <div>
+      <article
+        className="Item">
+        <div
+          className="card">
+          <div
+            className="image">
+            <img
+              alt="Placeat voluptates repellendus veniam."
+              src="placehold.png" />
+          </div>
+          <div
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              120
+            </div>
+            <div
+              className="description block-with-text" />
+          </div>
+        </div>
+      </article>
+      <img
+        src={null} />
+      <h3>
+        Quantità =
+        4
+      </h3>
+      <h3>
+        Subtotale =
+        480
+      </h3>
+      <select
+        onChange={[Function]}
+        value={undefined}>
+        <option
+          value="1">
+          1
+        </option>
+        <option
+          value="2">
+          2
+        </option>
+        <option
+          value="3">
+          3
+        </option>
+        <option
+          value="4">
+          4
+        </option>
+        <option
+          value="5">
+          5
+        </option>
+        <option
+          value="6">
+          6
+        </option>
+        <option
+          value="7">
+          7
+        </option>
+        <option
+          value="8">
+          8
+        </option>
+        <option
+          value="9">
+          9
+        </option>
+        <option
+          value="10+">
+          10+
+        </option>
+      </select>
+    </div>
+  </div>
+  <h3>
+    Totale =
+    900
+     €
+  </h3>
+  <button>
+    Acquista ora
+  </button>
+</div>
 `;

@@ -8,23 +8,27 @@ class CartItem extends Component {
     super(props);
     this.state = {
       isOptionValue: true,
-      selectedQuantity: '',
-      value: '',
+      selectedQuantity: this.props.item.quantity,
+      // value: this.props.item.quantity,
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     this.setState({selectedQuantity: event.target.value});
+    this.props.dispatchHandleChange(event.target.value);
     if (event.target.value === '10+') {
       this.setState({isOptionValue: false});
     }
-    this.setState({value: event.target.value});
+    if (event.target.value != '10+' && event.target.value < '10+') {
+      this.setState({isOptionValue: false});
+    }
+    // this.setState({value: event.target.value});
   }
 
   renderDropDown() {
     return (
-      <select className='drop-down-item' onChange={this.handleChange} value={this.state.value}>
+      <select className='drop-down-item' onChange={this.handleChange} value={this.state.selectedQuantity}>
         {
           ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10+'].map(
             (el, index) => <option value={el} key={index}>{el}</option>
@@ -38,11 +42,13 @@ class CartItem extends Component {
     return (
       <div>
         <input
-          className='input-quantity' type='text'
-          value={this.state.value}
+          className='input-quantity'
+          type="number" pattern="[0-9]*"
+          inputmode="numeric"
+          value={this.state.selectedQuantity}
           onChange={this.handleChange}>
         </input>
-        <button className='update-cart-item'>Aggiorna</button>
+        <button className='update-cart-item' onClick={this.handleChange}>Aggiorna</button>
       </div>
     );
   }
@@ -58,9 +64,9 @@ class CartItem extends Component {
           </div>
         </div>
         <div className='cart-item-bottom'>
-          <div className='class-name-quantity'>Quantità = {this.props.item.quantity}</div>
+          <div className='class-name-quantity'>Quantità = {this.state.selectedQuantity}</div>
           <div className='class-name-subtotal'>
-            Subtotale = {this.props.item.price * this.props.item.quantity} €
+            Subtotale = {this.props.item.price * this.state.selectedQuantity} €
           </div>
           {
             this.state.isOptionValue ? this.renderDropDown() : this.renderTextInput()
@@ -75,6 +81,7 @@ class CartItem extends Component {
 
 CartItem.propTypes = {
   item: PropTypes.array,
+  dispatchHandleChange: PropTypes.func.isRequired,
 };
 
 export default CartItem;
