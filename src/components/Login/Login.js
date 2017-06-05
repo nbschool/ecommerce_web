@@ -12,7 +12,7 @@ class Login extends Component {
 
     this.state = {
       email: '',
-      password: '',
+      password: ''
     };
   }
 
@@ -42,7 +42,7 @@ class Login extends Component {
         <div className="box">
           <img className="profile-img" src={login} alt="User" />
           <form className="form-signin" onSubmit={(event) => this.submitLogin(event)}>
-            <div className="error">{this.props.error ? t('login:error.form') : ''}</div>
+            <div className="error">{((this.props.error) ? t(`login:error.form`) : '')}</div>
             <input type="email" className="form-control"
               placeholder={t('login:email_placeholder')} required
               name="email" value={this.state.email}
