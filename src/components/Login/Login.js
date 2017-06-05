@@ -29,11 +29,9 @@ class Login extends Component {
   }
 
   render() {
-
     if (this.props.logged) {
-      return <Redirect to="/"/>
+      return <Redirect to="/"/>;
     }
-    
     const {t} = this.props;
 
     return (

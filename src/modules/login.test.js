@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
 
-import reducer, {
+import {
   fetchLogin,
   testing,
 } from './login';
@@ -14,7 +14,6 @@ beforeEach(() => {
 });
 
 test('fetch login with success', done => {
-
   fetchMock.post(`${testing.base_url}/auth/login/`, {
     status: 200,
     body: {success: true},

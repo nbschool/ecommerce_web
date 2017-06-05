@@ -5,7 +5,7 @@ import { I18nextProvider } from 'react-i18next';
 import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import { autoRehydrate, persistStore } from 'redux-persist'
+import { autoRehydrate, persistStore } from 'redux-persist';
 
 import thunkMiddleware from 'redux-thunk';
 
@@ -32,7 +32,7 @@ const store = createStore(
 persistStore(
   store,
   { whitelist: ['login'] },
-)
+);
 
 const CATEGORIES = [
       {name: 'abbigliamento uomo', id: 1},

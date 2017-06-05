@@ -25,19 +25,19 @@ function fetchLoginFailure() {
 
 export function fetchLogin(email, password) {
   return dispatch => {
-    return fetch(`${BASE_URL}/auth/login/`, { 
+    return fetch(`${BASE_URL}/auth/login/`, {
       method: 'post',
       headers: {
-       'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        'email': email,
-        'password': password,
+        email: email,
+        password: password,
       }),
       ...crendetialParams
     })
     .then(response => {
-      if(!response.ok)
+      if (!response.ok)
         throw new Error('Unable to login');
     })
     .then(() => dispatch(fetchLoginSuccess()))
