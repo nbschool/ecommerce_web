@@ -18,6 +18,7 @@ import i18n from './i18n'; // initialized i18next instance
 import CategoryMenu from './components/CategoryMenu';
 import ItemList from './containers/ItemListContainer';
 import Login from './containers/LoginContainer';
+import Cart from './containers/CartContainer';
 
 const store = createStore(
   rootReducer,
@@ -47,6 +48,8 @@ const routes = (
       <Route exact path="/" component={ItemList}/>
       <Route exact path="/login" component={Login}/>
       <Route path="/:category" component={ItemList}/>
+      <Route exact path="/carrello" component={Cart}/>
+
     </App>
   </Router>
 );
