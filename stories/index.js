@@ -230,7 +230,6 @@ storiesOf('SearchBar', module)
           search={action('call to dropDownList')} />
         <DropDownList
           dropDownList={dropDownList}
-          fetchDropDownList={action('fetch dropDownList one item')}
           loaded={true} />
       </div>
     );
@@ -250,7 +249,6 @@ storiesOf('SearchBar', module)
           search={action('call to dropDownList')} />
         <DropDownList
           dropDownList={dropDownList}
-          fetchDropDownList={action('fetch dropDownList many items item')}
           loaded={true} />
       </div>
     );
@@ -275,7 +273,6 @@ storiesOf('SearchBar', module)
           search={action('call to dropDownList many items')} />
         <DropDownList
           dropDownList={dropDownList}
-          fetchDropDownList={action('fetch dropDownList one item')}
           loaded={true} />
       </div>
     );
@@ -315,7 +312,6 @@ storiesOf('SearchBar', module)
           search={action('call to dropDownList many items')} />
         <DropDownList
           dropDownList={dropDownList}
-          fetchDropDownList={action('fetch dropDownList one item')}
           loaded={true} />
         <I18nextProvider i18n={i18n}>
           <ItemList
@@ -349,7 +345,6 @@ storiesOf('DropDownList', module)
     return (
       <DropDownList
         dropDownList={dropDownList}
-        fetchDropDownList={action('fetch dropDownList empty')}
         loaded={false} />
     );
   })
@@ -358,7 +353,6 @@ storiesOf('DropDownList', module)
     return (
       <DropDownList
         dropDownList={dropDownList}
-        fetchDropDownList={action('fetch dropDownList wrong search')}
         loaded={true} />
     );
   })
@@ -373,7 +367,6 @@ storiesOf('DropDownList', module)
     return (
       <DropDownList
         dropDownList={dropDownList}
-        fetchDropDownList={action('fetch DropDownList with one item')}
         loaded={true} />
     );
   })
@@ -394,7 +387,6 @@ storiesOf('DropDownList', module)
     return (
       <DropDownList
         dropDownList={dropDownList}
-        fetchDropDownList={action('fetch DropDownList with one item')}
         loaded={true} />
     );
   });
