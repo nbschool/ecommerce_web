@@ -1,35 +1,39 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import { translate } from 'react-i18next';
 
 import placehold from './placehold.png';
 import './Item.css';
 
-const Item = ({uuid, name, price, description, pictureUrl, tagStock}) => {
-  let emojiStock, textStock;
-  if (tagStock) {
-    emojiStock = '✅';
-    textStock = 'In Stock';
-  } else {
-    emojiStock = '❌';
-    textStock = 'Out of Stock';
+class Item extends Component {
+  render() {
+    const {t} = this.props;
+    let emojiStock, textStock;
+    if (this.props.tagStock) {
+      emojiStock = '✅';
+      textStock = t('item:textStock');
+    } else {
+      emojiStock = '❌';
+      textStock = t('item:textStock');
+    }
+    return (
+      <article key={this.props.uuid} className="Item">
+        <div className="card">
+          <div className="image">
+            <img src={this.props.pictureUrl ? this.props.pictureUrl : placehold} alt={this.props.name} />
+          </div>
+          <div className="info">
+            <div className="name">{this.props.name}</div>
+            <div className="price">€{this.props.price}</div>
+            <div className="description block-with-text">{this.props.description}</div>
+          </div>
+          <div className="in_Stock">
+            {emojiStock}<p>{textStock}</p>
+          </div>
+        </div>
+      </article>
+    );
   }
-  return (
-    <article key={uuid} className="Item">
-      <div className="card">
-        <div className="image">
-          <img src={pictureUrl ? pictureUrl : placehold} alt={name} />
-        </div>
-        <div className="info">
-          <div className="name">{name}</div>
-          <div className="price">€{price}</div>
-          <div className="description block-with-text">{description}</div>
-        </div>
-        <div className="in_Stock">
-          {emojiStock}<p>{textStock}</p>
-        </div>
-      </div>
-    </article>
-  );
 };
 
 Item.propTypes = {
@@ -40,8 +44,9 @@ Item.propTypes = {
   pictureUrl: PropTypes.string,
   category: PropTypes.string.isRequired,
   emojiStock: PropTypes.string.isRequired,
-  tagStock: PropTypes.boolean.isRequired,
+  tagStock: PropTypes.bool.isRequired,
   textStock: PropTypes.string.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
-export default Item;
+export default translate('item')(Item);
