@@ -193,7 +193,6 @@ export default function reducer(state = initialState, action = {}) {
         [action.payload.uuid]: {...action.payload}
       },
     };
-
   case SEARCH_ITEMS_SUCCESS:
     return {
       ...state,
@@ -210,7 +209,7 @@ export default function reducer(state = initialState, action = {}) {
       ...state,
       searchResults: [],
       searchStatus: action.payload.status
-    }
+    };
   default:
     return state;
   }

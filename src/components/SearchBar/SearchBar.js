@@ -50,7 +50,6 @@ class SearchBar extends Component {
     }
 
     search(value);
-
   }
 
   handleFocusChange(event) {
