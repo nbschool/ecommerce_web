@@ -34,6 +34,13 @@ const LanguageDecorator = (story) => (
 );
 addDecorator(LanguageDecorator);
 storiesOf('cart', module)
+  .add('no items', () => {
+    const items = [];
+    return (
+      <Cart
+        cart={items} />
+    );
+  })
   .add('one item', () => {
     const items = [{
       uuid: 'ert534534wertwert',
