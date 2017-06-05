@@ -8,29 +8,46 @@ class CartItem extends Component {
     super(props);
     this.state = {
       isOptionValue: true,
+      item: this.props.item,
       selectedQuantity: this.props.item.quantity,
-      // value: this.props.item.quantity,
+      textQuantityValue: this.props.item.quantity,
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleUpdateClick = this.handleUpdateClick.bind(this);
   }
 
   handleChange(event) {
-    this.setState({selectedQuantity: event.target.value});
+    event.preventDefault();
+    let value = parseInt(event.target.value)
+    this.setState({
+      selectedQuantity: value,
+      isOptionValue: value < 10,
+    });
     this.props.dispatchHandleChange(event.target.value);
-    if (event.target.value === '10+') {
-      this.setState({isOptionValue: false});
-    }
-    if (event.target.value != '10+' && event.target.value < '10+') {
-      this.setState({isOptionValue: false});
-    }
-    // this.setState({value: event.target.value});
   }
 
-  renderDropDown() {
+  handleTextChange(event) {
+    this.setState({textQuantityValue: event.target.value});
+  }
+
+  handleUpdateClick() {
+    this.setState({
+      selectedQuantity: this.state.textQuantityValue,
+      isOptionValue: this.state.textQuantityValue < 10,
+    })
+    this.props.dispatchHandleChange(this.state.textQuantityValue)
+  }
+
+  get renderDropDown() {
+    let values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10+']
     return (
-      <select className='drop-down-item' onChange={this.handleChange} value={this.state.selectedQuantity}>
+      <select
+        className='drop-down-item'
+        onChange={this.handleChange}
+        value={this.state.selectedQuantity}>
         {
-          ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10+'].map(
+          values.map(
             (el, index) => <option value={el} key={index}>{el}</option>
           )
         }
@@ -38,17 +55,18 @@ class CartItem extends Component {
     );
   }
 
-  renderTextInput() {
+  get renderTextInput() {
     return (
       <div>
         <input
           className='input-quantity'
-          type="number" pattern="[0-9]*"
-          inputmode="numeric"
-          value={this.state.selectedQuantity}
-          onChange={this.handleChange}>
+          type="number"
+          pattern="[0-9]*"
+          inputMode="numeric"
+          value={this.state.textQuantityValue}
+          onChange={this.handleTextChange}>
         </input>
-        <button className='update-cart-item' onClick={this.handleChange}>Aggiorna</button>
+        <button className='update-cart-item' onClick={this.handleUpdateClick}>Aggiorna</button>
       </div>
     );
   }
@@ -69,7 +87,7 @@ class CartItem extends Component {
             Subtotale = {this.props.item.price * this.state.selectedQuantity} €
           </div>
           {
-            this.state.isOptionValue ? this.renderDropDown() : this.renderTextInput()
+            this.state.isOptionValue ? this.renderDropDown : this.renderTextInput
           }
           <button className='remove-cart-item'>Rimuovi</button>
         </div>
