@@ -7,7 +7,7 @@ const ITEMS_FETCH_SUCCESS = 'ITEMS_FETCH_SUCCESS';
 const ITEMS_FETCH_FAILURE = 'ITEMS_FETCH_FAILURE';
 const PICTURE_FETCH_SUCCESS = 'PICTURE_FETCH_SUCCESS';
 const PICTURE_FETCH_FAILURE = 'PICTURE_FETCH_FAILURE';
-const SET_CART = 'SET_CART';
+const UPDATE_CART = 'UPDATE_CART';
 
 
 //
@@ -51,7 +51,7 @@ function fetchPictureFailure(errmessage) {
 
 export function setCart(uuid, price, numItems) {
   return {
-    type: SET_CART,
+    type: UPDATE_CART,
     payload: {
       uuid: uuid,
       price: price,
@@ -145,7 +145,7 @@ export default function reducer(state = initialState, action = {}) {
       ...state,
       items: addPictureToItem(action.payload, state.items),
     };
-  case SET_CART:
+  case UPDATE_CART:
     return {
       ...state,
       cart: action.payload
