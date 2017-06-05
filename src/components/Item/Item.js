@@ -21,7 +21,7 @@ class Item extends Component {
       numItems: count
     });
 
-    this.props.setItemInCart(this.props.uuid, this.props.price, this.state.numItems);
+    this.props.setItemInCart(this.props.uuid, this.props.price, count);
   }
 
   render() {

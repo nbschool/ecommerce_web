@@ -148,7 +148,10 @@ export default function reducer(state = initialState, action = {}) {
   case UPDATE_CART:
     return {
       ...state,
-      cart: {...state.cart, [action.payload.uuid]: {...action.payload}},
+      cart: {
+        ...state.cart,
+        [action.payload.uuid]: {...action.payload}
+      },
     };
 
   default:
