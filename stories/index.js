@@ -407,7 +407,7 @@ storiesOf('SearchBox', module)
     return (
       <SearchBox
         search={action(`search`)}
-        emptySearchresults={action('emptying stored results')}
+        emptySearchResults={action('emptying stored results')}
         searchResults={searchResults}
       />
     );
@@ -423,7 +423,7 @@ storiesOf('SearchBox', module)
     return (
       <SearchBox
         search={action(`search`)}
-        emptySearchresults={action('emptying stored results')}
+        emptySearchResults={action('emptying stored results')}
         searchResults={searchResults}
       />
     );
