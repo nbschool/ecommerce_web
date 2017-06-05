@@ -18,6 +18,8 @@ import Register from '../src/components/Register';
 import SearchBar from '../src/components/SearchBar';
 import DropDownItem from '../src/components/DropDownItem';
 import DropDownList from '../src/components/DropDownList';
+import SearchBox from '../src/components/SearchBox';
+
 
 registerScissors(defaultDevices);
 
@@ -211,6 +213,8 @@ storiesOf('SearchBar', module)
     i18n.changeLanguage("en");
     return (
       <SearchBar
+
+        emptySearchresults={action('empty stored search results')}
         search={action('call to search')} />
     );
   })
@@ -218,6 +222,8 @@ storiesOf('SearchBar', module)
     i18n.changeLanguage("it");
     return (
       <SearchBar
+
+        emptySearchresults={action('empty stored search results')}
         search={action('call to search')} />
     );
   })
@@ -227,6 +233,7 @@ storiesOf('SearchBar', module)
     return (
       <div>
         <SearchBar
+          emptySearchresults={action('empty stored search results')}
           search={action('call to dropDownList')} />
         <DropDownList
           dropDownList={dropDownList}
@@ -246,6 +253,7 @@ storiesOf('SearchBar', module)
     return (
       <div>
         <SearchBar
+          emptySearchresults={action('empty stored search results')}
           search={action('call to dropDownList')} />
         <DropDownList
           dropDownList={dropDownList}
@@ -270,6 +278,7 @@ storiesOf('SearchBar', module)
     return (
       <div>
         <SearchBar
+          emptySearchresults={action('empty stored search results')}
           search={action('call to dropDownList many items')} />
         <DropDownList
           dropDownList={dropDownList}
@@ -309,6 +318,7 @@ storiesOf('SearchBar', module)
     return (
       <div>
         <SearchBar
+          emptySearchresults={action('empty stored search results')}
           search={action('call to dropDownList many items')} />
         <DropDownList
           dropDownList={dropDownList}
@@ -388,5 +398,33 @@ storiesOf('DropDownList', module)
       <DropDownList
         dropDownList={dropDownList}
         loaded={true} />
+    );
+  });
+
+storiesOf('SearchBox', module)
+  .add('No results', () => {
+    const searchResults = [];
+    return (
+      <SearchBox
+        search={action(`search`)}
+        emptySearchresults={action('emptying stored results')}
+        searchResults={searchResults}
+      />
+    );
+  })
+  .add('With results', () => {
+    const searchResults = [{
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus veniam.',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34,
+      pictureUrl: null
+    }];
+    return (
+      <SearchBox
+        search={action(`search`)}
+        emptySearchresults={action('emptying stored results')}
+        searchResults={searchResults}
+      />
     );
   });
