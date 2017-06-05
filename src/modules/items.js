@@ -123,7 +123,7 @@ export const itemsLoaded = state => state.items.loaded;
 
 const initialState = {
   items: [],
-  cart: [],
+  cart: {},
   loaded: false,
 };
 
@@ -148,7 +148,7 @@ export default function reducer(state = initialState, action = {}) {
   case UPDATE_CART:
     return {
       ...state,
-      cart: action.payload
+      cart: {...state.cart, [action.payload.uuid]: {...action.payload}},
     };
 
   default:
