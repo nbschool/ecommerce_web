@@ -1,4 +1,4 @@
-import crendetialParams from './utils';
+import { credentialParams } from './utils';
 
 // ------------------------------------
 // Constants
@@ -34,7 +34,7 @@ export function fetchLogin(email, password) {
         email: email,
         password: password,
       }),
-      ...crendetialParams
+      ...credentialParams,
     })
     .then(response => {
       if (!response.ok)
