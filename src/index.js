@@ -19,6 +19,8 @@ import CategoryMenu from './components/CategoryMenu';
 import ItemList from './containers/ItemListContainer';
 import Login from './containers/LoginContainer';
 
+import UserInfo from './containers/UserInfoContainer';
+
 const store = createStore(
   rootReducer,
   undefined,
@@ -44,6 +46,7 @@ const routes = (
   <Router>
     <App>
       <CategoryMenu listCategories={CATEGORIES}/>
+      <UserInfo/>
       <Route exact path="/" component={ItemList}/>
       <Route exact path="/login" component={Login}/>
       <Route path="/:category" component={ItemList}/>
