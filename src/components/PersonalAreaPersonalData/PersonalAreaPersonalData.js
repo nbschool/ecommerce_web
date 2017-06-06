@@ -24,8 +24,8 @@ class PersonalAreaPersonalData extends Component {
     const {t} = this.props;
 
     return (
-      <div className="PersonalAreaPersonalData">
-        <h3>{t('personalArea:dataArea')}</h3>
+      <section className="PersonalAreaPersonalData">
+        <h1>{t('personalArea:dataArea')}</h1>
         <form className="form" onSubmit={(event) => this.submitData(event)}>
           <div>
             <label>{t('personalArea:dataArea_first_name')}</label>
@@ -39,21 +39,20 @@ class PersonalAreaPersonalData extends Component {
             <label>{t('personalArea:dataArea_email')}</label>
             <input className="form-control" type="email" value={this.state.email} />
           </div>
-
           <div>
             <label></label>
             <input type="submit" value={t('personalArea:dataArea_save')} />
           </div>
         </form>
-      </div>
+      </section>
     );
   }
 }
 
 PersonalAreaPersonalData.propTypes = {
-  t: PropTypes.func.isRequired,
   personalData: PropTypes.object.isRequired,
   saveData: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
 export default translate('login')(PersonalAreaPersonalData);

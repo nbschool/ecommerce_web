@@ -28,11 +28,11 @@ class SidebarMenu extends Component {
     });
 
     return (
-      <div className="SidebarMenu">
+      <section className="SidebarMenu">
         <ul>
           {menu}
         </ul>
-      </div>
+      </section>
     );
   }
 }

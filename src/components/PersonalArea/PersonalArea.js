@@ -34,31 +34,31 @@ class PersonalArea extends Component {
     if (this.state.activeArea === "adressesarea")
       area = <PersonalAreaAddressData/>;
     return (
-      <div className="PersonalArea">
-        <h3>{t('personalArea:title')}</h3>
+      <section className="PersonalArea">
+        <h1>{t('personalArea:title')}</h1>
         <div className="content">
-          <div className="sidebar">
+          <aside>
             <SidebarMenu
               active={this.props.active}
               menuList={this.props.menuList}
               setActiveArea={(area) => this.setActiveArea(area)} />
-          </div>
-          <div className="main">
+          </aside>
+          <article>
             {area}
-          </div>
+          </article>
         </div>
-      </div>
+      </section>
     );
   }
 }
 
 PersonalArea.propTypes = {
-  t: PropTypes.func.isRequired,
   active: PropTypes.string.isRequired,
   setActiveArea: PropTypes.func.isRequired,
   menuList: PropTypes.array.isRequired,
   personalData: PropTypes.object.isRequired,
   saveData: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
 export default translate('personalArea')(PersonalArea);
