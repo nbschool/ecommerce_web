@@ -1198,16 +1198,15 @@ exports[`Storyshots Login empty login it 1`] = `
 `;
 
 exports[`Storyshots PersonalArea default 1`] = `
-<div
+<section
   className="PersonalArea">
-  <h3>
+  <h1>
     Personal Area
-  </h3>
+  </h1>
   <div
     className="content">
-    <div
-      className="sidebar">
-      <div
+    <aside>
+      <section
         className="SidebarMenu">
         <ul>
           <li
@@ -1227,15 +1226,14 @@ exports[`Storyshots PersonalArea default 1`] = `
             </a>
           </li>
         </ul>
-      </div>
-    </div>
-    <div
-      className="main">
-      <div
+      </section>
+    </aside>
+    <article>
+      <section
         className="PersonalAreaPersonalData">
-        <h3>
+        <h1>
           Edit your personal data
-        </h3>
+        </h1>
         <form
           className="form"
           onSubmit={[Function]}>
@@ -1273,27 +1271,27 @@ exports[`Storyshots PersonalArea default 1`] = `
               value="Save" />
           </div>
         </form>
-      </div>
-    </div>
+      </section>
+    </article>
   </div>
-</div>
+</section>
 `;
 
 exports[`Storyshots PersonalAreaAddressData default 1`] = `
-<div
+<section
   className="PersonalAreaAddressData">
-  <h3>
+  <h1>
     Modifica i tuoi dati di spedizione
-  </h3>
-</div>
+  </h1>
+</section>
 `;
 
 exports[`Storyshots PersonalAreaPersonalData default 1`] = `
-<div
+<section
   className="PersonalAreaPersonalData">
-  <h3>
+  <h1>
     Modifica i tuoi dati personali
-  </h3>
+  </h1>
   <form
     className="form"
     onSubmit={[Function]}>
@@ -1331,7 +1329,7 @@ exports[`Storyshots PersonalAreaPersonalData default 1`] = `
         value="Salva" />
     </div>
   </form>
-</div>
+</section>
 `;
 
 exports[`Storyshots Register empty form en 1`] = `
@@ -2697,7 +2695,7 @@ exports[`Storyshots SearchBox With results 1`] = `
 `;
 
 exports[`Storyshots SidebarMenu default 1`] = `
-<div
+<section
   className="SidebarMenu">
   <ul>
     <li
@@ -2717,5 +2715,5 @@ exports[`Storyshots SidebarMenu default 1`] = `
       </a>
     </li>
   </ul>
-</div>
+</section>
 `;
