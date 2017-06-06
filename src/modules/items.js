@@ -1,3 +1,5 @@
+import crendetialParams from './utils';
+
 // ------------------------------------
 // Constants
 
@@ -7,6 +9,7 @@ const ITEMS_FETCH_SUCCESS = 'ITEMS_FETCH_SUCCESS';
 const ITEMS_FETCH_FAILURE = 'ITEMS_FETCH_FAILURE';
 const PICTURE_FETCH_SUCCESS = 'PICTURE_FETCH_SUCCESS';
 const PICTURE_FETCH_FAILURE = 'PICTURE_FETCH_FAILURE';
+const UPDATE_CART = 'UPDATE_CART';
 
 
 //
@@ -48,6 +51,17 @@ function fetchPictureFailure(errmessage) {
   };
 }
 
+export function setCart(uuid, price, numItems) {
+  return {
+    type: UPDATE_CART,
+    payload: {
+      uuid: uuid,
+      price: price,
+      numItems: numItems,
+    }
+  };
+}
+
 function fetchPicture(uuid) {
   return dispatch => {
     return fetch(`${BASE_URL}/items/${uuid}/pictures`)
@@ -80,7 +94,7 @@ function addPictureToItem(picture, items) {
 
 export function fetchItems() {
   return dispatch => {
-    return fetch(`${BASE_URL}/items`)
+    return fetch(`${BASE_URL}/items`, crendetialParams)
       .then(response => {
         if (!response.ok)
           throw new Error('Unable to fetch');
@@ -106,12 +120,12 @@ export function fetchItems() {
 
 export const getItems = state => state.items.items;
 export const itemsLoaded = state => state.items.loaded;
-
 // ------------------------------------
 // Store & reducer
 
 const initialState = {
   items: [],
+  cart: {},
   loaded: false,
 };
 
@@ -132,6 +146,14 @@ export default function reducer(state = initialState, action = {}) {
     return {
       ...state,
       items: addPictureToItem(action.payload, state.items),
+    };
+  case UPDATE_CART:
+    return {
+      ...state,
+      cart: {
+        ...state.cart,
+        [action.payload.uuid]: {...action.payload}
+      },
     };
 
   default:

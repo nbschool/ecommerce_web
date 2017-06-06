@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { I18nextProvider } from 'react-i18next';
 
-import { createStore, applyMiddleware } from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
+
+import { autoRehydrate, persistStore } from 'redux-persist';
 
 import thunkMiddleware from 'redux-thunk';
 
@@ -13,12 +15,23 @@ import rootReducer from './modules';
 import App from './components/App';
 import i18n from './i18n'; // initialized i18next instance
 
-import ItemList from './containers/ItemListContainer';
 import CategoryMenu from './components/CategoryMenu';
+import ItemList from './containers/ItemListContainer';
+import Login from './containers/LoginContainer';
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunkMiddleware)
+  undefined,
+  compose(
+    applyMiddleware(thunkMiddleware),
+    autoRehydrate(),
+  ),
+);
+
+// begin periodically persisting the store
+persistStore(
+  store,
+  { whitelist: ['login'] },
 );
 
 const CATEGORIES = [
@@ -32,6 +45,7 @@ const routes = (
     <App>
       <CategoryMenu listCategories={CATEGORIES}/>
       <Route exact path="/" component={ItemList}/>
+      <Route exact path="/login" component={Login}/>
       <Route path="/:category" component={ItemList}/>
     </App>
   </Router>

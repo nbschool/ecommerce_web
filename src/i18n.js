@@ -46,7 +46,9 @@ i18n
         },
         item: {
           in_stock: 'In Stock',
-          out_stock: 'Out of Stock'
+          out_stock: 'Out of Stock',
+          addToCart: "Add To Cart",
+          removeFromCart: "Remove from Cart"
         }
       },
       it: {
@@ -89,7 +91,9 @@ i18n
         },
         item: {
           in_stock: 'Disponible',
-          out_stock: 'Non Disponibile'
+          out_stock: 'Non Disponibile',
+          addToCart: "Aggiungi al Carrello",
+          removeFromCart: "Rimuovi dal Carrello"
         }
       }
     },
