@@ -28,6 +28,15 @@ class Item extends Component {
     const item = this.props;
     const {t} = this.props;
 
+    const tagStock = item.availability > 0;
+    let emojiStock, textStock;
+    if (tagStock) {
+      emojiStock = '✅';
+      textStock = t('item:in_stock');
+    } else {
+      emojiStock = '❌';
+      textStock = t('item:out_stock');
+    }
 
     let itemsAdded = [];
     let btnAdd = [];
@@ -76,7 +85,7 @@ class Item extends Component {
         </div>;
     }
 
-    let itemAvailable = [];
+    let itemAvailable;
     if (item.availability > 0) {
       itemAvailable =
         <div className="overlay" >
@@ -95,6 +104,9 @@ class Item extends Component {
             <div className="price">€{item.price}</div>
             <div className="description block-with-text">{item.description}</div>
             {itemAvailable}
+          </div>
+          <div className="in_Stock">
+            {emojiStock}<p>{textStock}</p>
           </div>
         </div>
       </article>

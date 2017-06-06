@@ -46,7 +46,52 @@ storiesOf('CategoryMenu', module)
   });
 
 storiesOf('Item', module)
-  .add('single item', () => {
+  .add('Item in Stock it', () => {
+    i18n.changeLanguage("it");
+    const item = {
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34,
+      pictureUrl: null,
+      availability: 3
+    };
+    return (
+      <Item
+      {...item} />
+    );
+  })
+  .add('Item out Stock it', () => {
+    i18n.changeLanguage("it");
+    const item = {
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34,
+      pictureUrl: null,
+      availability: 0
+    };
+    return (
+      <Item
+      {...item} />
+    );
+  })
+  .add('Item in Stock en', () => {
+    i18n.changeLanguage("en");
+    const item = {
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34,
+      pictureUrl: null,
+      availability: 3
+    };
+    return (
+      <Item
+      {...item} />
+    );
+  })
+  .add('Item out Stock', () => {
     i18n.changeLanguage("en");
     const item = {
       uuid: 'ert534534wertwert',
@@ -55,7 +100,7 @@ storiesOf('Item', module)
       price: 233.34,
       pictureUrl: null,
       category: 'accessori',
-      availability: 3
+      availability: 0
     };
     return (
       <I18nextProvider i18n={i18n}>
@@ -64,7 +109,6 @@ storiesOf('Item', module)
       </I18nextProvider>
     );
   });
-
 
 storiesOf('Itemlist', module)
   .add('empty en', () => {

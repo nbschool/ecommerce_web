@@ -45,6 +45,8 @@ i18n
           empty: 'No items availables'
         },
         item: {
+          in_stock: 'In Stock',
+          out_stock: 'Out of Stock',
           addToCart: "Add To Cart",
           removeFromCart: "Remove from Cart"
         }
@@ -88,6 +90,8 @@ i18n
           empty: 'Nessun items disponibile con questa ricerca'
         },
         item: {
+          in_stock: 'Disponible',
+          out_stock: 'Non Disponibile',
           addToCart: "Aggiungi al Carrello",
           removeFromCart: "Rimuovi dal Carrello"
         }
