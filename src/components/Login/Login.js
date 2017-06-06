@@ -1,3 +1,4 @@
+import { Redirect } from 'react-router';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
@@ -11,7 +12,8 @@ class Login extends Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      error: false,
     };
   }
 
@@ -24,19 +26,23 @@ class Login extends Component {
 
   submitLogin(event) {
     event.preventDefault();
-    this.props.login(this.state);
+    this.props.login(this.state.email, this.state.password);
+    this.setState({error: !this.props.logged});
   }
 
   render() {
+    if (this.props.logged) {
+      return <Redirect to="/"/>;
+    }
     const {t} = this.props;
 
     return (
       <div className="Login">
         <h1 className="title">{t('login:caption')}</h1>
         <div className="box">
-          <img className="profile-img" src={login} alt="User picture" />
+          <img className="profile-img" src={login} alt="User" />
           <form className="form-signin" onSubmit={(event) => this.submitLogin(event)}>
-            <div className="error">{((this.props.error) ? t(`login:error.form`) : '')}</div>
+            <div className="error">{((this.state.error) ? t(`login:error.form`) : '')}</div>
             <input type="email" className="form-control"
               placeholder={t('login:email_placeholder')} required
               name="email" value={this.state.email}
@@ -61,8 +67,8 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  error: PropTypes.string.isRequired,
   login: PropTypes.func.isRequired,
+  logged: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
 };
 

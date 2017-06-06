@@ -13,7 +13,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => {
   return {
-    error: logged(state),
+    logged: logged(state),
   };
 };
 

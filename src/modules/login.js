@@ -1,18 +1,12 @@
+import crendetialParams from './utils';
+
 // ------------------------------------
 // Constants
 
-const BASE_URL = '127.0.0.1:5000';
+const BASE_URL = 'http://127.0.0.1:5000';
 
 const LOGIN_FETCH_SUCCESS = 'LOGIN_FETCH_SUCCESS';
 const LOGIN_FETCH_FAILURE = 'LOGIN_FETCH_FAILURE';
-
-//
-export function filterItemsData(items) {
-  return items.map((item) => {
-    return {...item.data.attributes, uuid: item.data.id};
-  });
-}
-
 
 // ------------------------------------
 // Action creators
@@ -23,49 +17,44 @@ function fetchLoginSuccess() {
   };
 }
 
-function fetchLoginFailure(errmessage) {
+function fetchLoginFailure() {
   return {
     type: LOGIN_FETCH_FAILURE,
-    payload: errmessage,
   };
 }
 
 export function fetchLogin(email, password) {
   return dispatch => {
-    return fetch(`${BASE_URL}/auth/login/`, { 
+    return fetch(`${BASE_URL}/auth/login/`, {
       method: 'post',
-      mode: 'cors',
-      credentials: 'include',
       headers: {
-       'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         email: email,
         password: password,
-      })
+      }),
+      ...crendetialParams
     })
     .then(response => {
-      if(!response.ok)
+      if (!response.ok)
         throw new Error('Unable to login');
-      return response.json();
     })
     .then(() => dispatch(fetchLoginSuccess()))
-    .catch(error => dispatch(fetchLoginFailure(error.message)));
+    .catch(() => dispatch(fetchLoginFailure()));
   };
 }
 
 // ------------------------------------
 // Selectors
 
-export const logged = state => state.logged;
-export const error = state => state.error;
+export const logged = state => state.login.logged;
 
 // ------------------------------------
 // Store & reducer
 
 const initialState = {
   logged: false,
-  error: 'Login request has not started yet',
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -79,7 +68,6 @@ export default function reducer(state = initialState, action = {}) {
     return {
       ...state,
       logged: false,
-      error: action.payload,
     };
   default:
     return state;
