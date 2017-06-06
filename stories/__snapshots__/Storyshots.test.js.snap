@@ -343,83 +343,7 @@ exports[`Storyshots DropDownList wrong search 1`] = `
 </div>
 `;
 
-exports[`Storyshots Item Item in Stock 1`] = `
-<article
-  className="Item">
-  <div
-    className="card">
-    <div
-      className="image">
-      <img
-        alt="Placeat voluptates repellendus"
-        src="placehold.png" />
-    </div>
-    <div
-      className="info">
-      <div
-        className="name">
-        Placeat voluptates repellendus
-      </div>
-      <div
-        className="price">
-        €
-        233.34
-      </div>
-      <div
-        className="description block-with-text">
-        Deserunt ut quae architecto error assumenda exercitationem occaecati.
-      </div>
-    </div>
-    <div
-      className="isInStock">
-      ✅
-      <p>
-        Disponible
-      </p>
-    </div>
-  </div>
-</article>
-`;
-
-exports[`Storyshots Item Item out Stock 1`] = `
-<article
-  className="Item">
-  <div
-    className="card">
-    <div
-      className="image">
-      <img
-        alt="Placeat voluptates repellendus"
-        src="placehold.png" />
-    </div>
-    <div
-      className="info">
-      <div
-        className="name">
-        Placeat voluptates repellendus
-      </div>
-      <div
-        className="price">
-        €
-        233.34
-      </div>
-      <div
-        className="description block-with-text">
-        Deserunt ut quae architecto error assumenda exercitationem occaecati.
-      </div>
-    </div>
-    <div
-      className="isInStock">
-      ❌
-      <p>
-        Non Disponible
-      </p>
-    </div>
-  </div>
-</article>
-`;
-
-exports[`Storyshots Item single item 1`] = `
+exports[`Storyshots Item Item in Stock en 1`] = `
 <article
   className="Item">
   <div
@@ -462,8 +386,140 @@ exports[`Storyshots Item single item 1`] = `
       </div>
     </div>
     <div
-      className="isInStock">
-      <p />
+      className="in_Stock">
+      ✅
+      <p>
+        In Stock
+      </p>
+    </div>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Item Item in Stock it 1`] = `
+<article
+  className="Item">
+  <div
+    className="card">
+    <div
+      className="image">
+      <img
+        alt="Placeat voluptates repellendus"
+        src="placehold.png" />
+    </div>
+    <div
+      className="info">
+      <div
+        className="name">
+        Placeat voluptates repellendus
+      </div>
+      <div
+        className="price">
+        €
+        233.34
+      </div>
+      <div
+        className="description block-with-text">
+        Deserunt ut quae architecto error assumenda exercitationem occaecati.
+      </div>
+      <div
+        className="overlay">
+        <div>
+          <button
+            className="addToCart"
+            onClick={[Function]}>
+            Aggiungi al Carrello
+          </button>
+          <button
+            className="buttonDisabled"
+            disabled={true}>
+            Rimuovi dal Carrello
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="in_Stock">
+      ✅
+      <p>
+        Disponible
+      </p>
+    </div>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Item Item out Stock 1`] = `
+<article
+  className="Item">
+  <div
+    className="card">
+    <div
+      className="image">
+      <img
+        alt="Placeat voluptates repellendus"
+        src="placehold.png" />
+    </div>
+    <div
+      className="info">
+      <div
+        className="name">
+        Placeat voluptates repellendus
+      </div>
+      <div
+        className="price">
+        €
+        233.34
+      </div>
+      <div
+        className="description block-with-text">
+        Deserunt ut quae architecto error assumenda exercitationem occaecati.
+      </div>
+    </div>
+    <div
+      className="in_Stock">
+      ❌
+      <p>
+        Out of Stock
+      </p>
+    </div>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Item Item out Stock it 1`] = `
+<article
+  className="Item">
+  <div
+    className="card">
+    <div
+      className="image">
+      <img
+        alt="Placeat voluptates repellendus"
+        src="placehold.png" />
+    </div>
+    <div
+      className="info">
+      <div
+        className="name">
+        Placeat voluptates repellendus
+      </div>
+      <div
+        className="price">
+        €
+        233.34
+      </div>
+      <div
+        className="description block-with-text">
+        Deserunt ut quae architecto error assumenda exercitationem occaecati.
+      </div>
+    </div>
+    <div
+      className="in_Stock">
+      ❌
+      <p>
+        Non Disponibile
+      </p>
     </div>
   </div>
 </article>
@@ -536,10 +592,10 @@ exports[`Storyshots Itemlist with many items 1`] = `
           </div>
         </div>
         <div
-          className="isInStock">
+          className="in_Stock">
           ✅
           <p>
-            Disponible
+            In Stock
           </p>
         </div>
       </div>
@@ -586,10 +642,10 @@ exports[`Storyshots Itemlist with many items 1`] = `
           </div>
         </div>
         <div
-          className="isInStock">
+          className="in_Stock">
           ✅
           <p>
-            Disponible
+            In Stock
           </p>
         </div>
       </div>
@@ -636,10 +692,10 @@ exports[`Storyshots Itemlist with many items 1`] = `
           </div>
         </div>
         <div
-          className="isInStock">
+          className="in_Stock">
           ✅
           <p>
-            Disponible
+            In Stock
           </p>
         </div>
       </div>
@@ -686,10 +742,10 @@ exports[`Storyshots Itemlist with many items 1`] = `
           </div>
         </div>
         <div
-          className="isInStock">
+          className="in_Stock">
           ✅
           <p>
-            Disponible
+            In Stock
           </p>
         </div>
       </div>
@@ -736,10 +792,10 @@ exports[`Storyshots Itemlist with many items 1`] = `
           </div>
         </div>
         <div
-          className="isInStock">
+          className="in_Stock">
           ✅
           <p>
-            Disponible
+            In Stock
           </p>
         </div>
       </div>
@@ -786,10 +842,10 @@ exports[`Storyshots Itemlist with many items 1`] = `
           </div>
         </div>
         <div
-          className="isInStock">
+          className="in_Stock">
           ✅
           <p>
-            Disponible
+            In Stock
           </p>
         </div>
       </div>
@@ -836,10 +892,10 @@ exports[`Storyshots Itemlist with many items 1`] = `
           </div>
         </div>
         <div
-          className="isInStock">
+          className="in_Stock">
           ✅
           <p>
-            Disponible
+            In Stock
           </p>
         </div>
       </div>
@@ -886,10 +942,10 @@ exports[`Storyshots Itemlist with many items 1`] = `
           </div>
         </div>
         <div
-          className="isInStock">
+          className="in_Stock">
           ✅
           <p>
-            Disponible
+            In Stock
           </p>
         </div>
       </div>
@@ -936,10 +992,10 @@ exports[`Storyshots Itemlist with many items 1`] = `
           </div>
         </div>
         <div
-          className="isInStock">
+          className="in_Stock">
           ✅
           <p>
-            Disponible
+            In Stock
           </p>
         </div>
       </div>
@@ -995,10 +1051,10 @@ exports[`Storyshots Itemlist with one item 1`] = `
           </div>
         </div>
         <div
-          className="isInStock">
+          className="in_Stock">
           ✅
           <p>
-            Disponible
+            In Stock
           </p>
         </div>
       </div>
@@ -1921,10 +1977,10 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
             </div>
           </div>
           <div
-            className="isInStock">
+            className="in_Stock">
             ✅
             <p>
-              Disponible
+              In Stock
             </p>
           </div>
         </div>
@@ -1971,10 +2027,10 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
             </div>
           </div>
           <div
-            className="isInStock">
+            className="in_Stock">
             ✅
             <p>
-              Disponible
+              In Stock
             </p>
           </div>
         </div>
@@ -2021,10 +2077,10 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
             </div>
           </div>
           <div
-            className="isInStock">
+            className="in_Stock">
             ✅
             <p>
-              Disponible
+              In Stock
             </p>
           </div>
         </div>
@@ -2071,10 +2127,10 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
             </div>
           </div>
           <div
-            className="isInStock">
+            className="in_Stock">
             ✅
             <p>
-              Disponible
+              In Stock
             </p>
           </div>
         </div>
@@ -2121,10 +2177,10 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
             </div>
           </div>
           <div
-            className="isInStock">
+            className="in_Stock">
             ✅
             <p>
-              Disponible
+              In Stock
             </p>
           </div>
         </div>
@@ -2171,10 +2227,10 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
             </div>
           </div>
           <div
-            className="isInStock">
+            className="in_Stock">
             ✅
             <p>
-              Disponible
+              In Stock
             </p>
           </div>
         </div>
@@ -2221,10 +2277,10 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
             </div>
           </div>
           <div
-            className="isInStock">
+            className="in_Stock">
             ✅
             <p>
-              Disponible
+              In Stock
             </p>
           </div>
         </div>
@@ -2271,10 +2327,10 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
             </div>
           </div>
           <div
-            className="isInStock">
+            className="in_Stock">
             ✅
             <p>
-              Disponible
+              In Stock
             </p>
           </div>
         </div>
@@ -2321,10 +2377,10 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
             </div>
           </div>
           <div
-            className="isInStock">
+            className="in_Stock">
             ✅
             <p>
-              Disponible
+              In Stock
             </p>
           </div>
         </div>
