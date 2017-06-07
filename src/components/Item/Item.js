@@ -8,26 +8,18 @@ import './Item.css';
 class Item extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      numItems: 0,
-    };
     this.setNumberItemToCart = this.setNumberItemToCart.bind(this);
   }
 
-  setNumberItemToCart(amount) {
-    let count = this.state.numItems;
+  setNumberItemToCart(amount, itemQuantity) {
+    let count = itemQuantity;
     count += amount;
-    this.setState({
-      numItems: count
-    });
-
     this.props.setItemInCart(this.props.uuid, this.props.price, count);
   }
 
   render() {
     const item = this.props;
     const {t} = this.props;
-
     const tagStock = item.availability > 0;
     let emojiStock, textStock;
     if (tagStock) {
@@ -37,25 +29,25 @@ class Item extends Component {
       emojiStock = '❌';
       textStock = t('item:out_stock');
     }
-
+    const itemQuantity = this.props.itemQuantity(this.props.uuid);
     let itemsAdded = [];
     let btnAdd = [];
-
-    if (this.state.numItems > 0 && item.availability > this.state.numItems) {
+    if (itemQuantity > 0 && item.availability > itemQuantity) {
       itemsAdded =
-        <label>{this.state.numItems}</label>;
+        <label>{itemQuantity}</label>;
       btnAdd =
         <div className="overlay-buttons">
-          <button className="addToCart" onClick={() => this.setNumberItemToCart(1)}>
+          <button className="addToCart" onClick={() => this.setNumberItemToCart(1, itemQuantity)}>
             {t('item:addToCart')}
           </button>
-          <button className="removeFromCart" onClick={() => this.setNumberItemToCart(-1)}>
+          <button className="removeFromCart"
+                  onClick={() => this.setNumberItemToCart(-1, itemQuantity)}>
             {t('item:removeFromCart')}
           </button>
         </div>;
     }
 
-    else if (this.state.numItems === 0 && item.availability === 0) {
+    else if (itemQuantity === 0 && item.availability === 0) {
       btnAdd =
         <div className="overlay-buttons">
           <button className="buttonDisabled" disabled>{t('item:addToCart')}</button>
@@ -63,23 +55,24 @@ class Item extends Component {
         </div>;
     }
 
-    else if (this.state.numItems === 0 && item.availability > this.state.numItems) {
+    else if (itemQuantity === 0 && item.availability > itemQuantity) {
       btnAdd =
         <div className="overlay-buttons">
-          <button className="addToCart" onClick={() => this.setNumberItemToCart(1)}>
+          <button className="addToCart" onClick={() => this.setNumberItemToCart(1, itemQuantity)}>
             {t('item:addToCart')}
           </button>
           <button className="buttonDisabled" disabled>{t('item:removeFromCart')}</button>
         </div>;
     }
 
-    else if (this.state.numItems > 0) {
+    else if (itemQuantity > 0) {
       itemsAdded =
-        <label>{this.state.numItems}</label>;
+        <label>{itemQuantity}</label>;
       btnAdd =
         <div className="overlay-buttons">
           <button className="buttonDisabled" disabled>{t('item:addToCart')}</button>
-          <button className="removeFromCart" onClick={() => this.setNumberItemToCart(-1)}>
+          <button className="removeFromCart"
+                  onClick={() => this.setNumberItemToCart(-1, itemQuantity)}>
             {t('item:removeFromCart')}
           </button>
         </div>;
@@ -121,6 +114,7 @@ Item.propTypes = {
   category: PropTypes.string.isRequired,
   availability: PropTypes.number.isRequired,
   setItemInCart: PropTypes.func.isRequired,
+  itemQuantity: PropTypes.func.isRequired,
   t: PropTypes.func.isRequired
 };
 
