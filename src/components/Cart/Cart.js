@@ -8,11 +8,19 @@ class Cart extends Component {
   constructor(props) {
     super(props);
     this.dispatchHandleChange = this.dispatchHandleChange.bind(this);
+    this.handleBuyClick = this.handleBuyClick.bind(this);
   }
 
   dispatchHandleChange(item, quantity) {
     item.itemQuantity = quantity;
     this.props.setItemInCart(item.uuid, item.price, quantity);
+  }
+
+  handleBuyClick() {
+    for (let itemUuid in this.props.cart) {
+      this.props.setItemInCart(itemUuid, this.props.item(itemUuid).price, 0);
+    }
+    this.props.history.push("/")
   }
 
   render() {
@@ -41,7 +49,8 @@ class Cart extends Component {
         <h1>Carrello</h1>
         <div>{cart}</div>
         <h3>Totale = {total} €</h3>
-        <button className='buy'>Acquista ora</button>
+        <button className='buy'
+                onClick={this.handleBuyClick}>Acquista ora</button>
       </div>
     );
   }
