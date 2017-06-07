@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import placehold from './placehold.png';
 import './CartItem.css';
 
 class CartItem extends Component {
@@ -86,10 +87,11 @@ class CartItem extends Component {
 
   render() {
     const item = this.props.item;
+    console.log(item)
     return (
       <div className='cart-item'>
         <div className='cart-item-top'>
-          <img className='cart-item-img' src={item.pictureUrl} />
+          <img className='cart-item-img' src={item.pictureUrl ? item.pictureUrl : placehold} alt={item.name} />
           <div className='item'>
             <div className='item-name'>{item.name}</div>
             <div>Prezzo: {item.price}</div>
