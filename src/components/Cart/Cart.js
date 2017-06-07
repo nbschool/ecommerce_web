@@ -19,16 +19,18 @@ class Cart extends Component {
     let total = 0;
     const that = this;
     let cart = Object.values(this.props.cart).map((item, index) => {
-      const realItem = that.props.item(item.uuid);
-      total += (item.itemQuantity * item.price);
-      return (
-        <CartItem
-          className='cart-item'
-          key={index}
-          item={realItem}
-          quantity={item.itemQuantity}
-          dispatchHandleChange={this.dispatchHandleChange} />
-      );
+      if(item.itemQuantity > 0) {
+        const realItem = that.props.item(item.uuid);
+        total += (item.itemQuantity * item.price);
+        return (
+          <CartItem
+            className='cart-item'
+            key={index}
+            item={realItem}
+            quantity={item.itemQuantity}
+            dispatchHandleChange={this.dispatchHandleChange} />
+        );
+      }
     });
 
     if (cart.length === 0)

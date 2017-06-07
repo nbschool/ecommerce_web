@@ -16,6 +16,7 @@ class CartItem extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleUpdateClick = this.handleUpdateClick.bind(this);
+    this.handleRemoveClick = this.handleRemoveClick.bind(this);
   }
 
   handleChange(event) {
@@ -53,6 +54,10 @@ class CartItem extends Component {
     }
   }
 
+  handleRemoveClick() {
+    this.props.dispatchHandleChange(this.props.item, this.props.item.quantity);
+  }
+
   get renderDropDown() {
     const values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10+'];
     return (
@@ -87,6 +92,7 @@ class CartItem extends Component {
 
   render() {
     const item = this.props.item;
+    const that = this;
     console.log(item)
     return (
       <div className='cart-item'>
@@ -105,7 +111,8 @@ class CartItem extends Component {
           {
             this.state.isOptionValue ? this.renderDropDown : this.renderTextInput
           }
-          <button className='remove-cart-item'>Rimuovi</button>
+          <button className='remove-cart-item'
+                  onClick={that.handleRemoveClick}>Rimuovi</button>
         </div>
       </div>
     );
