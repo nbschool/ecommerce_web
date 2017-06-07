@@ -12,6 +12,8 @@ class PersonalArea extends Component {
   constructor(props) {
     super(props);
 
+    this.setActiveArea = this.setActiveArea.bind(this);
+
     this.state = {
       activeArea: 'personalarea'
     };
@@ -19,18 +21,18 @@ class PersonalArea extends Component {
 
   setActiveArea(activeArea) {
     this.setState({
-      activeArea: activeArea
+      activeArea: activeArea,
     });
   }
 
   render() {
     const {t} = this.props;
 
-    let area = '';
+    let area;
     if (this.state.activeArea === "personalarea")
       area = <PersonalAreaPersonalData
-      personalData={this.props.personalData}
-      saveData={this.props.saveData} />;
+        personalData={this.props.personalData}
+        saveData={this.props.saveData} />;
     if (this.state.activeArea === "adressesarea")
       area = <PersonalAreaAddressData/>;
     return (
@@ -39,9 +41,9 @@ class PersonalArea extends Component {
         <div className="content">
           <aside>
             <SidebarMenu
-              active={this.props.active}
+              active={this.state.activeArea}
               menuList={this.props.menuList}
-              setActiveArea={(area) => this.setActiveArea(area)} />
+              setActiveArea={this.setActiveArea} />
           </aside>
           <article>
             {area}

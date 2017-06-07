@@ -8,6 +8,8 @@ class PersonalAreaPersonalData extends Component {
   constructor(props) {
     super(props);
 
+    this.submitData = this.submitData.bind(this);
+
     this.state = {
       first_name: props.personalData.first_name,
       last_name: props.personalData.last_name,
@@ -26,7 +28,7 @@ class PersonalAreaPersonalData extends Component {
     return (
       <section className="PersonalAreaPersonalData">
         <h1>{t('personalArea:dataArea')}</h1>
-        <form className="form" onSubmit={(event) => this.submitData(event)}>
+        <form className="form" onSubmit={this.submitData}>
           <div>
             <label>{t('personalArea:dataArea_first_name')}</label>
             <input className="form-control" type="text" value={this.state.first_name} />
