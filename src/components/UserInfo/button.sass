@@ -1,32 +1,39 @@
 @import ../../style/palette.sass
 
-button
-    border: none
-    padding: 0.8em 0.4em
-    min-height: 2em
-    margin: 0.3em
-    border-radius: .25em
-    background-color: $primary-color-dark
-    display: inline-block
-    font-size: 0.9em
-    cursor: pointer
-    color: rgba(255, 255, 255, 0.85)
-    outline: 0
+.wrapper
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
 
-    &:hover
-        background-color: $primary-color
-    &:active
-        background-color: $accent-color
-    
-    &.primary
-    
+    p
+        padding: 0 .5em
+        margin: 0
+        color: $secondary-text-color
 
-    a
+    button
+        display: inline-block
+        color: rgba(255, 255, 255, 0.85)
+        background-color: $primary-color-dark
         font-size: 1em
-        text-decoration: none
+        color: rgba(255, 255, 255, 0.9)
+        border: none
+        border-radius: .25em
+        outline: 0
+        cursor: pointer
 
-        &:link, &:active, &:visited
-            color: rgba(255, 255, 255, 0.85)
-        
         &:hover
-            color: rgba(255, 255, 255, 0.95)
+            background-color: $primary-color
+        &:active
+            background-color: $accent-color
+
+        a
+            font-size: 1em
+            text-decoration: none
+            line-height: 100%
+
+            &:link, &:active, &:visited
+                color: rgba(255, 255, 255, 0.85)
+            
+            &:hover
+                color: rgba(255, 255, 255, 0.95)
