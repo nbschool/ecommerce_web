@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './button.css';
 
 /**
@@ -26,25 +27,40 @@ Button.propTypes = {
 class UserInfo extends React.Component {
   constructor(props) {
     super(props);
-    this.onClick = this.onClick.bind(this);
+
+    this.state = {
+      username: 'User'
+    };
+
+    this.logout = this.logout.bind(this);
   }
 
-  componentWillMount() {
-    // read cookies for session.
-    // if necessary query the server for the user info to show
-    return;
+  componentWillMount() { this.fetchUserData(); }
+
+  componentDidMount() { this.fetchUserData(); }
+
+  fetchUserData() {
+    if (this.props.isLogged) {
+      // TODO: When available implement the fetch action to get the user
+      // info from a /me endpoint on the server, such as the user name or
+      // the whole resource
+      return;
+    }
   }
 
-
-  onClick() {
-    this.props.logout();
-  }
+  logout() { this.props.logout(); }
 
   render() {
     const { isLogged } = this.props;
+    const { username } = this.state;
+
+
     return (
-      <div onClick={this.onClick}>
-        {isLogged ? <LoggedUser/> : <UnloggedUser/>}
+      <div>
+        {isLogged
+          ? <Button onClick={this.logout}>Hi, {username}!</Button>
+          : <Button><Link to='/login'>Login</Link></Button>
+        }
       </div>
     );
   }
