@@ -1,7 +1,12 @@
 @import ../App/App.sass
+@import ../../style/palette.sass
+
 .Item
   width: 25%
   position: relative
+  padding: 1em
+  margin-left: 1em
+  margin-right: 3.5em
 
   .overlay
     position: absolute
@@ -28,27 +33,32 @@
     padding: 1em
     flex-basis: 25%
     flex-grow: 1
-    background-color: #FFF
-    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25)
+    background-color: $primary-color-text
+    box-shadow: 1px 4px 9px 0px $secondary-text-color
 
   .image img
-  	width: 100%
+    width: 100%
 
   .info
     margin-top: auto
     padding-top: 20px
+    background-color: $primary-color-text
+    color: $primary-text-color
     text-align: center
     position: relative
-    
+    text-shadow: $divider-color
+
   .info div.name
     font-size: 0.9em
     font-weight: 600
     height: 2.5em
 
   .info div.price
+    color: $primary-text-color
     font-size: 2em
 
   .info div.description
+    color: $primary-text-color
     font-size: 0.8em
     font-style: italic
 
