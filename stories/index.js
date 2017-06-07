@@ -23,6 +23,7 @@ import SidebarMenu from '../src/components/SidebarMenu';
 import PersonalAreaPersonalData from '../src/components/PersonalAreaPersonalData';
 import PersonalAreaAddressData from '../src/components/PersonalAreaAddressData';
 import PersonalArea from '../src/components/PersonalArea';
+import TopBar from '../src/components/TopBar'
 
 registerScissors(defaultDevices);
 
@@ -32,6 +33,13 @@ const LanguageDecorator = (story) => (
   </I18nextProvider>
 );
 addDecorator(LanguageDecorator);
+
+storiesOf('TopBar', module)
+  .add('Top Bar', () => {
+    return (
+      <TopBar/>
+    );
+  });
 
 storiesOf('CategoryMenu', module)
   .addDecorator((story) => (
