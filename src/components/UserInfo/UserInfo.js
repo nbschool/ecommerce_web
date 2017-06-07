@@ -29,39 +29,47 @@ class UserInfo extends React.Component {
     super(props);
 
     this.state = {
-      username: 'User'
+      logged: false,
+      user: {
+        first_name: 'User'
+      }
     };
 
     this.logout = this.logout.bind(this);
   }
 
-  componentWillMount() { this.fetchUserData(); }
+  componentDidMount() { this.updateUserData(); }
 
-  componentDidUpdate() { this.fetchUserData(); }
+  componentDidUpdate() {
+    const { user: propsUser } = this.props;
 
-  fetchUserData() {
-    if (this.props.isLogged) {
-      // TODO: When available implement the fetch action to get the user
-      // info from a /me endpoint on the server, such as the user name or
-      // the whole resource
-      return;
+    this.updateUserData();
+
+    // Update the local user data if the state.user is not the same as the
+    // one received from props (i.e. the username changed)
+    if (propsUser !== this.state.user) {
+      this.setState({ user: propsUser });
+    }
+  }
+
+  updateUserData() {
+    const { isLogged } = this.props;
+
+    if (isLogged !== this.state.logged) {
+      this.setState({ logged: isLogged });
     }
   }
 
   logout() { this.props.logout(); }
 
   render() {
-    const { isLogged } = this.props;
-    const { username } = this.state;
-
+    const { logged } = this.state;
+    const { user: { first_name: firstName } } = this.state;
 
     return (
-      <div>
-        {isLogged
-          ? <Button onClick={this.logout}>Hi, {username}!</Button>
+      logged
+          ? <Button onClick={this.logout}>Hi, {firstName}! Logout</Button>
           : <Button><Link to='/login'>Login</Link></Button>
-        }
-      </div>
     );
   }
 }
@@ -69,6 +77,7 @@ class UserInfo extends React.Component {
 UserInfo.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   logout: PropTypes.func.isRequired,
+  user: PropTypes.object,
 };
 
 export default UserInfo;
