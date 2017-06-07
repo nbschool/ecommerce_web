@@ -42,6 +42,14 @@ exports[`Storyshots CategoryMenu four categories 1`] = `
         accessori
       </a>
     </li>
+    <li
+      className="">
+      <a
+        href="/carrello"
+        onClick={[Function]}>
+        carrello
+      </a>
+    </li>
   </ul>
 </nav>
 `;
@@ -362,6 +370,38 @@ exports[`Storyshots Item Item in Stock en 1`] = `
       className="price">
       €
       233.34
+      className="info">
+      <div
+        className="name">
+        Placeat voluptates repellendus
+      </div>
+      <div
+        className="price">
+        €
+        233.34
+      </div>
+      <div
+        className="description block-with-text">
+        Deserunt ut quae architecto error assumenda exercitationem occaecati.
+      </div>
+      <div
+        className="overlay">
+        <div>
+          <button
+            className="addToCart"
+            onClick={[Function]}>
+            Add To Cart
+          </button>
+          <button
+            className="removeFromCart"
+            onClick={[Function]}>
+            Remove from Cart
+          </button>
+        </div>
+        <label>
+          1
+        </label>
+      </div>
     </div>
     <div
       className="description block-with-text">
@@ -554,10 +594,203 @@ exports[`Storyshots Itemlist with many items 1`] = `
           className="name">
           Placeat voluptates repellendus veniam.
         </div>
+        <divclassName="price">
+          €
+          233.34
+=======
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div>
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="removeFromCart"
+                onClick={[Function]}>
+                Remove from Cart
+              </button>
+            </div>
+            <label>
+              1
+            </label>
+          </div>
+>>>>>>> storybook added with new features of binding item and cart.
+        </div>
+        <div
+          className="description block-with-text">
+          Deserunt ut quae architecto error assumenda exercitationem occaecati.
+        </div>
+        <div
+          className="overlay">
+          <div
+            className="overlay-buttons">
+            <button
+              className="addToCart"
+              onClick={[Function]}>
+              Add To Cart
+            </button>
+            <button
+              className="buttonDisabled"
+              disabled={true}>
+              Remove from Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="in_Stock">
+        ✅
+        <p>
+          In Stock
+        </p>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="image">
+        <img
+          alt="Placeat voluptates repellendus veniam."
+          src="placehold.png" />
+      </div>
+      <div
+        className="info">
+        <div
+          className="name">
+          Placeat voluptates repellendus veniam.
+        </div>
         <div
           className="price">
           €
           233.34
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div>
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="removeFromCart"
+                onClick={[Function]}>
+                Remove from Cart
+              </button>
+            </div>
+            <label>
+              1
+            </label>
+          </div>
+        </div>
+        <div
+          className="description block-with-text">
+          Deserunt ut quae architecto error assumenda exercitationem occaecati.
+        </div>
+        <div
+          className="overlay">
+          <div
+            className="overlay-buttons">
+            <button
+              className="addToCart"
+              onClick={[Function]}>
+              Add To Cart
+            </button>
+            <button
+              className="buttonDisabled"
+              disabled={true}>
+              Remove from Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="in_Stock">
+        ✅
+        <p>
+          In Stock
+        </p>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="image">
+        <img
+          alt="Placeat voluptates repellendus veniam."
+          src="placehold.png" />
+      </div>
+      <div
+        className="info">
+        <div
+          className="name">
+          Placeat voluptates repellendus veniam.
+        </div>
+        <div
+          className="price">
+          €
+          233.34
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div>
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="removeFromCart"
+                onClick={[Function]}>
+                Remove from Cart
+              </button>
+            </div>
+            <label>
+              1
+            </label>
+          </div>
         </div>
         <div
           className="description block-with-text">
@@ -626,6 +859,40 @@ exports[`Storyshots Itemlist with many items 1`] = `
               Remove from Cart
             </button>
           </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div>
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="removeFromCart"
+                onClick={[Function]}>
+                Remove from Cart
+              </button>
+            </div>
+            <label>
+              1
+            </label>
+          </div>
+        </div>
+        <div
+          className="in_Stock">
+          ✅
+          <p>
+            In Stock
+          </p>
         </div>
       </div>
       <div
@@ -654,6 +921,198 @@ exports[`Storyshots Itemlist with many items 1`] = `
           className="price">
           €
           233.34
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div>
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="removeFromCart"
+                onClick={[Function]}>
+                Remove from Cart
+              </button>
+            </div>
+            <label>
+              1
+            </label>
+          </div>
+        </div>
+        <div
+          className="description block-with-text">
+          Deserunt ut quae architecto error assumenda exercitationem occaecati.
+        </div>
+        <div
+          className="overlay">
+          <div
+            className="overlay-buttons">
+            <button
+              className="addToCart"
+              onClick={[Function]}>
+              Add To Cart
+            </button>
+            <button
+              className="buttonDisabled"
+              disabled={true}>
+              Remove from Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="in_Stock">
+        ✅
+        <p>
+          In Stock
+        </p>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="image">
+        <img
+          alt="Placeat voluptates repellendus veniam."
+          src="placehold.png" />
+      </div>
+      <div
+        className="info">
+        <div
+          className="name">
+          Placeat voluptates repellendus veniam.
+        </div>
+        <div
+          className="price">
+          €
+          233.34
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div>
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="removeFromCart"
+                onClick={[Function]}>
+                Remove from Cart
+              </button>
+            </div>
+            <label>
+              1
+            </label>
+          </div>
+        </div>
+        <div
+          className="description block-with-text">
+          Deserunt ut quae architecto error assumenda exercitationem occaecati.
+        </div>
+        <div
+          className="overlay">
+          <div
+            className="overlay-buttons">
+            <button
+              className="addToCart"
+              onClick={[Function]}>
+              Add To Cart
+            </button>
+            <button
+              className="buttonDisabled"
+              disabled={true}>
+              Remove from Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="in_Stock">
+        ✅
+        <p>
+          In Stock
+        </p>
+      </div>
+    </article>
+    <article
+      className="Item">
+      <div
+        className="image">
+        <img
+          alt="Placeat voluptates repellendus veniam."
+          src="placehold.png" />
+      </div>
+      <div
+        className="info">
+        <div
+          className="name">
+          Placeat voluptates repellendus veniam.
+        </div>
+        <div
+          className="price">
+          €
+          233.34
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div>
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="removeFromCart"
+                onClick={[Function]}>
+                Remove from Cart
+              </button>
+            </div>
+            <label>
+              1
+            </label>
+          </div>
         </div>
         <div
           className="description block-with-text">
@@ -721,198 +1180,22 @@ exports[`Storyshots Itemlist with many items 1`] = `
               disabled={true}>
               Remove from Cart
             </button>
-          </div>
-        </div>
-      </div>
-      <div
-        className="in_Stock">
-        ✅
-        <p>
-          In Stock
-        </p>
-      </div>
-    </article>
-    <article
-      className="Item">
-      <div
-        className="image">
-        <img
-          alt="Placeat voluptates repellendus veniam."
-          src="placehold.png" />
-      </div>
-      <div
-        className="info">
-        <div
-          className="name">
-          Placeat voluptates repellendus veniam.
-        </div>
-        <div
-          className="price">
-          €
-          233.34
-        </div>
-        <div
-          className="description block-with-text">
-          Deserunt ut quae architecto error assumenda exercitationem occaecati.
-        </div>
-        <div
-          className="overlay">
-          <div
-            className="overlay-buttons">
-            <button
-              className="addToCart"
-              onClick={[Function]}>
-              Add To Cart
-            </button>
-            <button
-              className="buttonDisabled"
-              disabled={true}>
-              Remove from Cart
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        className="in_Stock">
-        ✅
-        <p>
-          In Stock
-        </p>
-      </div>
-    </article>
-    <article
-      className="Item">
-      <div
-        className="image">
-        <img
-          alt="Placeat voluptates repellendus veniam."
-          src="placehold.png" />
-      </div>
-      <div
-        className="info">
-        <div
-          className="name">
-          Placeat voluptates repellendus veniam.
-        </div>
-        <div
-          className="price">
-          €
-          233.34
-        </div>
-        <div
-          className="description block-with-text">
-          Deserunt ut quae architecto error assumenda exercitationem occaecati.
-        </div>
-        <div
-          className="overlay">
-          <div
-            className="overlay-buttons">
-            <button
-              className="addToCart"
-              onClick={[Function]}>
-              Add To Cart
-            </button>
-            <button
-              className="buttonDisabled"
-              disabled={true}>
-              Remove from Cart
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        className="in_Stock">
-        ✅
-        <p>
-          In Stock
-        </p>
-      </div>
-    </article>
-    <article
-      className="Item">
-      <div
-        className="image">
-        <img
-          alt="Placeat voluptates repellendus veniam."
-          src="placehold.png" />
-      </div>
-      <div
-        className="info">
-        <div
-          className="name">
-          Placeat voluptates repellendus veniam.
-        </div>
-        <div
-          className="price">
-          €
-          233.34
-        </div>
-        <div
-          className="description block-with-text">
-          Deserunt ut quae architecto error assumenda exercitationem occaecati.
-        </div>
-        <div
-          className="overlay">
-          <div
-            className="overlay-buttons">
-            <button
-              className="addToCart"
-              onClick={[Function]}>
-              Add To Cart
-            </button>
-            <button
-              className="buttonDisabled"
-              disabled={true}>
-              Remove from Cart
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        className="in_Stock">
-        ✅
-        <p>
-          In Stock
-        </p>
-      </div>
-    </article>
-    <article
-      className="Item">
-      <div
-        className="image">
-        <img
-          alt="Placeat voluptates repellendus veniam."
-          src="placehold.png" />
-      </div>
-      <div
-        className="info">
-        <div
-          className="name">
-          Placeat voluptates repellendus veniam.
-        </div>
-        <div
-          className="price">
-          €
-          233.34
-        </div>
-        <div
-          className="description block-with-text">
-          Deserunt ut quae architecto error assumenda exercitationem occaecati.
-        </div>
-        <div
-          className="overlay">
-          <div
-            className="overlay-buttons">
-            <button
-              className="addToCart"
-              onClick={[Function]}>
-              Add To Cart
-            </button>
-            <button
-              className="buttonDisabled"
-              disabled={true}>
-              Remove from Cart
-            </button>
+            className="overlay">
+            <div>
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="removeFromCart"
+                onClick={[Function]}>
+                Remove from Cart
+              </button>
+            </div>
+            <label>
+              1
+            </label>
           </div>
         </div>
       </div>
@@ -1019,6 +1302,40 @@ exports[`Storyshots Itemlist with one item 1`] = `
               Remove from Cart
             </button>
           </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div>
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="removeFromCart"
+                onClick={[Function]}>
+                Remove from Cart
+              </button>
+            </div>
+            <label>
+              1
+            </label>
+          </div>
+        </div>
+        <div
+          className="in_Stock">
+          ✅
+          <p>
+            In Stock
+          </p>
         </div>
       </div>
       <div
@@ -1027,6 +1344,54 @@ exports[`Storyshots Itemlist with one item 1`] = `
         <p>
           In Stock
         </p>
+        className="card">
+        <div
+          className="image">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div>
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="removeFromCart"
+                onClick={[Function]}>
+                Remove from Cart
+              </button>
+            </div>
+            <label>
+              1
+            </label>
+          </div>
+        </div>
+        <div
+          className="in_Stock">
+          ✅
+          <p>
+            In Stock
+          </p>
+        </div>
       </div>
     </article>
   </section>
@@ -2057,11 +2422,475 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
           <div
             className="name">
             Placeat voluptates repellendus veniam.
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              233.34
+            </div>
+            <div
+              className="description block-with-text">
+              Deserunt ut quae architecto error assumenda exercitationem occaecati.
+            </div>
+            <div
+              className="overlay">
+              <div>
+                <button
+                  className="addToCart"
+                  onClick={[Function]}>
+                  Add To Cart
+                </button>
+                <button
+                  className="removeFromCart"
+                  onClick={[Function]}>
+                  Remove from Cart
+                </button>
+              </div>
+              <label>
+                1
+              </label>
+            </div>
           </div>
           <div
             className="price">
             €
             233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div
+              className="overlay-buttons">
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="buttonDisabled"
+                disabled={true}>
+                Remove from Cart
+              </button>
+              className="overlay">
+              <div>
+                <button
+                  className="addToCart"
+                  onClick={[Function]}>
+                  Add To Cart
+                </button>
+                <button
+                  className="removeFromCart"
+                  onClick={[Function]}>
+                  Remove from Cart
+                </button>
+              </div>
+              <label>
+                1
+              </label>
+            </div>
+          </div>
+        </div>
+        <div
+          className="in_Stock">
+          ✅
+          <p>
+            In Stock
+          </p>
+        </div>
+      </article>
+      <article
+        className="Item">
+        <div
+          className="image">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              233.34
+            </div>
+            <div
+              className="description block-with-text">
+              Deserunt ut quae architecto error assumenda exercitationem occaecati.
+            </div>
+            <div
+              className="overlay">
+              <div>
+                <button
+                  className="addToCart"
+                  onClick={[Function]}>
+                  Add To Cart
+                </button>
+                <button
+                  className="removeFromCart"
+                  onClick={[Function]}>
+                  Remove from Cart
+                </button>
+              </div>
+              <label>
+                1
+              </label>
+            </div>
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div
+              className="overlay-buttons">
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="buttonDisabled"
+                disabled={true}>
+                Remove from Cart
+              </button>
+              className="overlay">
+              <div>
+                <button
+                  className="addToCart"
+                  onClick={[Function]}>
+                  Add To Cart
+                </button>
+                <button
+                  className="removeFromCart"
+                  onClick={[Function]}>
+                  Remove from Cart
+                </button>
+              </div>
+              <label>
+                1
+              </label>
+            </div>
+          </div>
+        </div>
+        <div
+          className="in_Stock">
+          ✅
+          <p>
+            In Stock
+          </p>
+        </div>
+      </article>
+      <article
+        className="Item">
+        <div
+          className="image">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              233.34
+            </div>
+            <div
+              className="description block-with-text">
+              Deserunt ut quae architecto error assumenda exercitationem occaecati.
+            </div>
+            <div
+              className="overlay">
+              <div>
+                <button
+                  className="addToCart"
+                  onClick={[Function]}>
+                  Add To Cart
+                </button>
+                <button
+                  className="removeFromCart"
+                  onClick={[Function]}>
+                  Remove from Cart
+                </button>
+              </div>
+              <label>
+                1
+              </label>
+            </div>
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div
+              className="overlay-buttons">
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="buttonDisabled"
+                disabled={true}>
+                Remove from Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="in_Stock">
+          ✅
+          <p>
+            In Stock
+          </p>
+        </div>
+      </article>
+      <article
+        className="Item">
+        <div
+          className="image">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              233.34
+            </div>
+            <div
+              className="description block-with-text">
+              Deserunt ut quae architecto error assumenda exercitationem occaecati.
+            </div>
+            <div
+              className="overlay">
+              <div>
+                <button
+                  className="addToCart"
+                  onClick={[Function]}>
+                  Add To Cart
+                </button>
+                <button
+                  className="removeFromCart"
+                  onClick={[Function]}>
+                  Remove from Cart
+                </button>
+              </div>
+              <label>
+                1
+              </label>
+            </div>
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+          </div>
+          <div
+            className="overlay">
+            <div
+              className="overlay-buttons">
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="buttonDisabled"
+                disabled={true}>
+                Remove from Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="in_Stock">
+          ✅
+          <p>
+            In Stock
+          </p>
+        </div>
+      </article>
+      <article
+        className="Item">
+        <div
+          className="image">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+          </div>
+          <div
+            className="description block-with-text">
+            Deserunt ut quae architecto error assumenda exercitationem occaecati.
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              233.34
+            </div>
+            <div
+              className="description block-with-text">
+              Deserunt ut quae architecto error assumenda exercitationem occaecati.
+            </div>
+            <div
+              className="overlay">
+              <div>
+                <button
+                  className="addToCart"
+                  onClick={[Function]}>
+                  Add To Cart
+                </button>
+                <button
+                  className="removeFromCart"
+                  onClick={[Function]}>
+                  Remove from Cart
+                </button>
+              </div>
+              <label>
+                1
+              </label>
+            </div>
+          </div>
+          <div
+            className="overlay">
+            <div
+              className="overlay-buttons">
+              <button
+                className="addToCart"
+                onClick={[Function]}>
+                Add To Cart
+              </button>
+              <button
+                className="buttonDisabled"
+                disabled={true}>
+                Remove from Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="in_Stock">
+          ✅
+          <p>
+            In Stock
+          </p>
+        </div>
+      </article>
+      <article
+        className="Item">
+        <div
+          className="image">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="info">
+          <div
+            className="name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="price">
+            €
+            233.34
+            className="info">
+            <div
+              className="name">
+              Placeat voluptates repellendus veniam.
+            </div>
+            <div
+              className="price">
+              €
+              233.34
+            </div>
+            <div
+              className="description block-with-text">
+              Deserunt ut quae architecto error assumenda exercitationem occaecati.
+            </div>
+            <div
+              className="overlay">
+              <div>
+                <button
+                  className="addToCart"
+                  onClick={[Function]}>
+                  Add To Cart
+                </button>
+                <button
+                  className="removeFromCart"
+                  onClick={[Function]}>
+                  Remove from Cart
+                </button>
+              </div>
+              <label>
+                1
+              </label>
+            </div>
           </div>
           <div
             className="description block-with-text">
@@ -2177,246 +3006,22 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
                 disabled={true}>
                 Remove from Cart
               </button>
-            </div>
-          </div>
-        </div>
-        <div
-          className="in_Stock">
-          ✅
-          <p>
-            In Stock
-          </p>
-        </div>
-      </article>
-      <article
-        className="Item">
-        <div
-          className="image">
-          <img
-            alt="Placeat voluptates repellendus veniam."
-            src="placehold.png" />
-        </div>
-        <div
-          className="info">
-          <div
-            className="name">
-            Placeat voluptates repellendus veniam.
-          </div>
-          <div
-            className="price">
-            €
-            233.34
-          </div>
-          <div
-            className="description block-with-text">
-            Deserunt ut quae architecto error assumenda exercitationem occaecati.
-          </div>
-          <div
-            className="overlay">
-            <div
-              className="overlay-buttons">
-              <button
-                className="addToCart"
-                onClick={[Function]}>
-                Add To Cart
-              </button>
-              <button
-                className="buttonDisabled"
-                disabled={true}>
-                Remove from Cart
-              </button>
-            </div>
-          </div>
-        </div>
-        <div
-          className="in_Stock">
-          ✅
-          <p>
-            In Stock
-          </p>
-        </div>
-      </article>
-      <article
-        className="Item">
-        <div
-          className="image">
-          <img
-            alt="Placeat voluptates repellendus veniam."
-            src="placehold.png" />
-        </div>
-        <div
-          className="info">
-          <div
-            className="name">
-            Placeat voluptates repellendus veniam.
-          </div>
-          <div
-            className="price">
-            €
-            233.34
-          </div>
-          <div
-            className="description block-with-text">
-            Deserunt ut quae architecto error assumenda exercitationem occaecati.
-          </div>
-          <div
-            className="overlay">
-            <div
-              className="overlay-buttons">
-              <button
-                className="addToCart"
-                onClick={[Function]}>
-                Add To Cart
-              </button>
-              <button
-                className="buttonDisabled"
-                disabled={true}>
-                Remove from Cart
-              </button>
-            </div>
-          </div>
-        </div>
-        <div
-          className="in_Stock">
-          ✅
-          <p>
-            In Stock
-          </p>
-        </div>
-      </article>
-      <article
-        className="Item">
-        <div
-          className="image">
-          <img
-            alt="Placeat voluptates repellendus veniam."
-            src="placehold.png" />
-        </div>
-        <div
-          className="info">
-          <div
-            className="name">
-            Placeat voluptates repellendus veniam.
-          </div>
-          <div
-            className="price">
-            €
-            233.34
-          </div>
-          <div
-            className="description block-with-text">
-            Deserunt ut quae architecto error assumenda exercitationem occaecati.
-          </div>
-          <div
-            className="overlay">
-            <div
-              className="overlay-buttons">
-              <button
-                className="addToCart"
-                onClick={[Function]}>
-                Add To Cart
-              </button>
-              <button
-                className="buttonDisabled"
-                disabled={true}>
-                Remove from Cart
-              </button>
-            </div>
-          </div>
-        </div>
-        <div
-          className="in_Stock">
-          ✅
-          <p>
-            In Stock
-          </p>
-        </div>
-      </article>
-      <article
-        className="Item">
-        <div
-          className="image">
-          <img
-            alt="Placeat voluptates repellendus veniam."
-            src="placehold.png" />
-        </div>
-        <div
-          className="info">
-          <div
-            className="name">
-            Placeat voluptates repellendus veniam.
-          </div>
-          <div
-            className="price">
-            €
-            233.34
-          </div>
-          <div
-            className="description block-with-text">
-            Deserunt ut quae architecto error assumenda exercitationem occaecati.
-          </div>
-          <div
-            className="overlay">
-            <div
-              className="overlay-buttons">
-              <button
-                className="addToCart"
-                onClick={[Function]}>
-                Add To Cart
-              </button>
-              <button
-                className="buttonDisabled"
-                disabled={true}>
-                Remove from Cart
-              </button>
-            </div>
-          </div>
-        </div>
-        <div
-          className="in_Stock">
-          ✅
-          <p>
-            In Stock
-          </p>
-        </div>
-      </article>
-      <article
-        className="Item">
-        <div
-          className="image">
-          <img
-            alt="Placeat voluptates repellendus veniam."
-            src="placehold.png" />
-        </div>
-        <div
-          className="info">
-          <div
-            className="name">
-            Placeat voluptates repellendus veniam.
-          </div>
-          <div
-            className="price">
-            €
-            233.34
-          </div>
-          <div
-            className="description block-with-text">
-            Deserunt ut quae architecto error assumenda exercitationem occaecati.
-          </div>
-          <div
-            className="overlay">
-            <div
-              className="overlay-buttons">
-              <button
-                className="addToCart"
-                onClick={[Function]}>
-                Add To Cart
-              </button>
-              <button
-                className="buttonDisabled"
-                disabled={true}>
-                Remove from Cart
-              </button>
+              className="overlay">
+              <div>
+                <button
+                  className="addToCart"
+                  onClick={[Function]}>
+                  Add To Cart
+                </button>
+                <button
+                  className="removeFromCart"
+                  onClick={[Function]}>
+                  Remove from Cart
+                </button>
+              </div>
+              <label>
+                1
+              </label>
             </div>
           </div>
         </div>
@@ -2669,37 +3274,53 @@ exports[`Storyshots SidebarMenu default 1`] = `
   </ul>
 </section>
 `;
-exports[`Storyshots cart one item 1`] = `
-<div>
+exports[`Storyshots cart no items 1`] = `
+<div
+  className="cart">
   <h1>
     Carrello
   </h1>
-  <div
-    className="cart">
-    <div>
-      <article
-        className="Item">
+  <div>
+    <h2>
+      Il tuo carrello è vuoto.
+    </h2>
+  </div>
+  <h3>
+    Totale =
+    0
+     €
+  </h3>
+  <button
+    className="buy">
+    Acquista ora
+  </button>
+</div>
+`;
+
+exports[`Storyshots cart one item 1`] = `
+<div
+  className="cart">
+  <h1>
+    Carrello
+  </h1>
+  <div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <img
+          alt="Placeat voluptates repellendus veniam."
+          className="cart-item-img"
+          src="placehold.png" />
         <div
-          className="card">
+          className="item">
           <div
-            className="image">
-            <img
-              alt="Placeat voluptates repellendus"
-              src="placehold.png" />
+            className="item-name">
+            Placeat voluptates repellendus veniam.
           </div>
-          <div
-            className="info">
-            <div
-              className="name">
-              Placeat voluptates repellendus
-            </div>
-            <div
-              className="price">
-              €
-              233.34
-            </div>
-            <div
-              className="description block-with-text" />
+          <div>
+            Prezzo:
+            233.34
           </div>
         </div>
       </article>
@@ -2762,45 +3383,107 @@ exports[`Storyshots cart one item 1`] = `
   <h3>
     Totale =
     1166.7
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantità =
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotale =
+          NaN
+           €
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={undefined}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item">
+          Rimuovi
+        </button>
+      </div>
+    </div>
+  </div>
+  <h3>
+    Totale =
+    NaN
      €
   </h3>
-  <button>
+  <button
+    className="buy">
     Acquista ora
   </button>
 </div>
 `;
 
 exports[`Storyshots cart with many items 1`] = `
-<div>
+<div
+  className="cart">
   <h1>
     Carrello
   </h1>
-  <div
-    className="cart">
-    <div>
-      <article
-        className="Item">
+  <div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <img
+          alt="Placeat voluptates repellendus veniam."
+          className="cart-item-img"
+          src="placehold.png" />
         <div
-          className="card">
+          className="item">
           <div
-            className="image">
-            <img
-              alt="Placeat voluptates repellendus veniam."
-              src="placehold.png" />
+            className="item-name">
+            Placeat voluptates repellendus veniam.
           </div>
-          <div
-            className="info">
-            <div
-              className="name">
-              Placeat voluptates repellendus veniam.
-            </div>
-            <div
-              className="price">
-              €
-              0
-            </div>
-            <div
-              className="description block-with-text" />
+          <div>
+            Prezzo:
+            233.34
           </div>
         </div>
       </article>
@@ -2858,31 +3541,87 @@ exports[`Storyshots cart with many items 1`] = `
           10+
         </option>
       </select>
-    </div>
-    <div>
-      <article
-        className="Item">
+      </div>
+      <div
+        className="cart-item-bottom">
         <div
-          className="card">
+          className="class-name-quantity">
+          Quantità =
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotale =
+          NaN
+           €
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={undefined}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item">
+          Rimuovi
+        </button>
+      </div>
+    </div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <img
+          alt="Placeat voluptates repellendus veniam."
+          className="cart-item-img"
+          src="placehold.png" />
+        <div
+          className="item">
           <div
-            className="image">
-            <img
-              alt="Placeat voluptates repellendus veniam."
-              src="placehold.png" />
+            className="item-name">
+            Placeat voluptates repellendus veniam.
           </div>
-          <div
-            className="info">
-            <div
-              className="name">
-              Placeat voluptates repellendus veniam.
-            </div>
-            <div
-              className="price">
-              €
-              30
-            </div>
-            <div
-              className="description block-with-text" />
+          <div>
+            Prezzo:
+            233.34
           </div>
         </div>
       </article>
@@ -2940,31 +3679,87 @@ exports[`Storyshots cart with many items 1`] = `
           10+
         </option>
       </select>
-    </div>
-    <div>
-      <article
-        className="Item">
+      </div>
+      <div
+        className="cart-item-bottom">
         <div
-          className="card">
+          className="class-name-quantity">
+          Quantità =
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotale =
+          NaN
+           €
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={undefined}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item">
+          Rimuovi
+        </button>
+      </div>
+    </div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <img
+          alt="Placeat voluptates repellendus veniam."
+          className="cart-item-img"
+          src="placehold.png" />
+        <div
+          className="item">
           <div
-            className="image">
-            <img
-              alt="Placeat voluptates repellendus veniam."
-              src="placehold.png" />
+            className="item-name">
+            Placeat voluptates repellendus veniam.
           </div>
-          <div
-            className="info">
-            <div
-              className="name">
-              Placeat voluptates repellendus veniam.
-            </div>
-            <div
-              className="price">
-              €
-              60
-            </div>
-            <div
-              className="description block-with-text" />
+          <div>
+            Prezzo:
+            233.34
           </div>
         </div>
       </article>
@@ -3022,31 +3817,87 @@ exports[`Storyshots cart with many items 1`] = `
           10+
         </option>
       </select>
-    </div>
-    <div>
-      <article
-        className="Item">
+      </div>
+      <div
+        className="cart-item-bottom">
         <div
-          className="card">
+          className="class-name-quantity">
+          Quantità =
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotale =
+          NaN
+           €
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={undefined}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item">
+          Rimuovi
+        </button>
+      </div>
+    </div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <img
+          alt="Placeat voluptates repellendus veniam."
+          className="cart-item-img"
+          src="placehold.png" />
+        <div
+          className="item">
           <div
-            className="image">
-            <img
-              alt="Placeat voluptates repellendus veniam."
-              src="placehold.png" />
+            className="item-name">
+            Placeat voluptates repellendus veniam.
           </div>
-          <div
-            className="info">
-            <div
-              className="name">
-              Placeat voluptates repellendus veniam.
-            </div>
-            <div
-              className="price">
-              €
-              90
-            </div>
-            <div
-              className="description block-with-text" />
+          <div>
+            Prezzo:
+            233.34
           </div>
         </div>
       </article>
@@ -3104,31 +3955,87 @@ exports[`Storyshots cart with many items 1`] = `
           10+
         </option>
       </select>
-    </div>
-    <div>
-      <article
-        className="Item">
+      </div>
+      <div
+        className="cart-item-bottom">
         <div
-          className="card">
+          className="class-name-quantity">
+          Quantità =
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotale =
+          NaN
+           €
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={undefined}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item">
+          Rimuovi
+        </button>
+      </div>
+    </div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <img
+          alt="Placeat voluptates repellendus veniam."
+          className="cart-item-img"
+          src="placehold.png" />
+        <div
+          className="item">
           <div
-            className="image">
-            <img
-              alt="Placeat voluptates repellendus veniam."
-              src="placehold.png" />
+            className="item-name">
+            Placeat voluptates repellendus veniam.
           </div>
-          <div
-            className="info">
-            <div
-              className="name">
-              Placeat voluptates repellendus veniam.
-            </div>
-            <div
-              className="price">
-              €
-              120
-            </div>
-            <div
-              className="description block-with-text" />
+          <div>
+            Prezzo:
+            233.34
           </div>
         </div>
       </article>
@@ -3191,9 +4098,78 @@ exports[`Storyshots cart with many items 1`] = `
   <h3>
     Totale =
     900
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantità =
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotale =
+          NaN
+           €
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={undefined}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item">
+          Rimuovi
+        </button>
+      </div>
+    </div>
+  </div>
+  <h3>
+    Totale =
+    NaN
      €
   </h3>
-  <button>
+  <button
+    className="buy">
     Acquista ora
   </button>
 </div>

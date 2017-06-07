@@ -25,6 +25,7 @@ import PersonalAreaPersonalData from '../src/components/PersonalAreaPersonalData
 import PersonalAreaAddressData from '../src/components/PersonalAreaAddressData';
 import PersonalArea from '../src/components/PersonalArea';
 
+
 registerScissors(defaultDevices);
 
 const LanguageDecorator = (story) => (
@@ -38,22 +39,36 @@ storiesOf('cart', module)
     const items = [];
     return (
       <Cart
-        cart={items} />
+        cart={items}
+        />
     );
   })
   .add('one item', () => {
     const items = [{
       uuid: 'ert534534wertwert',
-      name: 'Placeat voluptates repellendus',
+      name: 'Placeat voluptates repellendus veniam.',
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
       pictureUrl: null,
       category: 'accessori',
-      quantity: 5,
+      availability: 3
     }];
+
     return (
       <Cart
-        cart={items} />
+        cart={items}
+        item={(uuid) => {
+          return {
+            uuid: 'ert534534wertwert',
+            name: 'Placeat voluptates repellendus veniam.',
+            description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+            price: 233.34,
+            pictureUrl: null,
+            category: 'accessori',
+            availability: 3
+          }
+        }}
+        setItemInCart={action('set item in cart')} />
     );
   })
   .add('with many items', () => {
@@ -67,13 +82,25 @@ storiesOf('cart', module)
         price: 30 * i,
         pictureUrl: null,
         category: 'accessori',
-        quantity: i,
+        availability: 3,
       };
       items.push(item);
     }
     return (
       <Cart
-        cart={items} />
+        cart={items}
+        item={(uuid) => {
+          return {
+            uuid: 'ert534534wertwert',
+            name: 'Placeat voluptates repellendus veniam.',
+            description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+            price: 233.34,
+            pictureUrl: null,
+            category: 'accessori',
+            availability: 3
+          }
+        }}
+        setItemInCart={action('set item in cart')} />
     );
   });
 
@@ -133,7 +160,8 @@ storiesOf('Item', module)
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
       pictureUrl: null,
-      availability: 3
+      category: 'accessori',
+      availability: 3,
     };
     return (
       <Item
@@ -154,7 +182,8 @@ storiesOf('Item', module)
     return (
       <I18nextProvider i18n={i18n}>
         <Item
-          {...item} />
+          {...item}
+          itemQuantity={(uuid) =>{ return 1 }} />
       </I18nextProvider>
     );
   });
@@ -201,6 +230,7 @@ storiesOf('Itemlist', module)
           itemList={itemList}
           fetchItemList={action('fetch ItemList with one item')}
           loaded={true}
+          itemQuantity={(uuid) => { return 1 }}
           match={{ params: { category: 'accessori' } }} />
       </I18nextProvider>
     );
@@ -228,6 +258,7 @@ storiesOf('Itemlist', module)
           itemList={itemList}
           fetchItemList={action('fetch ItemList with one item')}
           loaded={true}
+          itemQuantity={(uuid) => { return 1 }}
           match={{ params: { category: 'accessori' } }} />
       </I18nextProvider>
     );
@@ -362,7 +393,13 @@ storiesOf('SearchBar', module)
           search={action('call to dropDownList many items')} />
         <DropDownList
           dropDownList={dropDownList}
+<<<<<<< HEAD
           loaded={true} />
+=======
+          fetchDropDownList={action('fetch dropDownList one item')}
+          loaded={true}
+          itemQuantity={(uuid) => { return 1 }}/>
+>>>>>>> storybook added with new features of binding item and cart.
       </div>
     );
   })
@@ -402,13 +439,16 @@ storiesOf('SearchBar', module)
           search={action('call to dropDownList many items')} />
         <DropDownList
           dropDownList={dropDownList}
-          loaded={true} />
+          fetchDropDownList={action('fetch dropDownList one item')}
+          loaded={true}
+          itemQuantity={(uuid) => { return 1 }}/>
         <I18nextProvider i18n={i18n}>
           <ItemList
             itemList={itemList}
             fetchItemList={action('fetch ItemList with one item')}
             loaded={true}
-            match={{ params: { category: 'accessori' } }} />
+            match={{ params: { category: 'accessori' } }}
+            itemQuantity={(uuid) => { return 1 }}/>
         </I18nextProvider>
       </div>
     );
@@ -425,7 +465,8 @@ storiesOf('DropDownItem', module)
     };
     return (
       <DropDownItem
-        {...dropDownItem} />
+        {...dropDownItem}
+        itemQuantity={(uuid) => { return 1 }}/>
     );
   });
 
@@ -457,7 +498,9 @@ storiesOf('DropDownList', module)
     return (
       <DropDownList
         dropDownList={dropDownList}
-        loaded={true} />
+        fetchDropDownList={action('fetch DropDownList with one item')}
+        loaded={true}
+        itemQuantity={(uuid) => { return 1 }}/>
     );
   })
   .add('with many items', () => {
@@ -477,7 +520,9 @@ storiesOf('DropDownList', module)
     return (
       <DropDownList
         dropDownList={dropDownList}
-        loaded={true} />
+        fetchDropDownList={action('fetch DropDownList with one item')}
+        loaded={true}
+        itemQuantity={(uuid) => { return 1 }}/>
     );
   });
 
