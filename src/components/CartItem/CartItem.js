@@ -92,8 +92,6 @@ class CartItem extends Component {
 
   render() {
     const item = this.props.item;
-    const that = this;
-    console.log(item)
     return (
       <div className='cart-item'>
         <div className='cart-item-top'>
@@ -112,7 +110,7 @@ class CartItem extends Component {
             this.state.isOptionValue ? this.renderDropDown : this.renderTextInput
           }
           <button className='remove-cart-item'
-                  onClick={that.handleRemoveClick}>Rimuovi</button>
+                  onClick={this.handleRemoveClick}>Rimuovi</button>
         </div>
       </div>
     );
