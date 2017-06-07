@@ -1,18 +1,31 @@
 @import ../../style/palette.sass
 
-.TopBar
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: flex-start
-    background-color: $primary-color-dark
-    width: 100vw
-    height: 3em
-    margin: auto
+$movile-width : 414px
+@media screen and (max-width: $movile-width)
+    .TopBar
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+        background-color: $primary-color-dark
+        height: 3em
 
-    .Hamburger
-        background-image: url('./hamburger.png')
-        background-size: 2em 2em
-        width: 2em
-        height: 2em
-        margin-left: 0.5em
+        .Hamburger
+            background-image: url('./hamburger.png')
+            background-size: cover
+            width: 3em
+            height: 3em
+            margin-left: 0.5em
+
+$movile-width : 414px
+@media screen and (min-width: $movile-width+1)
+    .TopBar
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+        background-color: $primary-color-dark
+        height: 3em
+
+        .Hamburger
+            display: none
