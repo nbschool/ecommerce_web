@@ -3,21 +3,15 @@
 $movile-width : 414px
 @media screen and (max-width: $movile-width)
     .CategoryMenu
-        display: flex
-        width: 100vw
-        flex-direction: column
-        flex-wrap: wrap
-        justify-content: center
-        position: absolute
+        width: 100%
 
         ul
+            display: flex
+            flex-direction: column
             list-style: none
             margin: 0
             padding: 0
-            display: flex
-            flex: 0 0
-            flex-wrap: wrap
-            flex-direction: column
+
 
             li
                 flex: 1 1 15%
@@ -44,15 +38,7 @@ $movile-width : 414px
 
 @media screen and (min-width: $movile-width+1)
     .CategoryMenu
-        display: flex
-        flex-wrap: wrap
-        justify-content: center
-
-        .HeadBar
-            position: relative
-            background-color: $primary-color-dark
-            width: 100vw
-            display: none
+        width: 100%
 
         ul
             list-style: none
