@@ -3,24 +3,17 @@ import PropTypes from 'prop-types';
 
 import './TopBar.css';
 
-class TopBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const {image} = this.props;
-
-    return (
-      <div className="TopBar">
-        <div className="Hamburger"></div>
-      </div>
-    );
-  }
-}
+const TopBar = props => (
+  <div className="TopBar">
+    <div className="Hamburger"/>
+    <div className="content">
+      {props.children}
+    </div>
+  </div>
+);
 
 TopBar.propTypes = {
+  children: PropTypes.node,
 };
 
 export default TopBar;
