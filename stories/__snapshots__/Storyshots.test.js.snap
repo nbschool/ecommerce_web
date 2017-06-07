@@ -1197,6 +1197,141 @@ exports[`Storyshots Login empty login it 1`] = `
 </div>
 `;
 
+exports[`Storyshots PersonalArea default 1`] = `
+<section
+  className="PersonalArea">
+  <h1>
+    Personal Area
+  </h1>
+  <div
+    className="content">
+    <aside>
+      <section
+        className="SidebarMenu">
+        <ul>
+          <li
+            className="active"
+            onClick={[Function]}>
+            <a
+              href="#">
+              Dati personali
+            </a>
+          </li>
+          <li
+            className=""
+            onClick={[Function]}>
+            <a
+              href="#">
+              Dati di spedizione
+            </a>
+          </li>
+        </ul>
+      </section>
+    </aside>
+    <article>
+      <section
+        className="PersonalAreaPersonalData">
+        <h1>
+          Edit your personal data
+        </h1>
+        <form
+          className="form"
+          onSubmit={[Function]}>
+          <div>
+            <label>
+              First name
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              value="Pino" />
+          </div>
+          <div>
+            <label>
+              Last name
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              value="Silvestre" />
+          </div>
+          <div>
+            <label>
+              Email
+            </label>
+            <input
+              className="form-control"
+              type="email"
+              value="pino.silvestre@gmail.com" />
+          </div>
+          <div>
+            <label />
+            <input
+              type="submit"
+              value="Save" />
+          </div>
+        </form>
+      </section>
+    </article>
+  </div>
+</section>
+`;
+
+exports[`Storyshots PersonalAreaAddressData default 1`] = `
+<section
+  className="PersonalAreaAddressData">
+  <h1>
+    Modifica i tuoi dati di spedizione
+  </h1>
+</section>
+`;
+
+exports[`Storyshots PersonalAreaPersonalData default 1`] = `
+<section
+  className="PersonalAreaPersonalData">
+  <h1>
+    Modifica i tuoi dati personali
+  </h1>
+  <form
+    className="form"
+    onSubmit={[Function]}>
+    <div>
+      <label>
+        Nome
+      </label>
+      <input
+        className="form-control"
+        type="text"
+        value="Pino" />
+    </div>
+    <div>
+      <label>
+        Cognome
+      </label>
+      <input
+        className="form-control"
+        type="text"
+        value="Silvestre" />
+    </div>
+    <div>
+      <label>
+        Email
+      </label>
+      <input
+        className="form-control"
+        type="email"
+        value="pino.silvestre@gmail.com" />
+    </div>
+    <div>
+      <label />
+      <input
+        type="submit"
+        value="Salva" />
+    </div>
+  </form>
+</section>
+`;
+
 exports[`Storyshots Register empty form en 1`] = `
 <div
   className="Register">
@@ -2557,4 +2692,28 @@ exports[`Storyshots SearchBox With results 1`] = `
     </form>
   </div>
 </div>
+`;
+
+exports[`Storyshots SidebarMenu default 1`] = `
+<section
+  className="SidebarMenu">
+  <ul>
+    <li
+      className="active"
+      onClick={[Function]}>
+      <a
+        href="#">
+        Dati personali
+      </a>
+    </li>
+    <li
+      className=""
+      onClick={[Function]}>
+      <a
+        href="#">
+        Dati di spedizione
+      </a>
+    </li>
+  </ul>
+</section>
 `;

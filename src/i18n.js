@@ -49,6 +49,14 @@ i18n
           out_stock: 'Out of Stock',
           addToCart: "Add To Cart",
           removeFromCart: "Remove from Cart"
+        },
+        personalArea: {
+          title: 'Personal Area',
+          dataArea: 'Edit your personal data',
+          dataArea_first_name: 'First name',
+          dataArea_last_name: 'Last name',
+          dataArea_email: 'Email',
+          dataArea_save: 'Save'
         }
       },
       it: {
@@ -94,6 +102,14 @@ i18n
           out_stock: 'Non Disponibile',
           addToCart: "Aggiungi al Carrello",
           removeFromCart: "Rimuovi dal Carrello"
+        },
+        personalArea: {
+          title: 'Area personale',
+          dataArea: 'Modifica i tuoi dati personali',
+          dataArea_first_name: 'Nome',
+          dataArea_last_name: 'Cognome',
+          dataArea_email: 'Email',
+          dataArea_save: 'Salva'
         }
       }
     },
