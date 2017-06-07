@@ -2717,3 +2717,29 @@ exports[`Storyshots SidebarMenu default 1`] = `
   </ul>
 </section>
 `;
+
+exports[`Storyshots UserInfo Logged user 1`] = `
+<div>
+  <button
+    className="button undefined"
+    onClick={[Function]}>
+    Hi, 
+    User
+    !
+  </button>
+</div>
+`;
+
+exports[`Storyshots UserInfo Not logged user 1`] = `
+<div>
+  <button
+    className="button undefined"
+    onClick={undefined}>
+    <a
+      href="/login"
+      onClick={[Function]}>
+      Login
+    </a>
+  </button>
+</div>
+`;
