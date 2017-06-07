@@ -1,6 +1,6 @@
 
 // common credentials for fetch to server
-export const crendetialParams = {
+export const credentialParams = {
   mode: 'cors',
   credentials: 'include',
 };
