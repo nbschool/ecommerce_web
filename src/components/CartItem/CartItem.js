@@ -9,8 +9,8 @@ class CartItem extends Component {
     this.state = {
       isOptionValue: true,
       item: this.props.item,
-      selectedQuantity: this.props.item.quantity,
-      textQuantityValue: this.props.item.quantity,
+      selectedQuantity: this.props.quantity,
+      textQuantityValue: this.props.quantity,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
@@ -19,12 +19,20 @@ class CartItem extends Component {
 
   handleChange(event) {
     event.preventDefault();
-    const value = parseInt(event.target.value);
-    this.setState({
-      selectedQuantity: value,
-      isOptionValue: value < 10,
-    });
-    this.props.dispatchHandleChange(event.target.value);
+    if (this.checkAvailability(this.props.item, Number.parseInt(event.target.value))) {
+      const value = parseInt(event.target.value);
+      this.setState({
+        selectedQuantity: value,
+        isOptionValue: value < 10,
+      });
+      this.props.dispatchHandleChange(this.props.item, Number.parseInt(event.target.value));
+    } else {
+      alert('Prodotto non disponibile con questa quantità.');
+    }
+  }
+
+  checkAvailability(item, insertedQuantity) {
+    return (item.availability >= insertedQuantity) ? true : false;
   }
 
   handleTextChange(event) {
@@ -32,11 +40,16 @@ class CartItem extends Component {
   }
 
   handleUpdateClick() {
-    this.setState({
-      selectedQuantity: this.state.textQuantityValue,
-      isOptionValue: this.state.textQuantityValue < 10,
-    });
-    this.props.dispatchHandleChange(this.state.textQuantityValue);
+    if (this.checkAvailability(this.props.item, Number.parseInt(this.state.textQuantityValue))) {
+      this.setState({
+        selectedQuantity: this.state.textQuantityValue,
+        isOptionValue: this.state.textQuantityValue < 10,
+      });
+      this.props.dispatchHandleChange(this.props.item,
+                                      Number.parseInt(this.state.textQuantityValue));
+    } else {
+      alert('Prodotto non disponibile con questa quantità.');
+    }
   }
 
   get renderDropDown() {
@@ -72,19 +85,20 @@ class CartItem extends Component {
   }
 
   render() {
+    const item = this.props.item;
     return (
       <div className='cart-item'>
         <div className='cart-item-top'>
-          <img className='cart-item-img' src={this.props.item.pictureUrl} />
+          <img className='cart-item-img' src={item.pictureUrl} />
           <div className='item'>
-            <div className='item-name'>{this.props.item.name}</div>
-            <div>Prezzo: {this.props.item.price}</div>
+            <div className='item-name'>{item.name}</div>
+            <div>Prezzo: {item.price}</div>
           </div>
         </div>
         <div className='cart-item-bottom'>
           <div className='class-name-quantity'>Quantità = {this.state.selectedQuantity}</div>
           <div className='class-name-subtotal'>
-            Subtotale = {this.props.item.price * this.state.selectedQuantity} €
+            Subtotale = {item.price * this.state.selectedQuantity} €
           </div>
           {
             this.state.isOptionValue ? this.renderDropDown : this.renderTextInput
@@ -98,7 +112,8 @@ class CartItem extends Component {
 
 
 CartItem.propTypes = {
-  item: PropTypes.array,
+  item: PropTypes.object,
+  quantity: PropTypes.number,
   dispatchHandleChange: PropTypes.func.isRequired,
 };
 
