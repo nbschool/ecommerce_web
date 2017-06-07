@@ -14,7 +14,7 @@ class ItemList extends Component {
   }
 
   render() {
-    let itemList = this.props.itemList;
+    let {itemList} = this.props;
     const { match: { params: { category } } } = this.props;
     const {t} = this.props;
 
@@ -35,8 +35,10 @@ class ItemList extends Component {
         itemList = itemList.filter(el => el.category === category);
       }
 
-      itemList = itemList.map((el,index) => (
-        <Item key={index} {...el} setItemInCart={this.props.setItemInCart} />
+      itemList = itemList.map((el, index) => (
+        <Item key={index} {...el}
+              setItemInCart={this.props.setItemInCart}
+              itemQuantity={this.props.itemQuantity}/>
       ));
 
       return (
@@ -56,6 +58,7 @@ ItemList.propTypes = {
   loaded: PropTypes.bool.isRequired,
   match: PropTypes.object.isRequired,
   setItemInCart: PropTypes.func.isRequired,
+  itemQuantity: PropTypes.func.isRequired,
   t: PropTypes.func.isRequired,
 };
 
