@@ -37,7 +37,7 @@ class UserInfo extends React.Component {
 
   componentWillMount() { this.fetchUserData(); }
 
-  componentDidMount() { this.fetchUserData(); }
+  componentDidUpdate() { this.fetchUserData(); }
 
   fetchUserData() {
     if (this.props.isLogged) {
