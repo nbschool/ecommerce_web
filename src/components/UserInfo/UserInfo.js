@@ -1,8 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './button.css';
 
-const LoggedUser = () => (<p>Logged!</p>);
-const UnloggedUser = () => (<p>Not Logged!</p>);
+/**
+ * Generic button component to handle user inputs.
+ */
+const Button = props => {
+  const { className, onClick, children } = props;
+  const clsName = `button ${className}`;
+
+  return (
+    <button onClick={onClick} className={clsName}>
+      {children}
+    </button>
+  );
+};
+
+Button.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
+};
+
 
 class UserInfo extends React.Component {
   constructor(props) {
