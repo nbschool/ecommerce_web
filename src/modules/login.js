@@ -64,10 +64,7 @@ export function fetchLogout() {
   return dispatch => {
     return fetch(`${BASE_URL}/auth/logout/`, {
       method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      ...crendetialParams
+      ...credentialParams
     })
     .then(response => {
       if (!response.ok)
