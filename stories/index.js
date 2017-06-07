@@ -544,8 +544,18 @@ storiesOf('UserInfo', module)
     <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
   ))
   .add('Logged user', () => {
-    return <UserInfo isLogged={true} logout={action('logout')} />;
+    return (
+      <UserInfo
+        isLogged={true}
+        user={{first_name: 'John'}}
+        logout={action('logout')} />
+    );
   })
   .add('Not logged user', () => {
-    return <UserInfo isLogged={false} logout={action('logout')} />;
+    return (
+      <UserInfo
+        isLogged={false}
+        user={null}
+        logout={action('logout')} />
+    );
   });
