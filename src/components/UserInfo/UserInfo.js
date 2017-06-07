@@ -3,26 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './button.css';
 
-/**
- * Generic button component to handle user inputs.
- */
-const Button = props => {
-  const { className, onClick, children } = props;
-  const clsName = `button ${className}`;
-
-  return (
-    <button onClick={onClick} className={clsName}>
-      {children}
-    </button>
-  );
-};
-
-Button.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func,
-};
-
 
 class UserInfo extends React.Component {
   constructor(props) {
@@ -38,25 +18,28 @@ class UserInfo extends React.Component {
     this.logout = this.logout.bind(this);
   }
 
-  componentDidMount() { this.updateUserData(); }
+  componentDidMount() { this.updateUserData(this.props); }
 
-  componentDidUpdate() {
-    const { user: propsUser } = this.props;
+  // Use componentWillReceiveProps to avoid an useless render in between
+  componentWillReceiveProps(nextProps) { this.updateUserData(nextProps); }
 
-    this.updateUserData();
+  /**
+   * Update the state `user` and `logged` properties if one of them
+   * changed in the current props.
+   * A check is done to prevent infinite loop.
+   */
+  updateUserData(props) {
+    const { isLogged, user: propsUser } = props;
+    const { logged, user } = this.state;
 
-    // Update the local user data if the state.user is not the same as the
-    // one received from props (i.e. the username changed)
-    if (propsUser !== this.state.user) {
-      this.setState({ user: propsUser });
-    }
-  }
-
-  updateUserData() {
-    const { isLogged } = this.props;
-
-    if (isLogged !== this.state.logged) {
-      this.setState({ logged: isLogged });
+    if (isLogged !== logged || propsUser !== user) {
+      // safecheck for failed user info fetch. if We are logged we need to show
+      // something to the user, so we can use the previous/default state's user
+      const userData = propsUser ? propsUser : user;
+      this.setState({
+        logged: isLogged,
+        user: userData
+      });
     }
   }
 
@@ -64,12 +47,24 @@ class UserInfo extends React.Component {
 
   render() {
     const { logged } = this.state;
-    const { user: { first_name: firstName } } = this.state;
+
+    if (logged) {
+      // extract the first name property to be rendered
+      // This is done here to prevent the `Cannot read property of null` error
+      // if this.state.user == null
+      const { user: { first_name } } = this.state;
+      return (
+        <div className='wrapper'>
+          <p>Hi, {first_name}!</p>
+          <button onClick={this.logout}>Logout</button>
+        </div>
+      );
+    }
 
     return (
-      logged
-          ? <Button onClick={this.logout}>Hi, {firstName}! Logout</Button>
-          : <Button><Link to='/login'>Login</Link></Button>
+      <div className='wrapper'>
+        <button><Link to='/login'>Login</Link></button>
+      </div>
     );
   }
 }
