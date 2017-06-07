@@ -10,7 +10,9 @@ const ITEMS_FETCH_FAILURE = 'ITEMS_FETCH_FAILURE';
 const PICTURE_FETCH_SUCCESS = 'PICTURE_FETCH_SUCCESS';
 const PICTURE_FETCH_FAILURE = 'PICTURE_FETCH_FAILURE';
 const UPDATE_CART = 'UPDATE_CART';
-
+const SEARCH_ITEMS_SUCCESS = 'SEARCH_ITEMS_SUCCESS';
+const SEARCH_ITEMS_FAILURE = 'SEARCH_ITEMS_FAILURE';
+const EMPTY_SEARCH_RESULTS = 'EMPTY_SEARCH_RESULTS';
 
 //
 export function filterItemsData(items) {
@@ -75,6 +77,20 @@ function fetchPicture(uuid) {
   };
 }
 
+function searchItemSuccess(items) {
+  return {
+    type: SEARCH_ITEMS_SUCCESS,
+    payload: { items, status: 'success' },
+  };
+}
+
+function searchItemFailure(errmessage) {
+  return {
+    type: SEARCH_ITEMS_FAILURE,
+    payload: { status: errmessage },
+  };
+}
+
 function addPictureToItem(picture, items) {
   /*
     This method get the picture and all the items
@@ -114,12 +130,34 @@ export function fetchItems() {
   };
 }
 
+export function searchItems(query) {
+  const url = `${BASE_URL}/items/db/?query=${query}&limit=10`;
+  return dispatch => {
+    return fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Error while querying the server on ${url}`);
+      }
+      return response.json();
+    })
+    .then(items => dispatch(searchItemSuccess(filterItemsData(items))))
+    .catch(error => dispatch(searchItemFailure(error.message)));
+  };
+}
+
+export const emptySearchResults = () => ({
+  type: EMPTY_SEARCH_RESULTS,
+  payload: { status: 'ready' },
+});
 
 // ------------------------------------
 // Selectors
 
 export const getItems = state => state.items.items;
 export const itemsLoaded = state => state.items.loaded;
+export const getSearchResults = state => state.items.searchResults;
+export const getSearchStatus = state => state.items.searchStatus;
+
 // ------------------------------------
 // Store & reducer
 
@@ -127,6 +165,8 @@ const initialState = {
   items: [],
   cart: {},
   loaded: false,
+  searchResults: [],
+  searchStatus: 'ready',
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -155,7 +195,23 @@ export default function reducer(state = initialState, action = {}) {
         [action.payload.uuid]: {...action.payload}
       },
     };
-
+  case SEARCH_ITEMS_SUCCESS:
+    return {
+      ...state,
+      searchResults: action.payload.items,
+      searchStatus: action.payload.status,
+    };
+  case SEARCH_ITEMS_FAILURE:
+    return {
+      ...state,
+      searchStatus: action.payload.status,
+    };
+  case EMPTY_SEARCH_RESULTS:
+    return {
+      ...state,
+      searchResults: [],
+      searchStatus: action.payload.status
+    };
   default:
     return state;
   }
@@ -169,5 +225,8 @@ export const testing = {
   fetchItemsSuccess,
   fetchItemsFailure,
   fetchPictureSuccess,
-  fetchPictureFailure
+  fetchPictureFailure,
+  searchItemSuccess,
+  searchItemFailure,
+  initialState,
 };

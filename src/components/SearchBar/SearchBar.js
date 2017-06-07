@@ -8,20 +8,29 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      value: '',
+      active: false,
     };
 
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
+    this.handleFocusChange = this.handleFocusChange.bind(this);
+
     this.timeout = null;
   }
 
   handleInputChange(event) {
+    const { target: { value }} = event;
+    const { handleInputChange } = this.props;
+
     clearTimeout(this.timeout);
     this.setState({
-      value: event.target.value.substr(0, 20)
+      value: value.substr(0, 20)
     });
+
+    if (handleInputChange) { handleInputChange(value); }
+
     this.timeout = setTimeout(this.submitSearch, 500);
   }
 
@@ -31,8 +40,36 @@ class SearchBar extends Component {
   }
 
   submitSearch() {
-    if (this.state.value.length < 3) return;
-    this.props.search(this.state.value);
+    const { value } = this.state;
+    const { search, emptySearchResults } = this.props;
+    if (value.length < 3) {
+      if (emptySearchResults) {
+        emptySearchResults();
+      }
+      return;
+    }
+
+    search(value);
+  }
+
+  handleFocusChange(event) {
+    const { type } = event;
+    const { handleFocusChange } = this.props;
+    let active;
+
+    if (type === 'focus') {
+      active = true;
+    } else if (type === 'blur') {
+      active = false;
+    }
+
+    /**
+     * Safe check in case another type of event is passed.
+     * We don't want to dispatch anything if that's the case.
+     */
+    if (active !== undefined && handleFocusChange) {
+      handleFocusChange({ active });
+    }
   }
 
   render() {
@@ -46,10 +83,10 @@ class SearchBar extends Component {
             name="search"
             value={this.state.value}
             onChange={this.handleInputChange}
+            onBlur={this.handleFocusChange}
+            onFocus={this.handleFocusChange}
           />
-          <button className="submit">
-
-          </button>
+          <button className="submit"/>
         </form>
       </div>
     );
@@ -57,8 +94,11 @@ class SearchBar extends Component {
 }
 
 SearchBar.propTypes = {
-  search: PropTypes.func.isRequired,
   t: PropTypes.func.isRequired,
+  search: PropTypes.func.isRequired,
+  handleFocusChange: PropTypes.func,
+  handleInputChange: PropTypes.func,
+  emptySearchResults: PropTypes.func,
 };
 
 export default translate('login')(SearchBar);

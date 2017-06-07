@@ -1459,7 +1459,9 @@ exports[`Storyshots SearchBar dropDownList search many item 1`] = `
       onSubmit={[Function]}>
       <input
         name="search"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         placeholder="Search"
         type="text"
         value="" />
@@ -1701,7 +1703,9 @@ exports[`Storyshots SearchBar dropDownList search many item and itemList 1`] = `
       onSubmit={[Function]}>
       <input
         name="search"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         placeholder="Search"
         type="text"
         value="" />
@@ -2399,7 +2403,9 @@ exports[`Storyshots SearchBar dropDownList search one item 1`] = `
       onSubmit={[Function]}>
       <input
         name="search"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         placeholder="Search"
         type="text"
         value="" />
@@ -2449,7 +2455,9 @@ exports[`Storyshots SearchBar dropDownList wrong empty 1`] = `
       onSubmit={[Function]}>
       <input
         name="search"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         placeholder="Search"
         type="text"
         value="" />
@@ -2475,7 +2483,9 @@ exports[`Storyshots SearchBar empty search en 1`] = `
     onSubmit={[Function]}>
     <input
       name="search"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       placeholder="Search"
       type="text"
       value="" />
@@ -2493,12 +2503,58 @@ exports[`Storyshots SearchBar empty search it 1`] = `
     onSubmit={[Function]}>
     <input
       name="search"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       placeholder="Cerca"
       type="text"
       value="" />
     <button
       className="submit" />
   </form>
+</div>
+`;
+
+exports[`Storyshots SearchBox No results 1`] = `
+<div>
+  <div
+    className="SearchBar">
+    <form
+      className="box"
+      onSubmit={[Function]}>
+      <input
+        name="search"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="Search"
+        type="text"
+        value="" />
+      <button
+        className="submit" />
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots SearchBox With results 1`] = `
+<div>
+  <div
+    className="SearchBar">
+    <form
+      className="box"
+      onSubmit={[Function]}>
+      <input
+        name="search"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="Search"
+        type="text"
+        value="" />
+      <button
+        className="submit" />
+    </form>
+  </div>
 </div>
 `;

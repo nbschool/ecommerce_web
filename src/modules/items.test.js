@@ -7,6 +7,8 @@ import reducer, {
   getItems,
   itemsLoaded,
   filterItemsData,
+  searchItems,
+  emptySearchResults,
   testing
 } from './items';
 
@@ -157,4 +159,94 @@ test('check if items are loaded', () => {
   };
 
   expect(itemsLoaded({items: itemState})).toEqual(true);
+});
+
+test('Search items success', done => {
+  const data = [{
+    data: {
+      type: "item",
+      attributes: {
+        description: "Deserunt ut quae architecto error assumenda ",
+        price: 17.86,
+        availability: 29,
+        name: "Voluptatum dolorum atque."
+      },
+      id: "2aabf825-40b3-03d5-e686-9eaebd156c0e",
+      links: {
+        self: "/items/2aabf825-40b3-03d5-e686-9eaebd156c0e"
+      }
+    },
+    links: {
+      self: "/items/2aabf825-40b3-03d5-e686-9eaebd156c0e"
+    }
+  }];
+  fetchMock.get(`${testing.base_url}/items/db/?query=deserunt&limit=10`, {
+    status: 200,
+    body: data,
+  });
+
+  const store = mockStore();
+  const expectedActions = [
+    testing.searchItemSuccess(filterItemsData(data))
+  ];
+
+  return store.dispatch(searchItems('deserunt'))
+    .then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+      done();
+    });
+});
+
+test('Search items failure', done => {
+  const url = `${testing.base_url}/items/db/?query=deserunt&limit=10`;
+  const errorMessage = `Error while querying the server on ${url}`;
+  fetchMock.get(url, { status: 404, body: null, });
+
+  const store = mockStore();
+  const expectedActions = [
+    testing.searchItemFailure(errorMessage)
+  ];
+
+  return store.dispatch(searchItems('deserunt'))
+  .then(() => {
+    expect(store.getActions()).toEqual(expectedActions);
+    done();
+  });
+});
+
+test('searchItemSuccess action', () => {
+  const initialState = testing.initialState;
+  const parsedItems = [{
+    description: "Deserunt ut quae architecto error assumenda ",
+    price: 17.86,
+    availability: 29,
+    name: "Voluptatum dolorum atque.",
+    uuid: "2aabf825-40b3-03d5-e686-9eaebd156c0e"
+  }];
+
+  const newState = reducer(initialState, testing.searchItemSuccess(parsedItems));
+  expect(newState.searchResults).toEqual(parsedItems);
+  expect(newState.searchStatus).toEqual('success');
+});
+
+test('searchItemfail action', () => {
+  const initialState = testing.initialState;
+
+  const newState = reducer(initialState, testing.searchItemFailure('Error'));
+  expect(newState.searchStatus).toEqual('Error');
+});
+
+test('emptySearchresults action', () => {
+  const initialState = testing.initialState;
+  initialState.searchResults = [{
+    description: "Deserunt ut quae architecto error assumenda ",
+    price: 17.86,
+    availability: 29,
+    name: "Voluptatum dolorum atque.",
+    uuid: "2aabf825-40b3-03d5-e686-9eaebd156c0e"
+  }];
+
+  const newState = reducer(initialState, emptySearchResults());
+  expect(newState.searchStatus).toEqual('ready');
+  expect(newState.searchResults).toEqual([]);
 });
