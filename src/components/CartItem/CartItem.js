@@ -55,7 +55,7 @@ class CartItem extends Component {
   }
 
   handleRemoveClick() {
-    this.props.dispatchHandleChange(this.props.item, this.props.item.quantity);
+    this.props.dispatchHandleChange(this.props.item, 0);
   }
 
   get renderDropDown() {
