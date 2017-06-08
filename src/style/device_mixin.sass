@@ -1,0 +1,13 @@
+
+$device-size: ("mobile": ( max-width: 640px ))
+$device-size: map-merge($device-size, ("tablet": ( min-width: 641px )))
+$device-size: map-merge($device-size, ("desktop": ( min-width: 1024px )))
+
+
+=device($breakpoint)
+  @if map-has-key($device-size, $breakpoint)
+    @media screen and #{inspect(map-get($device-size, $breakpoint))}
+      @content
+  
+  @else
+    @warn "Breakpoint mixin supports: `#{$device-size}`"
