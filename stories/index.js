@@ -133,7 +133,8 @@ storiesOf('Item', module)
     };
     return (
       <Item
-      {...item} />
+      {...item}
+      itemQuantity={() => { return 1; }} />
     );
   })
   .add('Item out Stock it', () => {
@@ -148,7 +149,8 @@ storiesOf('Item', module)
     };
     return (
       <Item
-      {...item} />
+      {...item}
+      itemQuantity={() => { return 1; }} />
     );
   })
   .add('Item in Stock en', () => {
@@ -164,7 +166,8 @@ storiesOf('Item', module)
     };
     return (
       <Item
-      {...item} />
+      {...item}
+      itemQuantity={() => { return 1; }} />
     );
   })
   .add('Item out Stock', () => {
