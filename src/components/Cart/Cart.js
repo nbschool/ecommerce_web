@@ -17,17 +17,17 @@ class Cart extends Component {
   }
 
   handleBuyClick() {
-    for (let itemUuid in this.props.cart) {
+    for (const itemUuid in this.props.cart) {
       this.props.setItemInCart(itemUuid, this.props.item(itemUuid).price, 0);
     }
-    this.props.history.push("/")
+    this.props.history.push("/");
   }
 
   render() {
     let total = 0;
     const that = this;
     let cart = Object.values(this.props.cart).map((item, index) => {
-      if(item.itemQuantity > 0) {
+      if (item.itemQuantity > 0) {
         const realItem = that.props.item(item.uuid);
         total += (item.itemQuantity * item.price);
         return (
@@ -61,6 +61,7 @@ Cart.propTypes = {
   cart: PropTypes.object.isRequired,
   item: PropTypes.func.isRequired,
   setItemInCart: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
 export default Cart;
