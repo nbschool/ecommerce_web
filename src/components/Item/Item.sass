@@ -16,18 +16,22 @@
     width: 100%
     height: 0
     transition: .5s ease
-    display: flex
-    justify-content: space-around
-    white-space: nowrap 
-    color: white
+    color: $primary-color-text
     position: absolute
     overflow: hidden
     top: 70%
     left: 50%
     transform: translate(-50%, -50%)
 
+    .overlay-wrapper
+      display: flex
+
     button
       display: none
+      flex: 1 1 auto
+
+      &:last-child
+        margin-left: 0.5em
 
   .card
     padding: 1em
@@ -68,12 +72,12 @@
     margin-top: 1em
     p
       display: inline
-      color: #888
+      color: $secondary-text-color
       margin-left: 0.45em
 
 .Item:hover .overlay
   margin-top: -1em
-  background-color: white
+  background-color: $primary-color-text
   opacity: 1
   height: 100%
   display: flex
@@ -83,28 +87,25 @@
   label
     margin: auto auto
     text-align: center
-    border: 0
-    background-color: #4288CC
-    color: #FFF
+    background-color: $primary-color-dark
+    color: $primary-color-text
     width: 80%
-    padding-top: 0.3em
-    min-height: 1.6em
+    padding: 0.5em
 
   button
     border: none
     padding: 0.8em 0.4em
     min-height: 2em
-    margin: 0.3em
-    background: linear-gradient(rgb(89, 155, 179) 5%, rgb(64, 140, 153) 100%) rgb(89, 155, 179)
+    background: $primary-color-light
     display: inline-block
     font-size: 0.9em
     cursor: pointer
-    color: rgb(255, 255, 255)
-    background-color: white
+    color: $primary-color-text
+    outline: none
 
-  .buttonDisabled
-    background: rgba(212,228,239,1)
-    box-shadow: rgb(39, 104, 115) 0px 0px 0px 0px
+    &:hover:not(.buttonDisabled)
+      background-color: $primary-color-dark
+      box-shadow: $primary-color-dark 1px 3px 8px 0px
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-width : 320px) and (max-width : 480px)
