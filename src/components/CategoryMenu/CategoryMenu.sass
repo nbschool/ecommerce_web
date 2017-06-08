@@ -1,16 +1,16 @@
 @import ../../style/palette.sass
+@import ../../style/device_mixin.sass
 
 .CategoryMenu
-    display: flex
-    flex-wrap: wrap
-    justify-content: center
+    width: 100%
 
     ul
+        display: flex
+        flex-direction: column
         list-style: none
         margin: 0
         padding: 0
-        display: flex
-        flex-wrap: wrap
+
 
         li
             flex: 1 1 15%
@@ -34,3 +34,9 @@
 
                 &:hover
                     color: lighten($primary-color-dark, 30%)
+
+@include device("not-mobile")
+    .CategoryMenu
+        ul
+            flex-wrap: wrap
+            flex-direction: row

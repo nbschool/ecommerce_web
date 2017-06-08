@@ -1,5 +1,5 @@
 @import ../App/App.sass
-
+@import ../../style/device_mixin.sass
 
 .SidebarMenu
     background-color: $primary-color-light
@@ -10,7 +10,7 @@
         padding: 0
         display: flex
         flex-direction: column
-        @media only screen and (min-width : 320px) and (max-width : 480px)
+        @include device("mobile")
             flex-direction: row
 
         li

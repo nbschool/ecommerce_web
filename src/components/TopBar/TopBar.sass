@@ -1,0 +1,22 @@
+@import ../../style/palette.sass
+@import ../../style/device_mixin.sass
+
+.TopBar
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    background-color: $primary-color-dark
+    height: 3em
+
+    .Hamburger
+        background-image: url('./hamburger.png')
+        background-size: cover
+        width: 3em
+        height: 3em
+        margin-left: 0.5em
+
+@include device("not-mobile")
+    .TopBar
+        .Hamburger
+            display: none
