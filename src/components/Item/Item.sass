@@ -1,8 +1,5 @@
 @import ../App/App.sass
-<<<<<<< fix_color
 @import ../../style/palette.sass
-=======
->>>>>>> master
 @import ../../style/device_mixin.sass
 
 .Item
@@ -98,53 +95,3 @@
       display: inline
       color: $secondary-text-color
       margin-left: 0.45em
-<<<<<<< fix_color
-=======
-
-.Item:hover .overlay
-  margin-top: -1em
-  background-color: white
-  opacity: 1
-  height: 100%
-  display: flex
-  justify-content: space-around
-  flex-direction: column
-  
-  label
-    margin: auto auto
-    text-align: center
-    border: 0
-    background-color: #4288CC
-    color: #FFF
-    width: 80%
-    padding-top: 0.3em
-    min-height: 1.6em
-
-  button
-    border: none
-    padding: 0.8em 0.4em
-    min-height: 2em
-    margin: 0.3em
-    background: linear-gradient(rgb(89, 155, 179) 5%, rgb(64, 140, 153) 100%) rgb(89, 155, 179)
-    display: inline-block
-    font-size: 0.9em
-    cursor: pointer
-    color: rgb(255, 255, 255)
-    background-color: white
-
-  .buttonDisabled
-    background: rgba(212,228,239,1)
-    box-shadow: rgb(39, 104, 115) 0px 0px 0px 0px
-
-@include device("mobile")
-  .Item
-    width: 100%
-
-@include device("tablet")
-  .Item
-    width: 33.33%
-
-@include device("desktop")
-  .Item
-    width: 25%
->>>>>>> master
