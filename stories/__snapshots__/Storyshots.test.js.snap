@@ -2719,27 +2719,26 @@ exports[`Storyshots SidebarMenu default 1`] = `
 `;
 
 exports[`Storyshots UserInfo Logged user 1`] = `
-<div>
-  <button
-    className="button undefined"
-    onClick={[Function]}>
+<div
+  className="wrapper">
+  <p>
     Hi, 
-    User
+    John
     !
+  </p>
+  <button
+    onClick={[Function]}>
+    Logout
   </button>
 </div>
 `;
 
 exports[`Storyshots UserInfo Not logged user 1`] = `
-<div>
+<div
+  className="wrapper">
   <button
-    className="button undefined"
-    onClick={undefined}>
-    <a
-      href="/login"
-      onClick={[Function]}>
-      Login
-    </a>
+    onClick={[Function]}>
+    Login
   </button>
 </div>
 `;
