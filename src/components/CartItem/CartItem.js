@@ -95,22 +95,27 @@ class CartItem extends Component {
     return (
       <div className='cart-item'>
         <div className='cart-item-top'>
-          <img className='cart-item-img' src={item.pictureUrl ? item.pictureUrl : placehold} alt={item.name} />
+          <div className='cart-item-img'>
+            <img
+                 src={item.pictureUrl ? item.pictureUrl : placehold}
+                 alt={item.name} />
+          </div>
           <div className='item'>
             <div className='item-name'>{item.name}</div>
-            <div>Prezzo: {item.price}</div>
+            <div className='item-price'>EUR {item.price}</div>
           </div>
         </div>
         <div className='cart-item-bottom'>
           <div className='class-name-quantity'>Quantità = {this.state.selectedQuantity}</div>
           <div className='class-name-subtotal'>
-            Subtotale = {item.price * this.state.selectedQuantity} €
+            Subtotale = EUR {item.price * this.state.selectedQuantity}
           </div>
           {
             this.state.isOptionValue ? this.renderDropDown : this.renderTextInput
           }
           <button className='remove-cart-item'
                   onClick={this.handleRemoveClick}>Rimuovi</button>
+          <hr className="thin-line-separator"/>
         </div>
       </div>
     );

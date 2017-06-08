@@ -39,8 +39,7 @@ storiesOf('cart', module)
     const items = [];
     return (
       <Cart
-        cart={items}
-        />
+        cart={items} q/>
     );
   })
   .add('one item', () => {
@@ -59,14 +58,14 @@ storiesOf('cart', module)
         cart={items}
         item={(uuid) => {
           return {
-            uuid: 'ert534534wertwert',
+            uuid: uuid,
             name: 'Placeat voluptates repellendus veniam.',
             description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
             price: 233.34,
             pictureUrl: null,
             category: 'accessori',
             availability: 3
-          }
+          };
         }}
         setItemInCart={action('set item in cart')} />
     );
@@ -91,14 +90,14 @@ storiesOf('cart', module)
         cart={items}
         item={(uuid) => {
           return {
-            uuid: 'ert534534wertwert',
+            uuid: uuid,
             name: 'Placeat voluptates repellendus veniam.',
             description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
             price: 233.34,
             pictureUrl: null,
             category: 'accessori',
             availability: 3
-          }
+          };
         }}
         setItemInCart={action('set item in cart')} />
     );
@@ -183,7 +182,7 @@ storiesOf('Item', module)
       <I18nextProvider i18n={i18n}>
         <Item
           {...item}
-          itemQuantity={(uuid) =>{ return 1 }} />
+          itemQuantity={() => { return 1; }} />
       </I18nextProvider>
     );
   });
@@ -230,7 +229,7 @@ storiesOf('Itemlist', module)
           itemList={itemList}
           fetchItemList={action('fetch ItemList with one item')}
           loaded={true}
-          itemQuantity={(uuid) => { return 1 }}
+          itemQuantity={() => { return 1; }}
           match={{ params: { category: 'accessori' } }} />
       </I18nextProvider>
     );
@@ -258,7 +257,7 @@ storiesOf('Itemlist', module)
           itemList={itemList}
           fetchItemList={action('fetch ItemList with one item')}
           loaded={true}
-          itemQuantity={(uuid) => { return 1 }}
+          itemQuantity={() => { return 1; }}
           match={{ params: { category: 'accessori' } }} />
       </I18nextProvider>
     );
@@ -393,13 +392,9 @@ storiesOf('SearchBar', module)
           search={action('call to dropDownList many items')} />
         <DropDownList
           dropDownList={dropDownList}
-<<<<<<< HEAD
-          loaded={true} />
-=======
           fetchDropDownList={action('fetch dropDownList one item')}
           loaded={true}
-          itemQuantity={(uuid) => { return 1 }}/>
->>>>>>> storybook added with new features of binding item and cart.
+          itemQuantity={() => { return 1; }}/>
       </div>
     );
   })
@@ -441,14 +436,14 @@ storiesOf('SearchBar', module)
           dropDownList={dropDownList}
           fetchDropDownList={action('fetch dropDownList one item')}
           loaded={true}
-          itemQuantity={(uuid) => { return 1 }}/>
+          itemQuantity={() => { return 1; }}/>
         <I18nextProvider i18n={i18n}>
           <ItemList
             itemList={itemList}
             fetchItemList={action('fetch ItemList with one item')}
             loaded={true}
             match={{ params: { category: 'accessori' } }}
-            itemQuantity={(uuid) => { return 1 }}/>
+            itemQuantity={() => { return 1; }}/>
         </I18nextProvider>
       </div>
     );
@@ -466,7 +461,7 @@ storiesOf('DropDownItem', module)
     return (
       <DropDownItem
         {...dropDownItem}
-        itemQuantity={(uuid) => { return 1 }}/>
+        itemQuantity={() => { return 1; }}/>
     );
   });
 
@@ -500,7 +495,7 @@ storiesOf('DropDownList', module)
         dropDownList={dropDownList}
         fetchDropDownList={action('fetch DropDownList with one item')}
         loaded={true}
-        itemQuantity={(uuid) => { return 1 }}/>
+        itemQuantity={() => { return 1; }}/>
     );
   })
   .add('with many items', () => {
@@ -522,7 +517,7 @@ storiesOf('DropDownList', module)
         dropDownList={dropDownList}
         fetchDropDownList={action('fetch DropDownList with one item')}
         loaded={true}
-        itemQuantity={(uuid) => { return 1 }}/>
+        itemQuantity={() => { return 1; }}/>
     );
   });
 
