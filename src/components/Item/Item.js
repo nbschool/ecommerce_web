@@ -95,19 +95,17 @@ class Item extends Component {
     }
     return (
       <article key={item.uuid} className="Item">
-        <div className="card">
-          <div className="image">
-            <img src={item.pictureUrl ? item.pictureUrl : placehold} alt={item.name} />
-          </div>
-          <div className="info">
-            <div className="name">{item.name}</div>
-            <div className="price">€{item.price}</div>
-            <div className="description block-with-text">{item.description}</div>
-            {itemAvailable}
-          </div>
-          <div className="in_Stock">
-            {emojiStock}<p>{textStock}</p>
-          </div>
+        <div className="image">
+          <img src={item.pictureUrl ? item.pictureUrl : placehold} alt={item.name} />
+        </div>
+        <div className="info">
+          <div className="name">{item.name}</div>
+          <div className="price">€{item.price}</div>
+          <div className="description block-with-text">{item.description}</div>
+          {itemAvailable}
+        </div>
+        <div className="in_Stock">
+          {emojiStock}<p>{textStock}</p>
         </div>
       </article>
     );
