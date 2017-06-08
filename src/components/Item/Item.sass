@@ -1,5 +1,6 @@
 @import ../App/App.sass
 @import ../../style/palette.sass
+@import ../../style/device_mixin.sass
 
 .Item
   position: relative
@@ -7,8 +8,14 @@
   margin: 1em
   display: flex
   flex-flow: column nowrap
-  flex: 1 1 25%
   box-shadow: 1px 4px 9px 0px $secondary-text-color
+  width: 90%
+
+  +device("tablet")
+    width: 40%
+
+  +device("desktop")
+    width: 25%
 
   &:hover .overlay
     opacity: 1
@@ -17,7 +24,6 @@
   .overlay
     display: flex
     flex-flow: column nowrap
-    justify-content: space-between
     position: absolute
     opacity: 0
     visibility: hidden
@@ -36,7 +42,7 @@
 
   .overlay-buttons
     display: flex
-    flex-grow: 1
+    margin-bottom: 0.7em
 
     button
       display: inline-block
