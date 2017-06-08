@@ -45,7 +45,7 @@ class Item extends Component {
       itemsAdded =
         <label>{this.state.numItems}</label>;
       btnAdd =
-        <div className="overlay-wrapper">
+        <div className="overlay-buttons">
           <button className="addToCart" onClick={() => this.setNumberItemToCart(1)}>
             {t('item:addToCart')}
           </button>
@@ -57,7 +57,7 @@ class Item extends Component {
 
     else if (this.state.numItems === 0 && item.availability === 0) {
       btnAdd =
-        <div className="overlay-wrapper">
+        <div className="overlay-buttons">
           <button className="buttonDisabled" disabled>{t('item:addToCart')}</button>
           <button className="buttonDisabled" disabled>{t('item:removeFromCart')}</button>
         </div>;
@@ -65,7 +65,7 @@ class Item extends Component {
 
     else if (this.state.numItems === 0 && item.availability > this.state.numItems) {
       btnAdd =
-        <div className="overlay-wrapper">
+        <div className="overlay-buttons">
           <button className="addToCart" onClick={() => this.setNumberItemToCart(1)}>
             {t('item:addToCart')}
           </button>
@@ -77,7 +77,7 @@ class Item extends Component {
       itemsAdded =
         <label>{this.state.numItems}</label>;
       btnAdd =
-        <div className="overlay-wrapper">
+        <div className="overlay-buttons">
           <button className="buttonDisabled" disabled>{t('item:addToCart')}</button>
           <button className="removeFromCart" onClick={() => this.setNumberItemToCart(-1)}>
             {t('item:removeFromCart')}

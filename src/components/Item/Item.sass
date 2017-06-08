@@ -8,30 +8,52 @@
   margin-left: 1em
   margin-right: 3.5em
 
+  &:hover .overlay
+    opacity: 1
+    visibility: visible
+
   .overlay
+    display: flex
+    flex-flow: column nowrap
+    justify-content: space-between
     position: absolute
+    opacity: 0
+    visibility: hidden
     bottom: 0
     left: 0
     right: 0
-    width: 100%
-    height: 0
+    top: 0
     transition: .5s ease
-    color: $primary-color-text
-    position: absolute
-    overflow: hidden
-    top: 70%
-    left: 50%
-    transform: translate(-50%, -50%)
+    background-color: $primary-color-text
+    font-size: 110%
 
-    .overlay-wrapper
-      display: flex
+    label
+      text-align: center
+      background-color: $primary-color-dark
+      color: $primary-color-text
+      padding: 0.7em
+
+  .overlay-buttons
+    display: flex
+    flex-grow: 1
 
     button
-      display: none
+      display: inline-block
       flex: 1 1 auto
+      border: none
+      color: $primary-color-text
+      background: $primary-color-light
+      cursor: pointer
+      outline: none
+      height: 2.4em
+      font: inherit
 
       &:last-child
         margin-left: 0.5em
+
+      &:hover:not(.buttonDisabled)
+        background-color: $primary-color-dark
+        box-shadow: $primary-color-dark 1px 3px 8px 0px
 
   .card
     padding: 1em
@@ -44,8 +66,7 @@
     width: 100%
 
   .info
-    margin-top: auto
-    padding-top: 20px
+    margin-top: 0.5em
     background-color: $primary-color-text
     color: $primary-text-color
     text-align: center
@@ -74,38 +95,6 @@
       display: inline
       color: $secondary-text-color
       margin-left: 0.45em
-
-.Item:hover .overlay
-  margin-top: -1em
-  background-color: $primary-color-text
-  opacity: 1
-  height: 100%
-  display: flex
-  justify-content: space-around
-  flex-direction: column
-  
-  label
-    margin: auto auto
-    text-align: center
-    background-color: $primary-color-dark
-    color: $primary-color-text
-    width: 80%
-    padding: 0.5em
-
-  button
-    border: none
-    padding: 0.8em 0.4em
-    min-height: 2em
-    background: $primary-color-light
-    display: inline-block
-    font-size: 0.9em
-    cursor: pointer
-    color: $primary-color-text
-    outline: none
-
-    &:hover:not(.buttonDisabled)
-      background-color: $primary-color-dark
-      box-shadow: $primary-color-dark 1px 3px 8px 0px
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-width : 320px) and (max-width : 480px)
