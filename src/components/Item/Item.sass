@@ -2,11 +2,9 @@
 @import ../../style/palette.sass
 
 .Item
-  width: 25%
   position: relative
   padding: 1em
-  margin-left: 1em
-  margin-right: 3.5em
+  flex: 1 1 30%
 
   &:hover .overlay
     opacity: 1
@@ -57,8 +55,6 @@
 
   .card
     padding: 1em
-    flex-basis: 25%
-    flex-grow: 1
     background-color: $primary-color-text
     box-shadow: 1px 4px 9px 0px $secondary-text-color
 
@@ -95,13 +91,3 @@
       display: inline
       color: $secondary-text-color
       margin-left: 0.45em
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-width : 320px) and (max-width : 480px)
-  .Item
-    width: 100%
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-width : 768px) and (max-width : 1024px)
-  .Item
-    width: 33.33%
