@@ -4,10 +4,12 @@ $desktop-min: 1024px
 
 // breakpoint queries
 $mobile: ( max-width: $tablet-min - 1 )
+$not-mobile: ( min-width: $tablet-min )
 $tablet: ( min-width: $tablet-min, max-width: $desktop-min - 1 )
 $desktop: ( min-width: $desktop-min )
 
 $device-size: ( "mobile": $mobile )
+$device-size: map-merge($device-size, ( "not-mobile": $not-mobile ))
 $device-size: map-merge($device-size, ( "tablet": $tablet ))
 $device-size: map-merge($device-size, ( "desktop": $desktop ))
 
