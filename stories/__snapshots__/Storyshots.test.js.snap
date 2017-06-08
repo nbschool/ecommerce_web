@@ -3291,7 +3291,8 @@ exports[`Storyshots cart no items 1`] = `
      €
   </h3>
   <button
-    className="buy">
+    className="buy"
+    onClick={[Function]}>
     Acquista ora
   </button>
 </div>
@@ -3451,10 +3452,15 @@ exports[`Storyshots cart one item 1`] = `
   <h3>
     Totale =
     NaN
+  <div />
+  <h3>
+    Totale =
+    0
      €
   </h3>
   <button
-    className="buy">
+    className="buy"
+    onClick={[Function]}>
     Acquista ora
   </button>
 </div>
@@ -4166,10 +4172,15 @@ exports[`Storyshots cart with many items 1`] = `
   <h3>
     Totale =
     NaN
+  <div />
+  <h3>
+    Totale =
+    0
      €
   </h3>
   <button
-    className="buy">
+    className="buy"
+    onClick={[Function]}>
     Acquista ora
   </button>
 </div>
