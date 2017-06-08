@@ -11,9 +11,7 @@ class UserInfo extends React.Component {
 
     this.state = {
       logged: false,
-      user: {
-        first_name: 'User'
-      }
+      user: this.defaultUser
     };
 
     this.logout = this.logout.bind(this);
@@ -24,6 +22,11 @@ class UserInfo extends React.Component {
   // Use componentWillReceiveProps to avoid an useless render in between
   componentWillReceiveProps(nextProps) { this.updateUserData(nextProps); }
 
+  get defaultUser() {
+    return {
+      first_name: 'User'
+    };
+  }
   /**
    * Update the state `user` and `logged` properties if one of them
    * changed in the current props.
@@ -37,6 +40,10 @@ class UserInfo extends React.Component {
       // safecheck for failed user info fetch. if We are logged we need to show
       // something to the user, so we can use the previous/default state's user
       const userData = propsUser ? propsUser : user;
+      // safecheck for failed user info fetch or null user in props.
+      // If we have something (and it's different from current state) we store
+      // that, else we store the defaultUser to avoid attribute errors.
+      const userData = propsUser ? propsUser : this.defaultUser;
       this.setState({
         logged: isLogged,
         user: userData
