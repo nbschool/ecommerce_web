@@ -1,13 +1,32 @@
+// breakpoint key measures
+$tablet-min: 426px
+$desktop-min: 1024px
 
-$device-size: ("mobile": ( max-width: 640px ))
-$device-size: map-merge($device-size, ("tablet": ( min-width: 641px )))
-$device-size: map-merge($device-size, ("desktop": ( min-width: 1024px )))
+// breakpoint queries
+$mobile: ( max-width: $tablet-min - 1 )
+$tablet: ( min-width: $tablet-min, max-width: $desktop-min - 1 )
+$desktop: ( min-width: $desktop-min )
 
+$device-size: ( "mobile": $mobile )
+$device-size: map-merge($device-size, ( "tablet": $tablet ))
+$device-size: map-merge($device-size, ( "desktop": $desktop ))
 
 =device($breakpoint)
-  @if map-has-key($device-size, $breakpoint)
-    @media screen and #{inspect(map-get($device-size, $breakpoint))}
-      @content
-  
-  @else
+
+  @if not map-has-key($device-size, $breakpoint)
     @warn "Breakpoint mixin supports: `#{$device-size}`"
+  @else
+    $map: map-get($device-size, $breakpoint)
+    $query: ""
+
+    @if map-has-key($map, min-width)
+      $query: append($query, "(min-width: #{map-get($map, min-width)})")
+
+    @if map-has-key($map, min-width) and map-has-key($map, max-width)
+      $query: append($query, "and")
+
+    @if map-has-key($map, max-width)
+      $query: append($query, "(max-width: #{map-get($map, max-width)})")
+
+    @media screen and #{$query}
+      @content
