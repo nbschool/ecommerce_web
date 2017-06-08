@@ -1,4 +1,3 @@
-
 import { credentialParams } from './utils';
 
 // ------------------------------------
@@ -85,7 +84,7 @@ export function fetchLogin(email, password) {
     })
     .then(response => {
       if (!response.ok)
-        throw new Error ('Unable to login');
+        throw new Error('Unable to login');
     })
     .then(() => dispatch(fetchLoginSuccess()))
     .then(() => dispatch(getUser()))
