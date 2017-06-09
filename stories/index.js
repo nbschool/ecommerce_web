@@ -23,6 +23,7 @@ import SidebarMenu from '../src/components/SidebarMenu';
 import PersonalAreaPersonalData from '../src/components/PersonalAreaPersonalData';
 import PersonalAreaAddressData from '../src/components/PersonalAreaAddressData';
 import PersonalArea from '../src/components/PersonalArea';
+import UserInfo from '../src/components/UserInfo';
 
 registerScissors(defaultDevices);
 
@@ -535,5 +536,26 @@ storiesOf('PersonalArea', module)
         menuList={menuList}
         personalData={personalData}
         saveData={action('call to saveData')} />
+    );
+  });
+
+storiesOf('UserInfo', module)
+  .addDecorator(story => (
+    <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
+  ))
+  .add('Logged user', () => {
+    return (
+      <UserInfo
+        isLogged={true}
+        user={{first_name: 'John'}}
+        logout={action('logout')} />
+    );
+  })
+  .add('Not logged user', () => {
+    return (
+      <UserInfo
+        isLogged={false}
+        user={null}
+        logout={action('logout')} />
     );
   });
