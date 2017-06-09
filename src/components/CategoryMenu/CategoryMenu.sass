@@ -4,6 +4,7 @@
     display: flex
     flex-wrap: wrap
     justify-content: center
+    
 
     ul
         list-style: none
@@ -11,13 +12,14 @@
         padding: 0
         display: flex
         flex-wrap: wrap
+        box-shadow: 1px 5px 10px 0px $secondary-text-color
 
         li
             flex: 1 1 15%
-            background-color: $primary-color-dark
+            background-color: $primary-color
 
             &.active
-                background-color: $primary-color
+                background-color: $primary-color-dark
 
             a
                 display: block

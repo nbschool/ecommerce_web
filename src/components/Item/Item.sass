@@ -1,57 +1,91 @@
 @import ../App/App.sass
+@import ../../style/palette.sass
 @import ../../style/device_mixin.sass
 
 .Item
   position: relative
+  padding: 1em
+  margin: 1em
+  display: flex
+  flex-flow: column nowrap
+  box-shadow: 1px 4px 9px 0px $secondary-text-color
+  width: 90%
+
+  +device("tablet")
+    width: 40%
+
+  +device("desktop")
+    width: 25%
+
+  &:hover .overlay
+    opacity: 1
+    visibility: visible
 
   .overlay
+    display: flex
+    flex-flow: column nowrap
     position: absolute
+    opacity: 0
+    visibility: hidden
     bottom: 0
     left: 0
     right: 0
-    width: 100%
-    height: 0
+    top: 0
     transition: .5s ease
+    background-color: $primary-color-text
+
+    label
+      text-align: center
+      background-color: $primary-color-dark
+      color: $primary-color-text
+      padding: 0.7em
+
+  .overlay-buttons
     display: flex
-    justify-content: space-around
-    white-space: nowrap 
-    color: white
-    position: absolute
-    overflow: hidden
-    top: 70%
-    left: 50%
-    transform: translate(-50%, -50%)
+    margin-bottom: 0.7em
 
     button
-      display: none
+      display: inline-block
+      flex: 1 1 auto
+      border: none
+      color: $primary-color-text
+      background: $primary-color-light
+      cursor: pointer
+      outline: none
+      height: 2.4em
+      font: inherit
 
-  .card
-    padding: 1em
-    flex-basis: 25%
-    flex-grow: 1
-    background-color: #FFF
-    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25)
+      &:last-child
+        margin-left: 0.5em
+
+      &:hover:not(.buttonDisabled)
+        background-color: $primary-color-dark
+        box-shadow: $primary-color-dark 1px 3px 8px 0px
 
   .image img
-  	width: 100%
+    width: 100%
 
   .info
-    margin-top: auto
-    padding-top: 20px
+    margin-top: 0.5em
+    background-color: $primary-color-text
+    color: $primary-text-color
     text-align: center
     position: relative
-    
-  .info div.name
-    font-size: 0.9em
-    font-weight: 600
-    height: 2.5em
+    text-shadow: $divider-color
+    flex-grow: 1
 
-  .info div.price
-    font-size: 2em
+    .name
+      font-weight: 600
+      font-size: 125%
 
-  .info div.description
-    font-size: 0.8em
-    font-style: italic
+    .price
+      color: $primary-text-color
+      margin: 0.2em
+      font-size: 200%
+
+    .description
+      color: $primary-text-color
+      font-style: italic
 
   .in_Stock
     font-size: 0.75em
@@ -59,52 +93,5 @@
     margin-top: 1em
     p
       display: inline
-      color: #888
+      color: $secondary-text-color
       margin-left: 0.45em
-
-.Item:hover .overlay
-  margin-top: -1em
-  background-color: white
-  opacity: 1
-  height: 100%
-  display: flex
-  justify-content: space-around
-  flex-direction: column
-  
-  label
-    margin: auto auto
-    text-align: center
-    border: 0
-    background-color: #4288CC
-    color: #FFF
-    width: 80%
-    padding-top: 0.3em
-    min-height: 1.6em
-
-  button
-    border: none
-    padding: 0.8em 0.4em
-    min-height: 2em
-    margin: 0.3em
-    background: linear-gradient(rgb(89, 155, 179) 5%, rgb(64, 140, 153) 100%) rgb(89, 155, 179)
-    display: inline-block
-    font-size: 0.9em
-    cursor: pointer
-    color: rgb(255, 255, 255)
-    background-color: white
-
-  .buttonDisabled
-    background: rgba(212,228,239,1)
-    box-shadow: rgb(39, 104, 115) 0px 0px 0px 0px
-
-@include device("mobile")
-  .Item
-    width: 100%
-
-@include device("tablet")
-  .Item
-    width: 33.33%
-
-@include device("desktop")
-  .Item
-    width: 25%

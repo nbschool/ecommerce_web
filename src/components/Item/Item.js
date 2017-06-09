@@ -45,7 +45,7 @@ class Item extends Component {
       itemsAdded =
         <label>{this.state.numItems}</label>;
       btnAdd =
-        <div>
+        <div className="overlay-buttons">
           <button className="addToCart" onClick={() => this.setNumberItemToCart(1)}>
             {t('item:addToCart')}
           </button>
@@ -57,7 +57,7 @@ class Item extends Component {
 
     else if (this.state.numItems === 0 && item.availability === 0) {
       btnAdd =
-        <div>
+        <div className="overlay-buttons">
           <button className="buttonDisabled" disabled>{t('item:addToCart')}</button>
           <button className="buttonDisabled" disabled>{t('item:removeFromCart')}</button>
         </div>;
@@ -65,7 +65,7 @@ class Item extends Component {
 
     else if (this.state.numItems === 0 && item.availability > this.state.numItems) {
       btnAdd =
-        <div>
+        <div className="overlay-buttons">
           <button className="addToCart" onClick={() => this.setNumberItemToCart(1)}>
             {t('item:addToCart')}
           </button>
@@ -77,7 +77,7 @@ class Item extends Component {
       itemsAdded =
         <label>{this.state.numItems}</label>;
       btnAdd =
-        <div>
+        <div className="overlay-buttons">
           <button className="buttonDisabled" disabled>{t('item:addToCart')}</button>
           <button className="removeFromCart" onClick={() => this.setNumberItemToCart(-1)}>
             {t('item:removeFromCart')}
@@ -95,19 +95,17 @@ class Item extends Component {
     }
     return (
       <article key={item.uuid} className="Item">
-        <div className="card">
-          <div className="image">
-            <img src={item.pictureUrl ? item.pictureUrl : placehold} alt={item.name} />
-          </div>
-          <div className="info">
-            <div className="name">{item.name}</div>
-            <div className="price">€{item.price}</div>
-            <div className="description block-with-text">{item.description}</div>
-            {itemAvailable}
-          </div>
-          <div className="in_Stock">
-            {emojiStock}<p>{textStock}</p>
-          </div>
+        <div className="image">
+          <img src={item.pictureUrl ? item.pictureUrl : placehold} alt={item.name} />
+        </div>
+        <div className="info">
+          <div className="name">{item.name}</div>
+          <div className="price">€{item.price}</div>
+          <div className="description block-with-text">{item.description}</div>
+          {itemAvailable}
+        </div>
+        <div className="in_Stock">
+          {emojiStock}<p>{textStock}</p>
         </div>
       </article>
     );
