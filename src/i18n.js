@@ -57,7 +57,18 @@ i18n
           dataArea_last_name: 'Last name',
           dataArea_email: 'Email',
           dataArea_save: 'Save'
-        }
+        },
+        cart: {
+          emptyCart: 'Your cart is empty.',
+          cart: 'Cart',
+          total: 'Total',
+          buyNow: 'Acquista ora',
+        },
+        cartItem: {
+          quantity: 'Quantity',
+          subtotal: 'Subtotal',
+          remove: 'Remove',
+        },
       },
       it: {
         login: {
@@ -110,7 +121,18 @@ i18n
           dataArea_last_name: 'Cognome',
           dataArea_email: 'Email',
           dataArea_save: 'Salva'
-        }
+        },
+        cart: {
+          emptyCart: 'Il tuo carrello è vuoto.',
+          cart: 'Carrello',
+          total: 'Totale',
+          buyNow: 'Buy now',
+        },
+        cartItem: {
+          quantity: 'Quantità',
+          subtotal: 'Subtotale',
+          remove: 'Rimuovi',
+        },
       }
     },
 
