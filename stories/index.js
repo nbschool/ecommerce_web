@@ -35,14 +35,57 @@ const LanguageDecorator = (story) => (
 );
 addDecorator(LanguageDecorator);
 storiesOf('cart', module)
-  .add('no items', () => {
+  .add('no items it', () => {
+    i18n.changeLanguage("it");
     const items = [];
     return (
       <Cart
-        cart={items} q/>
+        cart={items} />
     );
   })
-  .add('one item', () => {
+  .add('no items en', () => {
+    i18n.changeLanguage("en");
+    const items = [];
+    return (
+      <Cart
+        cart={items} />
+    );
+  })
+  .add('one item it', () => {
+    i18n.changeLanguage("it");
+    const items = {
+      'ert534534wertwert': {
+        uuid: 'ert534534wertwert',
+        name: 'Placeat voluptates repellendus veniam.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+        price: 233.34,
+        pictureUrl: null,
+        category: 'accessori',
+        availability: 3,
+        itemQuantity: 1,
+      }
+    };
+
+    return (
+      <Cart
+        cart={items}
+        item={(uuid) => {
+          return {
+            uuid: uuid,
+            name: 'Placeat voluptates repellendus veniam.',
+            description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+            price: 233.34,
+            pictureUrl: null,
+            category: 'accessori',
+            availability: 3,
+            itemQuantity: 1,
+          };
+        }}
+        setItemInCart={action('set item in cart')} />
+    );
+  })
+  .add('one item en', () => {
+    i18n.changeLanguage("en");
     const items = [{
       uuid: 'ert534534wertwert',
       name: 'Placeat voluptates repellendus veniam.',
@@ -50,7 +93,8 @@ storiesOf('cart', module)
       price: 233.34,
       pictureUrl: null,
       category: 'accessori',
-      availability: 3
+      availability: 3,
+      itemQuantity: 1,
     }];
 
     return (
@@ -64,13 +108,15 @@ storiesOf('cart', module)
             price: 233.34,
             pictureUrl: null,
             category: 'accessori',
-            availability: 3
+            availability: 3,
+            itemQuantity: 1,
           };
         }}
         setItemInCart={action('set item in cart')} />
     );
   })
-  .add('with many items', () => {
+  .add('with many items it', () => {
+    i18n.changeLanguage("it");
     const items = [];
 
     for (let i = 1; i <= 5; i++) {
@@ -82,6 +128,7 @@ storiesOf('cart', module)
         pictureUrl: null,
         category: 'accessori',
         availability: 3,
+        itemQuantity: 1,
       };
       items.push(item);
     }
@@ -96,13 +143,48 @@ storiesOf('cart', module)
             price: 233.34,
             pictureUrl: null,
             category: 'accessori',
-            availability: 3
+            availability: 3,
+            itemQuantity: 1,
+          };
+        }}
+        setItemInCart={action('set item in cart')} />
+    );
+  })
+  .add('with many items en', () => {
+    i18n.changeLanguage("en");
+    const items = [];
+
+    for (let i = 1; i <= 5; i++) {
+      const item = {
+        uuid: 'ert534534we'.concat(i),
+        name: 'Placeat voluptates repellendus veniam.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+        price: 30 * i,
+        pictureUrl: null,
+        category: 'accessori',
+        availability: 3,
+        itemQuantity: 1,
+      };
+      items.push(item);
+    }
+    return (
+      <Cart
+        cart={items}
+        item={(uuid) => {
+          return {
+            uuid: uuid,
+            name: 'Placeat voluptates repellendus veniam.',
+            description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+            price: 233.34,
+            pictureUrl: null,
+            category: 'accessori',
+            availability: 3,
+            itemQuantity: 1,
           };
         }}
         setItemInCart={action('set item in cart')} />
     );
   });
-
 storiesOf('CategoryMenu', module)
   .addDecorator((story) => (
     <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
