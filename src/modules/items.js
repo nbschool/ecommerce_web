@@ -51,13 +51,13 @@ function fetchPictureFailure(errmessage) {
   };
 }
 
-export function setCart(uuid, price, numItems) {
+export function setCart(uuid, price, itemQuantity) {
   return {
     type: UPDATE_CART,
     payload: {
       uuid: uuid,
       price: price,
-      numItems: numItems,
+      itemQuantity: itemQuantity,
     }
   };
 }
@@ -155,7 +155,18 @@ export const getItems = state => state.items.items;
 export const itemsLoaded = state => state.items.loaded;
 export const getSearchResults = state => state.items.searchResults;
 export const getSearchStatus = state => state.items.searchStatus;
-
+export const getCart = state => state.items.cart;
+export const getCartQuantity = (state, uuid) => {
+  return ((state.items.cart[uuid] === undefined) ? 0 : state.items.cart[uuid].itemQuantity);
+};
+export const getItem = (state, uuid) => {
+  const items = state.items.items;
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].uuid === uuid) {
+      return items[i];
+    }
+  }
+};
 // ------------------------------------
 // Store & reducer
 

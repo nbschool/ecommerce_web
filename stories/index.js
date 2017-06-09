@@ -10,6 +10,7 @@ import registerScissors, { defaultDevices } from 'storybook-addon-scissors';
 import { storiesOf, action, addDecorator } from '@kadira/storybook';
 import { MemoryRouter } from 'react-router';
 
+import Cart from '../src/components/Cart';
 import CategoryMenu from '../src/components/CategoryMenu';
 import Item from '../src/components/Item';
 import ItemList from '../src/components/ItemList';
@@ -24,6 +25,7 @@ import PersonalAreaPersonalData from '../src/components/PersonalAreaPersonalData
 import PersonalAreaAddressData from '../src/components/PersonalAreaAddressData';
 import PersonalArea from '../src/components/PersonalArea';
 
+
 registerScissors(defaultDevices);
 
 const LanguageDecorator = (story) => (
@@ -32,7 +34,157 @@ const LanguageDecorator = (story) => (
   </I18nextProvider>
 );
 addDecorator(LanguageDecorator);
+storiesOf('cart', module)
+  .add('no items it', () => {
+    i18n.changeLanguage("it");
+    const items = [];
+    return (
+      <Cart
+        cart={items} />
+    );
+  })
+  .add('no items en', () => {
+    i18n.changeLanguage("en");
+    const items = [];
+    return (
+      <Cart
+        cart={items} />
+    );
+  })
+  .add('one item it', () => {
+    i18n.changeLanguage("it");
+    const items = {
+      'ert534534wertwert': {
+        uuid: 'ert534534wertwert',
+        name: 'Placeat voluptates repellendus veniam.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+        price: 233.34,
+        pictureUrl: null,
+        category: 'accessori',
+        availability: 3,
+        itemQuantity: 1,
+      }
+    };
 
+    return (
+      <Cart
+        cart={items}
+        item={(uuid) => {
+          return {
+            uuid: uuid,
+            name: 'Placeat voluptates repellendus veniam.',
+            description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+            price: 233.34,
+            pictureUrl: null,
+            category: 'accessori',
+            availability: 3,
+            itemQuantity: 1,
+          };
+        }}
+        setItemInCart={action('set item in cart')} />
+    );
+  })
+  .add('one item en', () => {
+    i18n.changeLanguage("en");
+    const items = [{
+      uuid: 'ert534534wertwert',
+      name: 'Placeat voluptates repellendus veniam.',
+      description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+      price: 233.34,
+      pictureUrl: null,
+      category: 'accessori',
+      availability: 3,
+      itemQuantity: 1,
+    }];
+
+    return (
+      <Cart
+        cart={items}
+        item={(uuid) => {
+          return {
+            uuid: uuid,
+            name: 'Placeat voluptates repellendus veniam.',
+            description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+            price: 233.34,
+            pictureUrl: null,
+            category: 'accessori',
+            availability: 3,
+            itemQuantity: 1,
+          };
+        }}
+        setItemInCart={action('set item in cart')} />
+    );
+  })
+  .add('with many items it', () => {
+    i18n.changeLanguage("it");
+    const items = [];
+
+    for (let i = 1; i <= 5; i++) {
+      const item = {
+        uuid: 'ert534534we'.concat(i),
+        name: 'Placeat voluptates repellendus veniam.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+        price: 30 * i,
+        pictureUrl: null,
+        category: 'accessori',
+        availability: 3,
+        itemQuantity: 1,
+      };
+      items.push(item);
+    }
+    return (
+      <Cart
+        cart={items}
+        item={(uuid) => {
+          return {
+            uuid: uuid,
+            name: 'Placeat voluptates repellendus veniam.',
+            description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+            price: 233.34,
+            pictureUrl: null,
+            category: 'accessori',
+            availability: 3,
+            itemQuantity: 1,
+          };
+        }}
+        setItemInCart={action('set item in cart')} />
+    );
+  })
+  .add('with many items en', () => {
+    i18n.changeLanguage("en");
+    const items = [];
+
+    for (let i = 1; i <= 5; i++) {
+      const item = {
+        uuid: 'ert534534we'.concat(i),
+        name: 'Placeat voluptates repellendus veniam.',
+        description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+        price: 30 * i,
+        pictureUrl: null,
+        category: 'accessori',
+        availability: 3,
+        itemQuantity: 1,
+      };
+      items.push(item);
+    }
+    return (
+      <Cart
+        cart={items}
+        item={(uuid) => {
+          return {
+            uuid: uuid,
+            name: 'Placeat voluptates repellendus veniam.',
+            description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
+            price: 233.34,
+            pictureUrl: null,
+            category: 'accessori',
+            availability: 3,
+            itemQuantity: 1,
+          };
+        }}
+        setItemInCart={action('set item in cart')} />
+    );
+  });
 storiesOf('CategoryMenu', module)
   .addDecorator((story) => (
     <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
@@ -63,7 +215,8 @@ storiesOf('Item', module)
     };
     return (
       <Item
-      {...item} />
+      {...item}
+      itemQuantity={() => { return 1; }} />
     );
   })
   .add('Item out Stock it', () => {
@@ -78,7 +231,8 @@ storiesOf('Item', module)
     };
     return (
       <Item
-      {...item} />
+      {...item}
+      itemQuantity={() => { return 1; }} />
     );
   })
   .add('Item in Stock en', () => {
@@ -89,11 +243,13 @@ storiesOf('Item', module)
       description: 'Deserunt ut quae architecto error assumenda exercitationem occaecati.',
       price: 233.34,
       pictureUrl: null,
-      availability: 3
+      category: 'accessori',
+      availability: 3,
     };
     return (
       <Item
-      {...item} />
+      {...item}
+      itemQuantity={() => { return 1; }} />
     );
   })
   .add('Item out Stock', () => {
@@ -110,7 +266,8 @@ storiesOf('Item', module)
     return (
       <I18nextProvider i18n={i18n}>
         <Item
-          {...item} />
+          {...item}
+          itemQuantity={() => { return 1; }} />
       </I18nextProvider>
     );
   });
@@ -157,6 +314,7 @@ storiesOf('Itemlist', module)
           itemList={itemList}
           fetchItemList={action('fetch ItemList with one item')}
           loaded={true}
+          itemQuantity={() => { return 1; }}
           match={{ params: { category: 'accessori' } }} />
       </I18nextProvider>
     );
@@ -184,6 +342,7 @@ storiesOf('Itemlist', module)
           itemList={itemList}
           fetchItemList={action('fetch ItemList with one item')}
           loaded={true}
+          itemQuantity={() => { return 1; }}
           match={{ params: { category: 'accessori' } }} />
       </I18nextProvider>
     );
@@ -318,7 +477,9 @@ storiesOf('SearchBar', module)
           search={action('call to dropDownList many items')} />
         <DropDownList
           dropDownList={dropDownList}
-          loaded={true} />
+          fetchDropDownList={action('fetch dropDownList one item')}
+          loaded={true}
+          itemQuantity={() => { return 1; }}/>
       </div>
     );
   })
@@ -358,13 +519,16 @@ storiesOf('SearchBar', module)
           search={action('call to dropDownList many items')} />
         <DropDownList
           dropDownList={dropDownList}
-          loaded={true} />
+          fetchDropDownList={action('fetch dropDownList one item')}
+          loaded={true}
+          itemQuantity={() => { return 1; }}/>
         <I18nextProvider i18n={i18n}>
           <ItemList
             itemList={itemList}
             fetchItemList={action('fetch ItemList with one item')}
             loaded={true}
-            match={{ params: { category: 'accessori' } }} />
+            match={{ params: { category: 'accessori' } }}
+            itemQuantity={() => { return 1; }}/>
         </I18nextProvider>
       </div>
     );
@@ -381,7 +545,8 @@ storiesOf('DropDownItem', module)
     };
     return (
       <DropDownItem
-        {...dropDownItem} />
+        {...dropDownItem}
+        itemQuantity={() => { return 1; }}/>
     );
   });
 
@@ -413,7 +578,9 @@ storiesOf('DropDownList', module)
     return (
       <DropDownList
         dropDownList={dropDownList}
-        loaded={true} />
+        fetchDropDownList={action('fetch DropDownList with one item')}
+        loaded={true}
+        itemQuantity={() => { return 1; }}/>
     );
   })
   .add('with many items', () => {
@@ -433,7 +600,9 @@ storiesOf('DropDownList', module)
     return (
       <DropDownList
         dropDownList={dropDownList}
-        loaded={true} />
+        fetchDropDownList={action('fetch DropDownList with one item')}
+        loaded={true}
+        itemQuantity={() => { return 1; }}/>
     );
   });
 
