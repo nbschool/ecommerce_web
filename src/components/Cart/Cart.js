@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { translate } from 'react-i18next';
 
 import CartItem from '../CartItem/';
 import './Cart.css';
@@ -26,6 +27,8 @@ class Cart extends Component {
   render() {
     let total = 0;
     const that = this;
+    const {t} = this.props;
+
     let cart = Object.values(this.props.cart).map((item, index) => {
       if (item.itemQuantity > 0) {
         const realItem = that.props.item(item.uuid);
@@ -42,15 +45,15 @@ class Cart extends Component {
     });
 
     if (cart.length === 0)
-      cart = <h2>Il tuo carrello è vuoto.</h2>;
+      cart = <h2>{t('cart:emptyCart')}</h2>;
 
     return (
       <div className='cart'>
-        <h1>Carrello</h1>
+        <h1>{t('cart:cart')}</h1>
         <div>{cart}</div>
-        <h3>Totale = {total} €</h3>
+        <h3>{t('cart:total')} = {total} €</h3>
         <button className='buy'
-                onClick={this.handleBuyClick}>Acquista ora</button>
+                onClick={this.handleBuyClick}>{t('cart:buyNow')}</button>
       </div>
     );
   }
@@ -62,6 +65,7 @@ Cart.propTypes = {
   item: PropTypes.func.isRequired,
   setItemInCart: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
-export default Cart;
+export default translate('cart')(Cart);

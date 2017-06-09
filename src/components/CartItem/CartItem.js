@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { translate } from 'react-i18next';
 
 import placehold from './placehold.png';
 import './CartItem.css';
@@ -92,6 +93,7 @@ class CartItem extends Component {
 
   render() {
     const item = this.props.item;
+    const {t} = this.props;
     return (
       <div className='cart-item'>
         <div className='cart-item-top'>
@@ -106,15 +108,15 @@ class CartItem extends Component {
           </div>
         </div>
         <div className='cart-item-bottom'>
-          <div className='class-name-quantity'>Quantità = {this.state.selectedQuantity}</div>
+          <div className='class-name-quantity'>{t('cartItem:quantity')} = {this.state.selectedQuantity}</div>
           <div className='class-name-subtotal'>
-            Subtotale = EUR {item.price * this.state.selectedQuantity}
+            {t('cartItem:subtotal')} = EUR {item.price * this.state.selectedQuantity}
           </div>
           {
             this.state.isOptionValue ? this.renderDropDown : this.renderTextInput
           }
           <button className='remove-cart-item'
-                  onClick={this.handleRemoveClick}>Rimuovi</button>
+                  onClick={this.handleRemoveClick}>{t('cartItem:remove')}</button>
           <hr className="thin-line-separator"/>
         </div>
       </div>
@@ -127,6 +129,7 @@ CartItem.propTypes = {
   item: PropTypes.object,
   quantity: PropTypes.number,
   dispatchHandleChange: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
-export default CartItem;
+export default translate('cartItem')(CartItem);
