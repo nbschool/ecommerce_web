@@ -2741,7 +2741,32 @@ exports[`Storyshots SidebarMenu default 1`] = `
 </section>
 `;
 
-exports[`Storyshots cart no items 1`] = `
+exports[`Storyshots cart no items en 1`] = `
+<div
+  className="cart">
+  <h1>
+    Cart
+  </h1>
+  <div>
+    <h2>
+      Your cart is empty.
+    </h2>
+  </div>
+  <h3>
+    Total
+     = 
+    0
+     €
+  </h3>
+  <button
+    className="buy"
+    onClick={[Function]}>
+    Acquista ora
+  </button>
+</div>
+`;
+
+exports[`Storyshots cart no items it 1`] = `
 <div
   className="cart">
   <h1>
@@ -2753,8 +2778,122 @@ exports[`Storyshots cart no items 1`] = `
     </h2>
   </div>
   <h3>
-    Totale = 
+    Totale
+     = 
     0
+     €
+  </h3>
+  <button
+    className="buy"
+    onClick={[Function]}>
+    Buy now
+  </button>
+</div>
+`;
+
+exports[`Storyshots cart one item en 1`] = `
+<div
+  className="cart">
+  <h1>
+    Cart
+  </h1>
+  <div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <div
+          className="cart-item-img">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="item">
+          <div
+            className="item-name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="item-price">
+            EUR 
+            233.34
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantity
+           = 
+          1
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotal
+           = EUR 
+          233.34
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={1}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item"
+          onClick={[Function]}>
+          Remove
+        </button>
+        <hr
+          className="thin-line-separator" />
+      </div>
+    </div>
+  </div>
+  <h3>
+    Total
+     = 
+    233.34
      €
   </h3>
   <button
@@ -2765,16 +2904,586 @@ exports[`Storyshots cart no items 1`] = `
 </div>
 `;
 
-exports[`Storyshots cart one item 1`] = `
+exports[`Storyshots cart one item it 1`] = `
 <div
   className="cart">
   <h1>
     Carrello
   </h1>
-  <div />
+  <div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <div
+          className="cart-item-img">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="item">
+          <div
+            className="item-name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="item-price">
+            EUR 
+            233.34
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantità
+           = 
+          1
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotale
+           = EUR 
+          233.34
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={1}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item"
+          onClick={[Function]}>
+          Rimuovi
+        </button>
+        <hr
+          className="thin-line-separator" />
+      </div>
+    </div>
+  </div>
   <h3>
-    Totale = 
-    0
+    Totale
+     = 
+    233.34
+     €
+  </h3>
+  <button
+    className="buy"
+    onClick={[Function]}>
+    Buy now
+  </button>
+</div>
+`;
+
+exports[`Storyshots cart with many items en 1`] = `
+<div
+  className="cart">
+  <h1>
+    Cart
+  </h1>
+  <div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <div
+          className="cart-item-img">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="item">
+          <div
+            className="item-name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="item-price">
+            EUR 
+            233.34
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantity
+           = 
+          1
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotal
+           = EUR 
+          233.34
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={1}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item"
+          onClick={[Function]}>
+          Remove
+        </button>
+        <hr
+          className="thin-line-separator" />
+      </div>
+    </div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <div
+          className="cart-item-img">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="item">
+          <div
+            className="item-name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="item-price">
+            EUR 
+            233.34
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantity
+           = 
+          1
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotal
+           = EUR 
+          233.34
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={1}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item"
+          onClick={[Function]}>
+          Remove
+        </button>
+        <hr
+          className="thin-line-separator" />
+      </div>
+    </div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <div
+          className="cart-item-img">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="item">
+          <div
+            className="item-name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="item-price">
+            EUR 
+            233.34
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantity
+           = 
+          1
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotal
+           = EUR 
+          233.34
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={1}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item"
+          onClick={[Function]}>
+          Remove
+        </button>
+        <hr
+          className="thin-line-separator" />
+      </div>
+    </div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <div
+          className="cart-item-img">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="item">
+          <div
+            className="item-name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="item-price">
+            EUR 
+            233.34
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantity
+           = 
+          1
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotal
+           = EUR 
+          233.34
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={1}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item"
+          onClick={[Function]}>
+          Remove
+        </button>
+        <hr
+          className="thin-line-separator" />
+      </div>
+    </div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <div
+          className="cart-item-img">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="item">
+          <div
+            className="item-name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="item-price">
+            EUR 
+            233.34
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantity
+           = 
+          1
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotal
+           = EUR 
+          233.34
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={1}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item"
+          onClick={[Function]}>
+          Remove
+        </button>
+        <hr
+          className="thin-line-separator" />
+      </div>
+    </div>
+  </div>
+  <h3>
+    Total
+     = 
+    450
      €
   </h3>
   <button
@@ -2785,22 +3494,479 @@ exports[`Storyshots cart one item 1`] = `
 </div>
 `;
 
-exports[`Storyshots cart with many items 1`] = `
+exports[`Storyshots cart with many items it 1`] = `
 <div
   className="cart">
   <h1>
     Carrello
   </h1>
-  <div />
+  <div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <div
+          className="cart-item-img">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="item">
+          <div
+            className="item-name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="item-price">
+            EUR 
+            233.34
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantità
+           = 
+          1
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotale
+           = EUR 
+          233.34
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={1}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item"
+          onClick={[Function]}>
+          Rimuovi
+        </button>
+        <hr
+          className="thin-line-separator" />
+      </div>
+    </div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <div
+          className="cart-item-img">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="item">
+          <div
+            className="item-name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="item-price">
+            EUR 
+            233.34
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantità
+           = 
+          1
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotale
+           = EUR 
+          233.34
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={1}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item"
+          onClick={[Function]}>
+          Rimuovi
+        </button>
+        <hr
+          className="thin-line-separator" />
+      </div>
+    </div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <div
+          className="cart-item-img">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="item">
+          <div
+            className="item-name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="item-price">
+            EUR 
+            233.34
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantità
+           = 
+          1
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotale
+           = EUR 
+          233.34
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={1}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item"
+          onClick={[Function]}>
+          Rimuovi
+        </button>
+        <hr
+          className="thin-line-separator" />
+      </div>
+    </div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <div
+          className="cart-item-img">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="item">
+          <div
+            className="item-name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="item-price">
+            EUR 
+            233.34
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantità
+           = 
+          1
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotale
+           = EUR 
+          233.34
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={1}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item"
+          onClick={[Function]}>
+          Rimuovi
+        </button>
+        <hr
+          className="thin-line-separator" />
+      </div>
+    </div>
+    <div
+      className="cart-item">
+      <div
+        className="cart-item-top">
+        <div
+          className="cart-item-img">
+          <img
+            alt="Placeat voluptates repellendus veniam."
+            src="placehold.png" />
+        </div>
+        <div
+          className="item">
+          <div
+            className="item-name">
+            Placeat voluptates repellendus veniam.
+          </div>
+          <div
+            className="item-price">
+            EUR 
+            233.34
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item-bottom">
+        <div
+          className="class-name-quantity">
+          Quantità
+           = 
+          1
+        </div>
+        <div
+          className="class-name-subtotal">
+          Subtotale
+           = EUR 
+          233.34
+        </div>
+        <select
+          className="drop-down-item"
+          onChange={[Function]}
+          value={1}>
+          <option
+            value="1">
+            1
+          </option>
+          <option
+            value="2">
+            2
+          </option>
+          <option
+            value="3">
+            3
+          </option>
+          <option
+            value="4">
+            4
+          </option>
+          <option
+            value="5">
+            5
+          </option>
+          <option
+            value="6">
+            6
+          </option>
+          <option
+            value="7">
+            7
+          </option>
+          <option
+            value="8">
+            8
+          </option>
+          <option
+            value="9">
+            9
+          </option>
+          <option
+            value="10+">
+            10+
+          </option>
+        </select>
+        <button
+          className="remove-cart-item"
+          onClick={[Function]}>
+          Rimuovi
+        </button>
+        <hr
+          className="thin-line-separator" />
+      </div>
+    </div>
+  </div>
   <h3>
-    Totale = 
-    0
+    Totale
+     = 
+    450
      €
   </h3>
   <button
     className="buy"
     onClick={[Function]}>
-    Acquista ora
+    Buy now
   </button>
 </div>
 `;
